@@ -1,0 +1,1484 @@
+/* =========================================================
+   COMPANY PROFILES
+   PROFESSIONAL JOB PORTAL UI
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.company-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f6f8fc;
+  color: #172033;
+  overflow-x: hidden;
+  font-family: inherit;
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.company-hero {
+  position: relative;
+  width: 100%;
+  min-height: 475px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 145px 7vw 85px;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8faff 0%,
+      #eef3ff 50%,
+      #f8f6ff 100%
+    );
+}
+
+.company-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(79, 70, 229, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(79, 70, 229, 0.025) 1px,
+      transparent 1px
+    );
+
+  background-size: 45px 45px;
+  pointer-events: none;
+}
+
+/* =========================================================
+   HERO GLOWS
+   ========================================================= */
+
+.company-hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(3px);
+}
+
+.company-glow-one {
+  width: 420px;
+  height: 420px;
+  right: -160px;
+  top: -230px;
+  background: rgba(79, 70, 229, 0.09);
+}
+
+.company-glow-two {
+  width: 350px;
+  height: 350px;
+  left: -180px;
+  bottom: -220px;
+  background: rgba(37, 99, 235, 0.07);
+}
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.company-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.company-eyebrow {
+  width: fit-content;
+  margin: 0 auto 16px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 14px;
+
+  border: 1px solid #cdd7fa;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.8);
+
+  color: #4f46e5;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+
+  box-shadow:
+    0 6px 20px rgba(79, 70, 229, 0.06);
+}
+
+.company-eyebrow svg {
+  font-size: 13px;
+}
+
+/* =========================================================
+   HERO HEADING
+   ========================================================= */
+
+.company-hero h1 {
+  margin: 0;
+
+  color: #172554;
+
+  font-size: clamp(40px, 5vw, 62px);
+  font-weight: 800;
+
+  line-height: 1.08;
+  letter-spacing: -2px;
+}
+
+.company-hero h1 span {
+  display: block;
+
+  background:
+    linear-gradient(
+      90deg,
+      #2563eb,
+      #4f46e5,
+      #7c3aed
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.company-hero p {
+  max-width: 650px;
+
+  margin: 18px auto 30px;
+
+  color: #64748b;
+
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.company-search-box {
+  width: 100%;
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+
+  padding: 9px;
+
+  background: #ffffff;
+
+  border: 1px solid #dce3f0;
+  border-radius: 15px;
+
+  box-shadow:
+    0 18px 45px rgba(30, 41, 80, 0.10);
+
+  text-align: left;
+}
+
+.company-search-field {
+  flex: 1;
+
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 8px 14px;
+}
+
+.company-search-field > svg {
+  flex-shrink: 0;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 12px;
+
+  border-radius: 10px;
+
+  background: #eef2ff;
+  color: #4f46e5;
+
+  font-size: 15px;
+}
+
+.company-search-field label {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #334155;
+
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.company-search-field input {
+  width: 100%;
+
+  padding: 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #172033;
+
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.company-search-field input::placeholder {
+  color: #9aa5b5;
+}
+
+.company-search-divider {
+  width: 1px;
+  height: 43px;
+
+  flex-shrink: 0;
+
+  background: #e4e8f0;
+}
+
+.company-search-button {
+  height: 50px;
+  min-width: 125px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  border: none;
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #4f46e5
+    );
+
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px rgba(37, 99, 235, 0.20);
+
+  transition: 0.2s ease;
+}
+
+.company-search-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 11px 25px rgba(37, 99, 235, 0.28);
+}
+
+/* =========================================================
+   HERO STATS
+   ========================================================= */
+
+.company-hero-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 30px;
+
+  margin-top: 27px;
+}
+
+.company-hero-stats div:not(.company-stat-line) {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.company-hero-stats strong {
+  color: #172554;
+
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.company-hero-stats span {
+  color: #718096;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.company-stat-line {
+  width: 1px;
+  height: 28px;
+
+  background: #d9e0ec;
+}
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+.company-main {
+  width: min(1180px, 90%);
+
+  margin: 0 auto;
+
+  padding: 65px 0 80px;
+}
+
+/* =========================================================
+   LIST HEADER
+   ========================================================= */
+
+.company-list-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 32px;
+}
+
+.company-small-label {
+  color: #4f46e5;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 1.3px;
+}
+
+.company-list-header h2 {
+  margin: 7px 0 5px;
+
+  color: #172033;
+
+  font-size: 29px;
+  font-weight: 800;
+
+  letter-spacing: -0.7px;
+}
+
+.company-list-header p {
+  margin: 0;
+
+  color: #718096;
+
+  font-size: 13px;
+}
+
+.company-result-count {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 10px 14px;
+
+  border: 1px solid #e0e6f0;
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  white-space: nowrap;
+}
+
+.company-result-count strong {
+  color: #4f46e5;
+  font-size: 17px;
+}
+
+.company-result-count span {
+  color: #718096;
+  font-size: 11px;
+}
+
+/* =========================================================
+   SECTION TITLE
+   ========================================================= */
+
+.section-title-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.section-title-row span {
+  color: #7b879b;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1.3px;
+}
+
+.section-title-row h3 {
+  margin: 4px 0 0;
+
+  color: #172033;
+
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.section-title-row button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #4f46e5;
+
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   FEATURED GRID
+   ========================================================= */
+
+.featured-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-bottom: 60px;
+}
+
+/* =========================================================
+   FEATURED CARD
+   ========================================================= */
+
+.featured-company-card {
+  position: relative;
+
+  padding: 22px;
+
+  border: 1px solid #e0e6f0;
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 8px 25px rgba(30, 41, 80, 0.055);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.featured-company-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #cbd5f5;
+
+  box-shadow:
+    0 18px 40px rgba(30, 41, 80, 0.10);
+}
+
+.featured-top,
+.company-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* =========================================================
+   COMPANY LOGO
+   ========================================================= */
+
+.company-logo {
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eff6ff,
+      #eef2ff
+    );
+
+  border: 1px solid #dce5ff;
+
+  color: #3158c9;
+
+  font-size: 17px;
+  font-weight: 900;
+
+  letter-spacing: -0.5px;
+}
+
+.company-logo-small {
+  width: 52px;
+  height: 52px;
+  border-radius: 13px;
+}
+
+/* =========================================================
+   FAVORITE
+   ========================================================= */
+
+.favorite-button {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #e1e6ef;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #7d8798;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.favorite-button:hover {
+  border-color: #c7d2fe;
+
+  background: #f5f7ff;
+
+  color: #4f46e5;
+}
+
+.favorite-button svg {
+  font-size: 13px;
+}
+
+/* =========================================================
+   FEATURED CONTENT
+   ========================================================= */
+
+.featured-company-name {
+  margin-top: 17px;
+}
+
+.featured-company-name h4 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.featured-company-name h4 svg {
+  color: #2563eb;
+  font-size: 12px;
+}
+
+.featured-company-name span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #7a8699;
+
+  font-size: 11px;
+}
+
+.featured-location {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-top: 14px;
+
+  color: #667085;
+
+  font-size: 11px;
+}
+
+.featured-location svg {
+  color: #64748b;
+}
+
+/* =========================================================
+   FEATURED BOTTOM
+   ========================================================= */
+
+.featured-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 20px;
+
+  padding-top: 16px;
+
+  border-top: 1px solid #edf0f5;
+}
+
+.featured-bottom > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.featured-bottom strong {
+  color: #172033;
+  font-size: 14px;
+}
+
+.featured-bottom span {
+  color: #8a94a5;
+  font-size: 10px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  color: #334155;
+
+  font-size: 12px;
+}
+
+.rating svg {
+  color: #f59e0b;
+  font-size: 11px;
+}
+
+/* =========================================================
+   VIEW COMPANY BUTTON
+   ========================================================= */
+
+.view-company-button {
+  width: 100%;
+
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  margin-top: 17px;
+
+  border: 1px solid #dce3f0;
+  border-radius: 9px;
+
+  background: #f8faff;
+
+  color: #334155;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.view-company-button:hover {
+  border-color: #c7d2fe;
+
+  background: #eef2ff;
+
+  color: #4f46e5;
+}
+
+/* =========================================================
+   COMPANY GRID
+   ========================================================= */
+
+.company-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+/* =========================================================
+   COMPANY CARD
+   ========================================================= */
+
+.company-card {
+  border: 1px solid #e1e6ef;
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 7px 23px rgba(30, 41, 80, 0.045);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.company-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #d2daf0;
+
+  box-shadow:
+    0 16px 35px rgba(30, 41, 80, 0.085);
+}
+
+.company-card-top {
+  padding: 20px 20px 0;
+}
+
+.company-card-content {
+  padding: 15px 20px 20px;
+}
+
+/* =========================================================
+   COMPANY NAME
+   ========================================================= */
+
+.company-name-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.company-name-row h3 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 15px;
+  font-weight: 800;
+
+  line-height: 1.3;
+}
+
+.verified-icon {
+  flex-shrink: 0;
+
+  color: #2563eb;
+
+  font-size: 12px;
+}
+
+.company-industry {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #7b8798;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.company-card-content > p {
+  min-height: 55px;
+
+  margin: 14px 0;
+
+  color: #6b778b;
+
+  font-size: 11px;
+
+  line-height: 1.65;
+}
+
+/* =========================================================
+   META
+   ========================================================= */
+
+.company-meta {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  padding-bottom: 14px;
+
+  border-bottom: 1px solid #edf0f5;
+}
+
+.company-meta span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #68758a;
+
+  font-size: 10px;
+}
+
+.company-meta svg {
+  color: #718096;
+
+  font-size: 11px;
+}
+
+/* =========================================================
+   CARD FOOTER
+   ========================================================= */
+
+.company-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 14px;
+}
+
+.company-jobs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.company-jobs > svg {
+  color: #4f46e5;
+  font-size: 14px;
+}
+
+.company-jobs div {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.company-jobs strong {
+  color: #172033;
+
+  font-size: 12px;
+}
+
+.company-jobs span {
+  color: #8993a4;
+
+  font-size: 9px;
+}
+
+.company-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  color: #475569;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.company-rating svg {
+  color: #f59e0b;
+  font-size: 11px;
+}
+
+/* =========================================================
+   PROFILE BUTTON
+   ========================================================= */
+
+.company-view-button {
+  width: 100%;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  margin-top: 17px;
+
+  border: 1px solid #d9e2f3;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #334155;
+
+  font-family: inherit;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.company-view-button:hover {
+  border-color: #4f46e5;
+
+  background: #4f46e5;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 7px 18px rgba(79, 70, 229, 0.18);
+}
+
+.company-view-button svg {
+  transition: transform 0.2s ease;
+}
+
+.company-view-button:hover svg {
+  transform: translateX(3px);
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.company-empty {
+  min-height: 300px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  text-align: center;
+
+  padding: 40px;
+
+  border: 1px dashed #d7deeb;
+  border-radius: 16px;
+
+  background: #ffffff;
+}
+
+.company-empty > div {
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 14px;
+
+  border-radius: 14px;
+
+  background: #eef2ff;
+
+  color: #4f46e5;
+
+  font-size: 20px;
+}
+
+.company-empty h3 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 18px;
+}
+
+.company-empty p {
+  margin: 7px 0 17px;
+
+  color: #7b8798;
+
+  font-size: 12px;
+}
+
+.company-empty button {
+  height: 38px;
+
+  padding: 0 16px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #4f46e5;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.company-cta {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 22px;
+
+  margin-top: 65px;
+
+  padding: 30px 34px;
+
+  border: 1px solid #d7def4;
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eef3ff,
+      #f7f5ff
+    );
+
+  overflow: hidden;
+}
+
+.company-cta::after {
+  content: "";
+
+  position: absolute;
+
+  width: 260px;
+  height: 260px;
+
+  right: -100px;
+  top: -150px;
+
+  border-radius: 50%;
+
+  background: rgba(99, 102, 241, 0.08);
+}
+
+.company-cta-icon {
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  color: #4f46e5;
+
+  box-shadow:
+    0 8px 20px rgba(30, 41, 80, 0.07);
+
+  font-size: 21px;
+}
+
+.company-cta-content {
+  flex: 1;
+}
+
+.company-cta-content span {
+  color: #4f46e5;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.company-cta-content h2 {
+  margin: 4px 0 4px;
+
+  color: #172033;
+
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.company-cta-content p {
+  margin: 0;
+
+  max-width: 600px;
+
+  color: #69758a;
+
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.company-cta > button {
+  position: relative;
+  z-index: 2;
+
+  min-width: 190px;
+  height: 44px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  border: none;
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #4f46e5
+    );
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px rgba(37, 99, 235, 0.20);
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.company-footer {
+  background: #111827;
+
+  color: #ffffff;
+
+  padding: 40px 7vw 20px;
+}
+
+.company-footer-inner {
+  max-width: 1180px;
+
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.company-footer-inner strong {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.company-footer-inner p {
+  margin: 6px 0 0;
+
+  color: #9ca3af;
+
+  font-size: 11px;
+}
+
+.company-footer-links {
+  display: flex;
+  align-items: center;
+
+  gap: 22px;
+}
+
+.company-footer-links button {
+  border: none;
+
+  background: transparent;
+
+  color: #cbd5e1;
+
+  font-family: inherit;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.company-footer-links button:hover {
+  color: #ffffff;
+}
+
+.company-footer-bottom {
+  max-width: 1180px;
+
+  margin: 30px auto 0;
+
+  padding-top: 17px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+  color: #778296;
+
+  font-size: 10px;
+
+  text-align: center;
+}
+
+/* =========================================================
+   LARGE TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+  .company-main {
+    width: 92%;
+  }
+
+  .featured-grid,
+  .company-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .company-hero {
+    padding:
+      125px
+      5vw
+      65px;
+  }
+
+  .company-search-box {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .company-search-field {
+    width: 100%;
+  }
+
+  .company-search-divider {
+    width: calc(100% - 28px);
+    height: 1px;
+
+    margin: 0 auto;
+  }
+
+  .company-search-button {
+    width: 100%;
+
+    margin-top: 5px;
+  }
+
+  .company-list-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .company-result-count {
+    align-self: flex-start;
+  }
+
+  .company-cta {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .company-cta > button {
+    width: 100%;
+  }
+
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .company-hero {
+    min-height: auto;
+
+    padding:
+      115px
+      20px
+      55px;
+  }
+
+  .company-hero h1 {
+    font-size: 38px;
+
+    letter-spacing: -1.2px;
+  }
+
+  .company-hero p {
+    font-size: 13px;
+  }
+
+  .company-hero-stats {
+    gap: 15px;
+  }
+
+  .company-hero-stats strong {
+    font-size: 14px;
+  }
+
+  .company-hero-stats span {
+    font-size: 9px;
+  }
+
+  .company-main {
+    width: calc(100% - 32px);
+
+    padding-top: 45px;
+  }
+
+  .featured-grid,
+  .company-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .company-list-header h2 {
+    font-size: 25px;
+  }
+
+  .section-title-row h3 {
+    font-size: 19px;
+  }
+
+  .company-cta {
+    padding: 25px 22px;
+  }
+
+  .company-cta-content h2 {
+    font-size: 18px;
+  }
+
+  .company-footer {
+    padding:
+      35px
+      20px
+      18px;
+  }
+
+  .company-footer-inner {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .company-footer-links {
+    gap: 15px;
+  }
+
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+  .company-hero h1 {
+    font-size: 33px;
+  }
+
+  .company-hero-stats {
+    gap: 9px;
+  }
+
+  .company-search-field {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.company-page button:focus-visible,
+.company-page input:focus-visible {
+  outline: 3px solid rgba(79, 70, 229, 0.22);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .company-page *,
+  .company-page *::before,
+  .company-page *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+}

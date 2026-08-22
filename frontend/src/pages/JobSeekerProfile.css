@@ -1,0 +1,1458 @@
+/* =========================================================
+   JOB SEEKER PROFILE
+   PROFESSIONAL JOB PORTAL / ATS UI
+   BLUE + INDIGO THEME
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-blue: #2563eb;
+  --dark-blue: #1d4ed8;
+  --light-blue: #eff6ff;
+  --indigo: #4f46e5;
+
+  --dark-text: #172033;
+  --text: #344054;
+  --muted-text: #667085;
+
+  --pale-bg: #f5f8ff;
+  --white: #ffffff;
+
+  --border: #e4e9f2;
+  --border-light: #edf1f7;
+
+  --success: #16a34a;
+  --success-bg: #f0fdf4;
+
+  --danger: #dc2626;
+  --danger-bg: #fff5f5;
+
+  --shadow-sm: 0 4px 16px rgba(23, 32, 51, 0.04);
+  --shadow-md: 0 8px 28px rgba(23, 32, 51, 0.06);
+  --shadow-blue: 0 8px 22px rgba(37, 99, 235, 0.16);
+}
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+.js-profile-page {
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 34px 42px 70px;
+
+  background: var(--pale-bg);
+  color: var(--dark-text);
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.js-profile-header {
+  width: 100%;
+  max-width: 1320px;
+
+  margin: 0 auto 26px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+}
+
+.js-profile-header h1 {
+  margin: 0;
+
+  color: var(--dark-text);
+
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 750;
+
+  letter-spacing: -0.7px;
+}
+
+.js-profile-header p {
+  margin: 7px 0 0;
+
+  color: var(--muted-text);
+
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   COMMON BUTTONS
+   ========================================================= */
+
+.js-edit-btn,
+.js-save-btn,
+.js-cancel-btn {
+  min-height: 44px;
+
+  padding: 0 18px;
+
+  border: 0;
+  outline: none;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border-radius: 9px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+/* =========================================================
+   EDIT BUTTON
+   ========================================================= */
+
+.js-edit-btn {
+  color: #ffffff;
+
+  background: var(--primary-blue);
+
+  box-shadow: var(--shadow-blue);
+}
+
+.js-edit-btn:hover {
+  background: var(--dark-blue);
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 10px 25px rgba(37, 99, 235, 0.2);
+}
+
+/* =========================================================
+   EDIT ACTIONS
+   ========================================================= */
+
+.js-edit-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+/* =========================================================
+   SAVE BUTTON
+   ========================================================= */
+
+.js-save-btn {
+  color: #ffffff;
+
+  background: var(--primary-blue);
+
+  box-shadow:
+    0 5px 16px rgba(37, 99, 235, 0.15);
+}
+
+.js-save-btn:hover:not(:disabled) {
+  background: var(--dark-blue);
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 9px 22px rgba(37, 99, 235, 0.2);
+}
+
+/* =========================================================
+   CANCEL BUTTON
+   ========================================================= */
+
+.js-cancel-btn {
+  color: #475467;
+
+  background: #ffffff;
+
+  border: 1px solid #d9e0ea;
+}
+
+.js-cancel-btn:hover:not(:disabled) {
+  background: #f8fafc;
+
+  border-color: #cbd5e1;
+}
+
+/* =========================================================
+   DISABLED BUTTON
+   ========================================================= */
+
+.js-save-btn:disabled,
+.js-cancel-btn:disabled,
+.js-edit-btn:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+/* =========================================================
+   PROFILE HERO CARD
+   ========================================================= */
+
+.js-profile-card {
+  width: 100%;
+  max-width: 1320px;
+
+  min-height: 190px;
+
+  margin: 0 auto 22px;
+
+  padding: 32px 36px;
+
+  position: relative;
+
+  background: var(--white);
+
+  border: 1px solid var(--border);
+
+  border-radius: 16px;
+
+  box-shadow: var(--shadow-md);
+
+  overflow: hidden;
+}
+
+/* TOP BLUE LINE */
+
+.js-profile-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--primary-blue),
+      var(--indigo)
+    );
+}
+
+/* SUBTLE BACKGROUND */
+
+.js-profile-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 240px;
+  height: 240px;
+
+  right: -100px;
+  top: -130px;
+
+  border-radius: 50%;
+
+  background: rgba(37, 99, 235, 0.045);
+
+  pointer-events: none;
+}
+
+.js-profile-main {
+  min-height: 120px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 25px;
+
+  position: relative;
+
+  z-index: 1;
+}
+
+/* =========================================================
+   AVATAR
+   ========================================================= */
+
+.js-profile-avatar {
+  width: 108px;
+  height: 108px;
+
+  flex: 0 0 108px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #eff6ff,
+      #e8edff
+    );
+
+  border: 5px solid #ffffff;
+
+  box-shadow:
+    0 0 0 1px #cddafa,
+    0 8px 22px rgba(37, 99, 235, 0.12);
+
+  color: var(--primary-blue);
+
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.js-profile-avatar span {
+  line-height: 1;
+}
+
+/* =========================================================
+   PROFILE BASIC INFO
+   ========================================================= */
+
+.js-profile-basic {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.js-profile-basic h2 {
+  margin: 0 0 8px;
+
+  color: var(--dark-text);
+
+  font-size: 25px;
+  line-height: 1.2;
+
+  font-weight: 750;
+
+  letter-spacing: -0.4px;
+}
+
+.js-profile-role,
+.js-profile-location {
+  margin: 6px 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: var(--muted-text);
+
+  font-size: 14px;
+
+  font-weight: 500;
+}
+
+.js-profile-role svg,
+.js-profile-location svg {
+  color: var(--primary-blue);
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   OPEN TO WORK
+   ========================================================= */
+
+.js-profile-status {
+  width: fit-content;
+
+  margin-top: 12px;
+
+  padding: 6px 11px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  border-radius: 20px;
+
+  background: var(--success-bg);
+
+  color: var(--success);
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+.js-profile-status span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--success);
+}
+
+/* =========================================================
+   COMMON SECTION CARD
+   ========================================================= */
+
+.js-section-card {
+  width: 100%;
+  max-width: 1320px;
+
+  margin: 0 auto 22px;
+
+  padding: 29px 32px;
+
+  background: var(--white);
+
+  border: 1px solid var(--border);
+
+  border-radius: 15px;
+
+  box-shadow: var(--shadow-sm);
+
+  transition:
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.js-section-card:hover {
+  border-color: #dce3ef;
+
+  box-shadow: var(--shadow-md);
+}
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
+.js-section-heading {
+  width: 100%;
+
+  margin-bottom: 25px;
+
+  padding-bottom: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  border-bottom: 1px solid var(--border-light);
+}
+
+.js-section-heading > div {
+  min-width: 0;
+}
+
+.js-section-heading h2 {
+  margin: 0;
+
+  color: var(--dark-text);
+
+  font-size: 19px;
+
+  line-height: 1.35;
+
+  font-weight: 750;
+
+  letter-spacing: -0.25px;
+}
+
+.js-section-heading p {
+  margin: 5px 0 0;
+
+  color: var(--muted-text);
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+/* SECTION ICON */
+
+.js-section-heading > svg {
+  width: 40px;
+  height: 40px;
+
+  padding: 10px;
+
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  background: var(--light-blue);
+
+  color: var(--primary-blue);
+
+  font-size: 17px;
+}
+
+/* =========================================================
+   FORM GRID
+   ========================================================= */
+
+.js-form-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px 24px;
+}
+
+.js-form-group {
+  min-width: 0;
+}
+
+.js-full-width {
+  grid-column: 1 / -1;
+}
+
+/* =========================================================
+   LABELS
+   ========================================================= */
+
+.js-form-group label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #344054;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+/* =========================================================
+   INPUT WRAPPER
+   ========================================================= */
+
+.js-input-wrapper {
+  width: 100%;
+
+  height: 47px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 13px;
+
+  border: 1px solid #dce3ec;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.js-input-wrapper:focus-within {
+  border-color: var(--primary-blue);
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.js-input-wrapper > svg {
+  flex: 0 0 auto;
+
+  margin-right: 10px;
+
+  color: #98a2b3;
+
+  font-size: 14px;
+}
+
+.js-input-wrapper:focus-within > svg {
+  color: var(--primary-blue);
+}
+
+.js-input-wrapper input {
+  width: 100%;
+  min-width: 0;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: var(--dark-text);
+
+  font-size: 14px;
+
+  font-weight: 500;
+}
+
+.js-input-wrapper input::placeholder,
+.js-form-group textarea::placeholder,
+.js-form-group input::placeholder {
+  color: #98a2b3;
+}
+
+/* =========================================================
+   NORMAL INPUTS
+   ========================================================= */
+
+.js-form-group > input {
+  width: 100%;
+
+  height: 47px;
+
+  padding: 0 13px;
+
+  border: 1px solid #dce3ec;
+
+  border-radius: 9px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: var(--dark-text);
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.js-form-group > input:focus {
+  border-color: var(--primary-blue);
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* =========================================================
+   TEXTAREA
+   ========================================================= */
+
+.js-form-group textarea {
+  width: 100%;
+
+  min-height: 110px;
+
+  padding: 13px 14px;
+
+  border: 1px solid #dce3ec;
+
+  border-radius: 9px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: var(--dark-text);
+
+  resize: vertical;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  line-height: 1.65;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.js-form-group textarea:focus {
+  border-color: var(--primary-blue);
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* =========================================================
+   DISABLED / VIEW MODE
+   ========================================================= */
+
+.js-form-group input:disabled,
+.js-form-group textarea:disabled,
+.js-input-wrapper input:disabled {
+  color: #475467;
+
+  background: #f8fafc;
+
+  cursor: default;
+
+  opacity: 1;
+}
+
+.js-form-group small {
+  display: block;
+
+  margin-top: 7px;
+
+  color: #98a2b3;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   EXPERIENCE / EDUCATION ITEM
+   ========================================================= */
+
+.js-experience-item {
+  position: relative;
+
+  margin-bottom: 18px;
+
+  padding: 22px;
+
+  border: 1px solid #e1e7f0;
+
+  border-radius: 11px;
+
+  background: #fbfcfe;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.js-experience-item:hover {
+  border-color: #cfdaf0;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 5px 18px rgba(23, 32, 51, 0.04);
+}
+
+.js-experience-item:last-of-type {
+  margin-bottom: 0;
+}
+
+.js-experience-item .js-form-grid {
+  gap: 18px 22px;
+}
+
+/* =========================================================
+   REMOVE BUTTON
+   ========================================================= */
+
+.js-remove-btn {
+  margin-top: 18px;
+
+  min-height: 37px;
+
+  padding: 0 13px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  border: 1px solid #f0caca;
+
+  border-radius: 8px;
+
+  background: #fff7f7;
+
+  color: var(--danger);
+
+  cursor: pointer;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.js-remove-btn:hover {
+  background: #ffeded;
+
+  border-color: #e6a7a7;
+
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   EMPTY TEXT
+   ========================================================= */
+
+.js-empty-text {
+  margin: 0;
+
+  padding: 18px;
+
+  border: 1px dashed #d5deea;
+
+  border-radius: 9px;
+
+  background: #fafcff;
+
+  color: #98a2b3;
+
+  text-align: center;
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   ADD BUTTON
+   ========================================================= */
+
+.js-password-toggle-btn {
+  min-height: 40px;
+
+  margin-top: 18px;
+
+  padding: 0 15px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  border: 1px solid #bfd2f7;
+
+  border-radius: 8px;
+
+  background: var(--light-blue);
+
+  color: var(--primary-blue);
+
+  cursor: pointer;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.js-password-toggle-btn:hover {
+  background: #e3edff;
+
+  border-color: #a9c2f5;
+
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   PASSWORD SECTION
+   ========================================================= */
+
+.password-section {
+  margin-top: 22px;
+}
+
+.js-password-form {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.js-password-form .js-password-actions {
+  grid-column: 1 / -1;
+}
+
+/* =========================================================
+   PASSWORD INPUT
+   ========================================================= */
+
+.password-input-wrapper {
+  position: relative;
+}
+
+.password-input-wrapper input {
+  padding-right: 40px;
+}
+
+.password-eye-btn {
+  width: 32px;
+  height: 32px;
+
+  position: absolute;
+
+  right: 5px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #7c8799;
+
+  cursor: pointer;
+
+  border-radius: 6px;
+}
+
+.password-eye-btn:hover {
+  background: var(--light-blue);
+
+  color: var(--primary-blue);
+}
+
+/* =========================================================
+   PASSWORD ACTIONS
+   ========================================================= */
+
+.js-password-actions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  padding-top: 5px;
+}
+
+/* =========================================================
+   DANGER ZONE
+   ========================================================= */
+
+.js-danger-zone {
+  width: 100%;
+
+  max-width: 1320px;
+
+  margin: 26px auto 0;
+
+  border: 1px solid #f0cece;
+
+  border-radius: 14px;
+
+  background: #fffafa;
+
+  overflow: hidden;
+}
+
+/* =========================================================
+   DANGER HEADING
+   ========================================================= */
+
+.js-danger-heading {
+  padding: 22px 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  border-bottom: 1px solid #f3dddd;
+}
+
+.js-danger-icon {
+  width: 43px;
+  height: 43px;
+
+  flex: 0 0 43px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #ffe8e8;
+
+  color: var(--danger);
+
+  font-size: 17px;
+}
+
+.js-danger-heading h2 {
+  margin: 0;
+
+  color: #a72f2f;
+
+  font-size: 18px;
+
+  font-weight: 750;
+}
+
+.js-danger-heading p {
+  margin: 5px 0 0;
+
+  color: #8b6e6e;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   DANGER CONTENT
+   ========================================================= */
+
+.js-danger-content {
+  padding: 22px 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+}
+
+.js-danger-content h3 {
+  margin: 0 0 5px;
+
+  color: #4a3636;
+
+  font-size: 14px;
+
+  font-weight: 750;
+}
+
+.js-danger-content p {
+  max-width: 720px;
+
+  margin: 0;
+
+  color: #806d6d;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   DELETE BUTTON
+   ========================================================= */
+
+.js-delete-account-btn {
+  flex-shrink: 0;
+
+  min-height: 42px;
+
+  padding: 0 16px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  border: 1px solid #df9e9e;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: var(--danger);
+
+  cursor: pointer;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.js-delete-account-btn:hover:not(:disabled) {
+  background: #fff0f0;
+
+  border-color: #d97878;
+
+  transform: translateY(-1px);
+}
+
+.js-delete-account-btn:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   BOTTOM ACTIONS
+   ========================================================= */
+
+.js-bottom-actions {
+  width: 100%;
+
+  max-width: 1320px;
+
+  margin: 24px auto 0;
+
+  padding: 16px 20px;
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  gap: 10px;
+
+  background: #ffffff;
+
+  border: 1px solid var(--border);
+
+  border-radius: 12px;
+
+  box-shadow: var(--shadow-sm);
+}
+
+/* =========================================================
+   LOADER
+   ========================================================= */
+
+.profile-loader {
+  width: 34px;
+  height: 34px;
+
+  border: 3px solid #dbe7ff;
+
+  border-top-color: var(--primary-blue);
+
+  border-radius: 50%;
+
+  animation:
+    profileSpin 0.8s linear infinite;
+}
+
+@keyframes profileSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   FOCUS ACCESSIBILITY
+   ========================================================= */
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.18);
+
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .js-profile-page {
+    padding: 30px 30px 60px;
+  }
+
+  .js-profile-card,
+  .js-section-card,
+  .js-profile-header,
+  .js-danger-zone,
+  .js-bottom-actions {
+    max-width: 100%;
+  }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .js-password-form {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .js-password-form
+    .js-form-group:last-of-type {
+    grid-column: 1 / -1;
+  }
+}
+
+/* =========================================================
+   SMALL TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .js-profile-page {
+    padding: 24px 18px 50px;
+  }
+
+  .js-profile-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .js-profile-header h1 {
+    font-size: 27px;
+  }
+
+  .js-profile-header > button,
+  .js-edit-actions {
+    width: 100%;
+  }
+
+  .js-edit-actions {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .js-edit-actions button {
+    width: 100%;
+  }
+
+  .js-profile-card,
+  .js-section-card {
+    padding: 24px 20px;
+  }
+
+  .js-profile-main {
+    align-items: flex-start;
+  }
+
+  .js-profile-avatar {
+    width: 88px;
+    height: 88px;
+
+    flex-basis: 88px;
+
+    font-size: 32px;
+  }
+
+  .js-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .js-full-width {
+    grid-column: auto;
+  }
+
+  .js-password-form {
+    grid-template-columns: 1fr;
+  }
+
+  .js-password-form
+    .js-form-group:last-of-type {
+    grid-column: auto;
+  }
+
+  .js-danger-content {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .js-delete-account-btn {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+  .js-profile-page {
+    padding: 20px 12px 40px;
+  }
+
+  .js-profile-card,
+  .js-section-card {
+    border-radius: 11px;
+
+    padding: 20px 16px;
+  }
+
+  .js-profile-main {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .js-profile-basic {
+    width: 100%;
+  }
+
+  .js-profile-basic h2 {
+    font-size: 22px;
+  }
+
+  .js-section-heading {
+    align-items: flex-start;
+  }
+
+  .js-section-heading h2 {
+    font-size: 17px;
+  }
+
+  .js-section-heading > svg {
+    width: 36px;
+    height: 36px;
+
+    padding: 9px;
+  }
+
+  .js-experience-item {
+    padding: 16px;
+  }
+
+  .js-danger-heading,
+  .js-danger-content {
+    padding: 18px;
+  }
+
+  .js-bottom-actions {
+    padding: 13px;
+
+    flex-direction: column-reverse;
+  }
+
+  .js-bottom-actions button {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+  .js-profile-page {
+    padding: 16px 9px 35px;
+  }
+
+  .js-profile-header h1 {
+    font-size: 24px;
+  }
+
+  .js-profile-header p {
+    font-size: 13px;
+  }
+
+  .js-profile-card,
+  .js-section-card {
+    padding: 18px 14px;
+  }
+
+  .js-profile-avatar {
+    width: 76px;
+    height: 76px;
+
+    flex-basis: 76px;
+
+    font-size: 28px;
+  }
+
+  .js-edit-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .js-form-grid {
+    gap: 16px;
+  }
+}
+
+/* =========================================================
+   PRINT
+   ========================================================= */
+
+@media print {
+  .js-profile-page {
+    padding: 0;
+
+    background: #ffffff;
+  }
+
+  .js-profile-header button,
+  .js-edit-actions,
+  .js-password-toggle-btn,
+  .js-remove-btn,
+  .js-delete-account-btn,
+  .js-bottom-actions,
+  .password-section,
+  .js-danger-zone {
+    display: none !important;
+  }
+
+  .js-profile-card,
+  .js-section-card {
+    max-width: none;
+
+    margin-bottom: 15px;
+
+    box-shadow: none;
+
+    break-inside: avoid;
+  }
+}

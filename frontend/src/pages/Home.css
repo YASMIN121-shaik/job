@@ -1,0 +1,1881 @@
+/* =========================================================
+   HOME PAGE
+   PROFESSIONAL NAVY / INDIGO / VIOLET THEME
+========================================================= */
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+  min-height: 100%;
+
+  background: #f8faff;
+}
+
+.home-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #f8faff;
+  color: #172554;
+
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   COMMON RESET
+========================================================= */
+
+.home-page *,
+.home-page *::before,
+.home-page *::after {
+  box-sizing: border-box;
+}
+
+.home-page button,
+.home-page input,
+.home-page select,
+.home-page textarea {
+  font-family: inherit;
+}
+
+.home-page img {
+  max-width: 100%;
+  display: block;
+}
+
+.home-page a {
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   COMMON SECTION
+========================================================= */
+
+.home-section,
+.section {
+  position: relative;
+
+  width: 100%;
+
+  padding:
+    95px
+    7vw;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8faff 0%,
+      #f4f7ff 55%,
+      #faf8ff 100%
+    );
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   COMMON SECTION CONTAINER
+========================================================= */
+
+.home-section-container,
+.section-container {
+  position: relative;
+
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   SECTION DECORATION
+========================================================= */
+
+.home-section::before,
+.section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  top: -170px;
+  left: -160px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(79, 70, 229, 0.035);
+
+  pointer-events: none;
+}
+
+.home-section::after,
+.section::after {
+  content: "";
+
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  right: -140px;
+  bottom: -150px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(124, 58, 237, 0.035);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading {
+  position: relative;
+
+  max-width: 700px;
+
+  margin:
+    0
+    auto
+    50px;
+
+  text-align: center;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   SECTION EYEBROW
+========================================================= */
+
+.section-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 14px;
+
+  color: #4f46e5;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+.section-eyebrow i {
+  color: #6366f1;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   SECTION HEADING TITLE
+========================================================= */
+
+.section-heading h2,
+.company-content h2,
+.about-content h2,
+.section-container > h2 {
+  margin: 0;
+
+  color: #172554;
+
+  font-size:
+    clamp(
+      36px,
+      4vw,
+      48px
+    );
+
+  font-weight: 750;
+
+  line-height: 1.15;
+
+  letter-spacing: -1.4px;
+}
+
+
+/* =========================================================
+   HEADING HIGHLIGHT
+========================================================= */
+
+.section-heading h2 span,
+.company-content h2 span,
+.about-content h2 span {
+  background:
+    linear-gradient(
+      90deg,
+      #4338ca,
+      #6366f1,
+      #7c3aed
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================================================
+   SECTION DESCRIPTION
+========================================================= */
+
+.section-heading p,
+.section-subtitle {
+  max-width: 600px;
+
+  margin:
+    18px
+    auto
+    0;
+
+  color: #667085;
+
+  font-size: 15px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   CAREER SECTION
+========================================================= */
+
+.career-section {
+  position: relative;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8faff,
+      #f4f7ff
+    );
+}
+
+
+/* =========================================================
+   RESOURCE GRID
+========================================================= */
+
+.resource-grid,
+.cards {
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   RESOURCE CARD
+========================================================= */
+
+.resource-card,
+.card {
+  position: relative;
+
+  min-height: 290px;
+
+  padding: 29px;
+
+  border:
+    1px solid
+    #dce3f1;
+
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 8px 25px
+    rgba(30, 41, 80, 0.05);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+/* =========================================================
+   CARD TOP LINE
+========================================================= */
+
+.resource-card::before,
+.card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 29px;
+
+  width: 38px;
+  height: 3px;
+
+  border-radius:
+    0
+    0
+    5px
+    5px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #4f46e5,
+      #7c3aed
+    );
+
+  transition:
+    width 0.25s ease;
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.resource-card:hover,
+.card:hover {
+  transform:
+    translateY(-6px);
+
+  border-color:
+    #c7d2fe;
+
+  box-shadow:
+    0 20px 40px
+    rgba(30, 41, 80, 0.11);
+}
+
+.resource-card:hover::before,
+.card:hover::before {
+  width: 65px;
+}
+
+
+/* =========================================================
+   RESOURCE CARD TOP
+========================================================= */
+
+.resource-card-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   RESOURCE ICON
+========================================================= */
+
+.resource-icon,
+.card .icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 22px;
+
+  border-radius: 12px;
+
+  background:
+    #eef2ff;
+
+  color: #4f46e5;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* =========================================================
+   RESOURCE ICON HOVER
+========================================================= */
+
+.resource-card:hover .resource-icon,
+.card:hover .icon {
+  background:
+    linear-gradient(
+      135deg,
+      #4f46e5,
+      #6366f1
+    );
+
+  color: #ffffff;
+
+  transform:
+    scale(1.05);
+
+  box-shadow:
+    0 8px 18px
+    rgba(79, 70, 229, 0.20);
+}
+
+
+/* =========================================================
+   RESOURCE NUMBER
+========================================================= */
+
+.resource-number {
+  color: #a0a9ba;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   RESOURCE TEXT
+========================================================= */
+
+.resource-card h3,
+.card h3 {
+  margin:
+    0
+    0
+    11px;
+
+  color: #1e2a4a;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  line-height: 1.35;
+}
+
+.resource-card p,
+.card p {
+  margin: 0;
+
+  color: #758197;
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   RESOURCE LINK
+========================================================= */
+
+.resource-link {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 23px;
+
+  color: #4f46e5;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.resource-link i {
+  transition:
+    transform 0.2s ease;
+}
+
+.resource-card:hover .resource-link i {
+  transform:
+    translate(
+      2px,
+      -2px
+    );
+}
+
+
+/* =========================================================
+   COMPANY SECTION
+========================================================= */
+
+.company-section {
+  position: relative;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f4f7ff 0%,
+      #f8faff 100%
+    );
+
+  border-top:
+    1px solid
+    #dfe5f2;
+
+  border-bottom:
+    1px solid
+    #dfe5f2;
+}
+
+
+/* =========================================================
+   COMPANY LAYOUT
+========================================================= */
+
+.company-layout {
+  display: grid;
+
+  grid-template-columns:
+    0.9fr
+    1.1fr;
+
+  gap: 80px;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   COMPANY CONTENT
+========================================================= */
+
+.company-content {
+  max-width: 500px;
+}
+
+.company-content h2 {
+  font-size:
+    clamp(
+      34px,
+      3.5vw,
+      45px
+    );
+}
+
+.company-content p {
+  margin:
+    20px
+    0
+    26px;
+
+  color: #667085;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   COMPANY BUTTON
+========================================================= */
+
+.company-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  min-height: 46px;
+
+  padding:
+    0
+    20px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4f46e5,
+      #6366f1
+    );
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px
+    rgba(79, 70, 229, 0.18);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   COMPANY BUTTON HOVER
+========================================================= */
+
+.company-button:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #4338ca,
+      #7c3aed
+    );
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 12px 25px
+    rgba(79, 70, 229, 0.24);
+}
+
+
+/* =========================================================
+   COMPANY CARDS
+========================================================= */
+
+.company-cards {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 13px;
+}
+
+
+/* =========================================================
+   COMPANY CARD
+========================================================= */
+
+.company-card {
+  display: grid;
+
+  grid-template-columns:
+    50px
+    minmax(0, 1fr)
+    auto;
+
+  align-items: center;
+
+  gap: 16px;
+
+  padding:
+    19px
+    21px;
+
+  border:
+    1px solid
+    #dce3f1;
+
+  border-radius: 13px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 5px 18px
+    rgba(30, 41, 80, 0.025);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.company-card:hover {
+  transform:
+    translateX(5px);
+
+  border-color:
+    #c7d2fe;
+
+  box-shadow:
+    0 12px 28px
+    rgba(30, 41, 80, 0.08);
+}
+
+
+/* =========================================================
+   COMPANY CARD ICON
+========================================================= */
+
+.company-card-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  background:
+    #eef2ff;
+
+  color: #4f46e5;
+
+  font-size: 17px;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.company-card:hover .company-card-icon {
+  background:
+    linear-gradient(
+      135deg,
+      #4f46e5,
+      #6366f1
+    );
+
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   COMPANY CARD TEXT
+========================================================= */
+
+.company-card h3 {
+  margin:
+    0
+    0
+    5px;
+
+  color: #233154;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  line-height: 1.35;
+}
+
+.company-card p {
+  margin: 0;
+
+  color: #8290a5;
+
+  font-size: 12px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   COMPANY ARROW
+========================================================= */
+
+.company-arrow {
+  color: #9aa5b8;
+
+  font-size: 14px;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.company-card:hover .company-arrow {
+  color: #4f46e5;
+
+  transform:
+    translate(
+      2px,
+      -2px
+    );
+}
+
+
+/* =========================================================
+   ABOUT SECTION
+========================================================= */
+
+.about-section {
+  background:
+    linear-gradient(
+      135deg,
+      #f8faff,
+      #faf8ff
+    );
+}
+
+
+/* =========================================================
+   ABOUT LAYOUT
+========================================================= */
+
+.about-layout {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 90px;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   ABOUT CONTENT
+========================================================= */
+
+.about-content {
+  max-width: 570px;
+}
+
+.about-content h2 {
+  font-size:
+    clamp(
+      35px,
+      3.5vw,
+      47px
+    );
+}
+
+.about-content > p {
+  margin:
+    19px
+    0
+    0;
+
+  color: #667085;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   ABOUT CHECKS
+========================================================= */
+
+.about-checks {
+  display: grid;
+
+  gap: 11px;
+
+  margin-top: 25px;
+}
+
+.about-checks div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #536174;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.about-checks i {
+  color: #4f46e5;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   ABOUT STATS
+========================================================= */
+
+.about-stats,
+.stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 14px;
+}
+
+
+/* =========================================================
+   ABOUT STAT CARD
+========================================================= */
+
+.about-stat-card,
+.stat-box {
+  min-height: 165px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 23px;
+
+  border:
+    1px solid
+    #dce3f1;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 7px 22px
+    rgba(30, 41, 80, 0.045);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+/* =========================================================
+   STAT CARD HOVER
+========================================================= */
+
+.about-stat-card:hover,
+.stat-box:hover {
+  transform:
+    translateY(-4px);
+
+  border-color:
+    #c7d2fe;
+
+  box-shadow:
+    0 14px 30px
+    rgba(30, 41, 80, 0.09);
+}
+
+
+/* =========================================================
+   STAT ICON
+========================================================= */
+
+.about-stat-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 15px;
+
+  border-radius: 9px;
+
+  background:
+    #eef2ff;
+
+  color: #4f46e5;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   STAT TEXT
+========================================================= */
+
+.about-stat-card h3,
+.stat-box h3 {
+  margin: 0;
+
+  color: #1e2a4a;
+
+  font-size: 28px;
+
+  font-weight: 750;
+
+  line-height: 1.2;
+}
+
+.about-stat-card span,
+.stat-box span {
+  margin-top: 5px;
+
+  color: #8390a3;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   HOME CTA
+========================================================= */
+
+.home-cta {
+  position: relative;
+
+  overflow: hidden;
+
+  margin:
+    0
+    7vw
+    80px;
+
+  padding:
+    72px
+    30px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #312e81 0%,
+      #4338ca 42%,
+      #6366f1 72%,
+      #7c3aed 100%
+    );
+
+  text-align: center;
+
+  box-shadow:
+    0 22px 50px
+    rgba(67, 56, 202, 0.22);
+}
+
+
+/* =========================================================
+   CTA DECORATIONS
+========================================================= */
+
+.home-cta::before {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  left: -220px;
+  bottom: -280px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.055
+    );
+
+  pointer-events: none;
+}
+
+.home-cta::after {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  right: -130px;
+  top: -190px;
+
+  border-radius: 50%;
+
+  border:
+    45px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.07
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   LEGACY CTA DECORATION
+========================================================= */
+
+.home-cta-decoration {
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  right: -100px;
+  top: -170px;
+
+  border:
+    45px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.05
+    );
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CTA CONTENT
+========================================================= */
+
+.home-cta-content {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 650px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   CTA ICON
+========================================================= */
+
+.cta-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin:
+    0
+    auto
+    19px;
+
+  border-radius: 13px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.13
+    );
+
+  color: #ffffff;
+
+  font-size: 20px;
+
+  box-shadow:
+    inset 0 0 0 1px
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+}
+
+
+/* =========================================================
+   CTA TITLE
+========================================================= */
+
+.home-cta h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(
+      30px,
+      3vw,
+      40px
+    );
+
+  font-weight: 750;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.9px;
+}
+
+
+/* =========================================================
+   CTA DESCRIPTION
+========================================================= */
+
+.home-cta p {
+  max-width: 540px;
+
+  margin:
+    14px
+    auto
+    27px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.82
+    );
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   CTA ACTIONS
+========================================================= */
+
+.cta-actions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 11px;
+}
+
+.cta-actions button {
+  min-height: 46px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  padding:
+    0
+    20px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #4338ca;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+
+/* =========================================================
+   CTA PRIMARY HOVER
+========================================================= */
+
+.cta-actions button:hover {
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 10px 22px
+    rgba(
+      0,
+      0,
+      0,
+      0.15
+    );
+}
+
+
+/* =========================================================
+   CTA SECONDARY
+========================================================= */
+
+.cta-actions .cta-secondary {
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.40
+    );
+
+  background:
+    transparent;
+
+  color: #ffffff;
+}
+
+.cta-actions .cta-secondary:hover {
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.10
+    );
+}
+
+
+/* =========================================================
+   LEGACY JSX SUPPORT
+========================================================= */
+
+.section {
+  background:
+    linear-gradient(
+      135deg,
+      #f8faff,
+      #f4f7ff
+    );
+}
+
+.section.light {
+  background:
+    #f4f7ff;
+
+  border-top:
+    1px solid
+    #dfe5f2;
+
+  border-bottom:
+    1px solid
+    #dfe5f2;
+}
+
+.card .icon {
+  flex-shrink: 0;
+}
+
+.about-text {
+  display: block;
+
+  max-width: 750px;
+
+  margin:
+    19px
+    auto
+    0;
+
+  color: #667085;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+.section-container > h2 {
+  text-align: center;
+}
+
+.section-container > .section-subtitle {
+  text-align: center;
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .home-section,
+  .section {
+    padding:
+      85px
+      5vw;
+  }
+
+  .company-layout {
+    gap: 60px;
+  }
+
+  .about-layout {
+    gap: 65px;
+  }
+
+  .resource-card,
+  .card {
+    padding: 27px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .home-section,
+  .section {
+    padding:
+      75px
+      5vw;
+  }
+
+  .section-heading h2,
+  .company-content h2,
+  .about-content h2,
+  .section-container > h2 {
+    font-size: 38px;
+  }
+
+  .section-heading p,
+  .section-subtitle {
+    font-size: 14px;
+  }
+
+  .resource-grid,
+  .cards {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+  .resource-card:last-child,
+  .card:last-child {
+    grid-column:
+      1 / -1;
+  }
+
+  .company-layout {
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+  }
+
+  .company-content {
+    max-width: 650px;
+  }
+
+  .company-content p {
+    font-size: 14px;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .about-content {
+    max-width: 700px;
+  }
+
+  .about-content > p {
+    font-size: 14px;
+  }
+
+  .home-cta {
+    margin:
+      0
+      5vw
+      60px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .home-section,
+  .section {
+    padding:
+      60px
+      20px;
+  }
+
+  .section-heading {
+    margin-bottom: 37px;
+  }
+
+  .section-eyebrow {
+    font-size: 12px;
+  }
+
+  .section-heading h2,
+  .company-content h2,
+  .about-content h2,
+  .section-container > h2 {
+    font-size: 31px;
+
+    letter-spacing: -0.8px;
+  }
+
+  .section-heading p,
+  .section-subtitle {
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+
+  /* =======================================================
+     RESOURCE CARDS
+  ======================================================= */
+
+  .resource-grid,
+  .cards {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .resource-card:last-child,
+  .card:last-child {
+    grid-column: auto;
+  }
+
+  .resource-card,
+  .card {
+    min-height: auto;
+
+    padding: 25px;
+  }
+
+  .resource-card h3,
+  .card h3 {
+    font-size: 19px;
+  }
+
+  .resource-card p,
+  .card p {
+    font-size: 13px;
+  }
+
+  .resource-link {
+    font-size: 12px;
+  }
+
+
+  /* =======================================================
+     COMPANY
+  ======================================================= */
+
+  .company-content p {
+    font-size: 14px;
+  }
+
+  .company-button {
+    min-height: 44px;
+
+    font-size: 12px;
+  }
+
+  .company-card {
+    grid-template-columns:
+      44px
+      minmax(0, 1fr)
+      auto;
+
+    gap: 12px;
+
+    padding: 16px;
+  }
+
+  .company-card-icon {
+    width: 44px;
+    height: 44px;
+
+    font-size: 16px;
+  }
+
+  .company-card h3 {
+    font-size: 14px;
+  }
+
+  .company-card p {
+    font-size: 11px;
+  }
+
+  .company-arrow {
+    font-size: 13px;
+  }
+
+
+  /* =======================================================
+     ABOUT
+  ======================================================= */
+
+  .about-content > p {
+    font-size: 14px;
+  }
+
+  .about-checks div {
+    font-size: 12px;
+  }
+
+  .about-stats,
+  .stats {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+  .about-stat-card,
+  .stat-box {
+    min-height: 140px;
+
+    padding: 19px;
+  }
+
+  .about-stat-card h3,
+  .stat-box h3 {
+    font-size: 24px;
+  }
+
+  .about-stat-card span,
+  .stat-box span {
+    font-size: 11px;
+  }
+
+
+  /* =======================================================
+     CTA
+  ======================================================= */
+
+  .home-cta {
+    margin:
+      0
+      15px
+      45px;
+
+    padding:
+      58px
+      20px;
+
+    border-radius: 16px;
+  }
+
+  .cta-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .home-cta h2 {
+    font-size: 29px;
+  }
+
+  .home-cta p {
+    font-size: 13px;
+  }
+
+  .cta-actions {
+    flex-direction: column;
+
+    width: 100%;
+  }
+
+  .cta-actions button {
+    width: 100%;
+
+    min-height: 44px;
+
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .home-section,
+  .section {
+    padding:
+      55px
+      16px;
+  }
+
+  .section-heading h2,
+  .company-content h2,
+  .about-content h2,
+  .section-container > h2 {
+    font-size: 28px;
+  }
+
+  .section-heading p,
+  .section-subtitle {
+    font-size: 12.5px;
+  }
+
+  .resource-card,
+  .card {
+    padding: 22px;
+  }
+
+  .resource-card h3,
+  .card h3 {
+    font-size: 18px;
+  }
+
+  .resource-card p,
+  .card p {
+    font-size: 12px;
+  }
+
+  .company-card {
+    grid-template-columns:
+      40px
+      minmax(0, 1fr)
+      auto;
+  }
+
+  .company-card-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .company-card h3 {
+    font-size: 13px;
+  }
+
+  .company-card p {
+    font-size: 10px;
+  }
+
+  .about-stats,
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .about-stat-card,
+  .stat-box {
+    min-height: 125px;
+  }
+
+  .home-cta h2 {
+    font-size: 27px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.home-page button:focus-visible,
+.home-page a:focus-visible {
+  outline:
+    3px solid
+    rgba(
+      79,
+      70,
+      229,
+      0.25
+    );
+
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .home-page *,
+  .home-page *::before,
+  .home-page *::after {
+
+    scroll-behavior: auto !important;
+
+    transition: none !important;
+
+    animation: none !important;
+  }
+}

@@ -1,0 +1,1004 @@
+/* =========================================================
+   NAVBAR
+   PROFESSIONAL BLUE + INDIGO JOB PORTAL THEME
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   NAVBAR CONTAINER
+========================================================= */
+
+.navbar {
+    width: 100%;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7vw;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    border-bottom: 1px solid #e5eaf2;
+
+    box-shadow:
+        0 4px 20px rgba(23, 32, 51, 0.06);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    flex-shrink: 0;
+
+    text-decoration: none;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   LOGO IMAGE
+========================================================= */
+
+.logo img {
+    width: 48px;
+    height: 48px;
+
+    object-fit: cover;
+
+    border-radius: 13px;
+
+    border: 2px solid #dbe7ff;
+
+    background: #f5f8ff;
+
+    box-shadow:
+        0 5px 15px rgba(37, 99, 235, 0.12);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/* =========================================================
+   LOGO IMAGE HOVER
+========================================================= */
+
+.logo:hover img {
+    transform: translateY(-2px);
+
+    border-color: #bfd3fa;
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.20);
+}
+
+
+/* =========================================================
+   LOGO TEXT
+========================================================= */
+
+.logo h2 {
+    margin: 0;
+
+    color: #172033;
+
+    font-size: 27px;
+
+    font-weight: 800;
+
+    letter-spacing: -0.7px;
+
+    line-height: 1;
+
+    white-space: nowrap;
+}
+
+
+.logo h2 span {
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   NAVIGATION LINKS
+========================================================= */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    list-style: none;
+
+    gap: 30px;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   NAVIGATION LINK
+========================================================= */
+
+.nav-links a {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    padding: 29px 0;
+
+    text-decoration: none;
+
+    color: #4b5567;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+/* =========================================================
+   NAVIGATION UNDERLINE
+========================================================= */
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: 20px;
+
+    width: 0;
+    height: 2px;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    transform: translateX(-50%);
+
+    transition:
+        width 0.25s ease;
+}
+
+
+/* =========================================================
+   NAVIGATION HOVER
+========================================================= */
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+
+.nav-links a:hover::after {
+    width: 24px;
+}
+
+
+/* =========================================================
+   NAVIGATION ACTIVE
+========================================================= */
+
+.nav-links a.active {
+    color: #2563eb;
+}
+
+
+.nav-links a.active::after {
+    width: 24px;
+}
+
+
+/* =========================================================
+   NAV BUTTON AREA
+========================================================= */
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   ACCOUNT MENU
+========================================================= */
+
+.account-menu {
+    position: relative;
+}
+
+
+/* =========================================================
+   ACCOUNT BUTTON
+========================================================= */
+
+.account-btn {
+    width: 118px;
+    height: 42px;
+
+    min-width: 118px;
+    min-height: 42px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 0;
+
+    border: 1px solid #2563eb;
+
+    border-radius: 9px;
+
+    background: #2563eb;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 16px rgba(37, 99, 235, 0.16);
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   ACCOUNT BUTTON HOVER
+========================================================= */
+
+.account-btn:hover,
+.account-btn-active {
+    background: #1d4ed8;
+
+    border-color: #1d4ed8;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 9px 22px rgba(37, 99, 235, 0.25);
+}
+
+
+/* =========================================================
+   ACCOUNT BUTTON ICON
+========================================================= */
+
+.account-btn > i:first-child {
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   ACCOUNT CHEVRON
+========================================================= */
+
+.account-chevron {
+    font-size: 10px;
+
+    margin-left: 1px;
+}
+
+
+/* =========================================================
+   ACCOUNT DROPDOWN
+========================================================= */
+
+.account-dropdown {
+    position: absolute;
+
+    top: calc(100% + 12px);
+
+    right: 0;
+
+    width: 275px;
+
+    padding: 9px;
+
+    background: #ffffff;
+
+    border: 1px solid #e3e9f3;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 20px 50px rgba(23, 32, 51, 0.16);
+
+    z-index: 1100;
+
+    animation:
+        accountDropdown 0.2s ease;
+}
+
+
+/* =========================================================
+   DROPDOWN TOP ARROW
+========================================================= */
+
+.account-dropdown::before {
+    content: "";
+
+    position: absolute;
+
+    top: -6px;
+
+    right: 28px;
+
+    width: 11px;
+    height: 11px;
+
+    background: #ffffff;
+
+    border-left: 1px solid #e3e9f3;
+
+    border-top: 1px solid #e3e9f3;
+
+    transform: rotate(45deg);
+}
+
+
+/* =========================================================
+   DROPDOWN HEADER
+========================================================= */
+
+.account-dropdown-header {
+    display: flex;
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 10px 9px 12px;
+}
+
+
+/* =========================================================
+   DROPDOWN HEADER ICON
+========================================================= */
+
+.account-header-icon {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   DROPDOWN HEADER TEXT
+========================================================= */
+
+.account-dropdown-header > div:last-child {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.account-dropdown-header strong {
+    color: #172033;
+
+    font-size: 13px;
+
+    font-weight: 750;
+}
+
+
+.account-dropdown-header span {
+    color: #7a8496;
+
+    font-size: 10.5px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.dropdown-divider {
+    width: 100%;
+
+    height: 1px;
+
+    margin: 2px 0 7px;
+
+    background: #edf0f5;
+}
+
+
+/* =========================================================
+   DROPDOWN ITEM
+========================================================= */
+
+.account-dropdown-item {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    gap: 11px;
+
+    padding: 10px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    color: #172033;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* =========================================================
+   DROPDOWN ITEM HOVER
+========================================================= */
+
+.account-dropdown-item:hover {
+    background: #f5f8ff;
+
+    transform: translateX(2px);
+}
+
+
+/* =========================================================
+   DROPDOWN ICON
+========================================================= */
+
+.dropdown-icon {
+    width: 39px;
+    height: 39px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   LOGIN ICON
+========================================================= */
+
+.login-icon {
+    background: #eff6ff;
+
+    color: #2563eb;
+}
+
+
+/* =========================================================
+   REGISTER ICON
+========================================================= */
+
+.register-icon {
+    background: #eef2ff;
+
+    color: #4f46e5;
+}
+
+
+/* =========================================================
+   DROPDOWN CONTENT
+========================================================= */
+
+.dropdown-item-content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+.dropdown-item-content strong {
+    color: #172033;
+
+    font-size: 12.5px;
+
+    font-weight: 700;
+}
+
+
+.dropdown-item-content span {
+    color: #7a8496;
+
+    font-size: 10.5px;
+}
+
+
+/* =========================================================
+   DROPDOWN ARROW
+========================================================= */
+
+.dropdown-arrow {
+    color: #a0a8b5;
+
+    font-size: 10px;
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.account-dropdown-item:hover .dropdown-arrow {
+    color: #2563eb;
+
+    transform: translateX(2px);
+}
+
+
+/* =========================================================
+   DROPDOWN FOOTER
+========================================================= */
+
+.account-dropdown-footer {
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 5px;
+
+    padding: 9px 10px 5px;
+
+    border-top: 1px solid #edf0f5;
+
+    color: #7a8496;
+
+    font-size: 10px;
+}
+
+
+.account-dropdown-footer i {
+    color: #2563eb;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   DROPDOWN ANIMATION
+========================================================= */
+
+@keyframes accountDropdown {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-7px)
+            scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.menu-btn {
+    display: none;
+
+    width: 42px;
+    height: 42px;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #dce4ef;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #172033;
+
+    font-size: 19px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   MENU BUTTON HOVER
+========================================================= */
+
+.menu-btn:hover {
+    background: #f5f8ff;
+
+    border-color: #a9c2f5;
+
+    color: #2563eb;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 14px rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        padding: 0 5vw;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .logo h2 {
+        font-size: 25px;
+    }
+
+    .account-btn {
+        width: 108px;
+
+        min-width: 108px;
+
+        height: 40px;
+
+        min-height: 40px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        height: 74px;
+
+        padding: 0 5vw;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .menu-btn {
+        display: inline-flex;
+    }
+
+    .nav-buttons {
+        margin-left: auto;
+    }
+
+    .account-btn {
+        width: 100px;
+
+        min-width: 100px;
+
+        height: 40px;
+
+        min-height: 40px;
+
+        font-size: 12px;
+    }
+
+    .logo img {
+        width: 44px;
+        height: 44px;
+    }
+
+    .logo h2 {
+        font-size: 23px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        height: 70px;
+
+        padding: 0 20px;
+    }
+
+    .logo {
+        gap: 8px;
+    }
+
+    .logo img {
+        width: 40px;
+        height: 40px;
+
+        border-radius: 11px;
+    }
+
+    .logo h2 {
+        font-size: 21px;
+
+        letter-spacing: -0.5px;
+    }
+
+    .nav-buttons {
+        gap: 7px;
+    }
+
+    .account-btn {
+        width: 92px;
+
+        min-width: 92px;
+
+        height: 38px;
+
+        min-height: 38px;
+
+        border-radius: 8px;
+
+        font-size: 11px;
+    }
+
+    .account-btn > i:first-child {
+        font-size: 13px;
+    }
+
+    .account-chevron {
+        font-size: 9px;
+    }
+
+    .account-dropdown {
+        width: 245px;
+
+        top: calc(100% + 10px);
+    }
+
+    .menu-btn {
+        width: 38px;
+        height: 38px;
+
+        font-size: 17px;
+
+        border-radius: 8px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+    .navbar {
+        padding: 0 15px;
+    }
+
+    .logo {
+        gap: 7px;
+    }
+
+    .logo h2 {
+        font-size: 19px;
+    }
+
+    .logo img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .nav-buttons {
+        gap: 5px;
+    }
+
+    .account-btn {
+        width: 86px;
+
+        min-width: 86px;
+
+        height: 37px;
+
+        min-height: 37px;
+
+        font-size: 10.5px;
+
+        gap: 6px;
+    }
+
+    .account-dropdown {
+        right: -5px;
+
+        width: 225px;
+    }
+
+    .menu-btn {
+        width: 37px;
+        height: 37px;
+
+        font-size: 16px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .navbar {
+        padding: 0 12px;
+    }
+
+    .logo {
+        gap: 6px;
+    }
+
+    .logo h2 {
+        font-size: 17px;
+    }
+
+    .logo img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .nav-buttons {
+        gap: 4px;
+    }
+
+    .account-btn {
+        width: 80px;
+
+        min-width: 80px;
+
+        height: 36px;
+
+        min-height: 36px;
+
+        font-size: 10px;
+
+        gap: 4px;
+    }
+
+    .account-dropdown {
+        right: -8px;
+
+        width: 210px;
+    }
+
+    .menu-btn {
+        width: 35px;
+        height: 35px;
+
+        font-size: 15px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.navbar button:focus-visible,
+.navbar a:focus-visible {
+    outline:
+        3px solid
+        rgba(37, 99, 235, 0.22);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .navbar *,
+    .navbar *::before,
+    .navbar *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}

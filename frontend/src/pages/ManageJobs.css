@@ -1,0 +1,898 @@
+/* =========================================================
+   MANAGE JOBS
+   PROFESSIONAL ADMIN / JOB PORTAL UI
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.manage-jobs-container {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+
+  padding: 42px 48px 70px;
+
+  background: #f5f8fd;
+
+  color: #172033;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.manage-jobs-header {
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  margin-bottom: 28px;
+}
+
+.manage-jobs-header > div:first-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.manage-jobs-header h1 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 34px;
+  font-weight: 800;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.7px;
+}
+
+.manage-jobs-header p {
+  margin: 8px 0 0;
+
+  color: #718096;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.manage-jobs-header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================================================
+   REFRESH BUTTON
+========================================================= */
+
+.refresh-job-btn {
+  height: 46px;
+  min-width: 112px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 0 18px;
+
+  border: 1px solid #cfd9e8;
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #40516d;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 12px rgba(31, 45, 70, 0.05);
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.refresh-job-btn svg {
+  font-size: 14px;
+}
+
+.refresh-job-btn:hover {
+  background: #f7fffc;
+
+  border-color: #0c9b72;
+
+  color: #087a5c;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 7px 18px rgba(12, 155, 114, 0.10);
+}
+
+.refresh-job-btn:active {
+  transform: translateY(0);
+}
+
+.refresh-job-btn:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   REFRESH ANIMATION
+========================================================= */
+
+.refresh-spinning {
+  animation: refreshSpin 0.9s linear infinite;
+}
+
+@keyframes refreshSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   ADD JOB BUTTON
+========================================================= */
+
+.add-job-btn {
+  height: 46px;
+  min-width: 128px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 0 20px;
+
+  border: 1px solid #0c9b72;
+  border-radius: 10px;
+
+  background: linear-gradient(
+    135deg,
+    #0c9b72 0%,
+    #087a5c 100%
+  );
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 7px 18px rgba(12, 155, 114, 0.20);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.add-job-btn svg {
+  font-size: 14px;
+}
+
+.add-job-btn:hover {
+  background: linear-gradient(
+    135deg,
+    #087a5c 0%,
+    #06634a 100%
+  );
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 24px rgba(12, 155, 114, 0.28);
+}
+
+.add-job-btn:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   SEARCH AREA
+========================================================= */
+
+.search-box {
+  width: 100%;
+
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 14px;
+
+  padding: 0 18px;
+
+  border: 1px solid #d8e1ed;
+
+  border-radius: 12px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 5px 18px rgba(31, 45, 70, 0.05);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.search-box:focus-within {
+  border-color: #53b996;
+
+  box-shadow:
+    0 0 0 3px rgba(12, 155, 114, 0.10);
+}
+
+.search-box svg {
+  flex-shrink: 0;
+
+  margin-right: 12px;
+
+  color: #8b9ab0;
+
+  font-size: 17px;
+}
+
+.search-box input {
+  width: 100%;
+  height: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #25334d;
+
+  font-family: inherit;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.search-box input::placeholder {
+  color: #9aa8bb;
+}
+
+
+/* =========================================================
+   JOB COUNT
+========================================================= */
+
+.jobs-count {
+  margin-bottom: 12px;
+
+  color: #718096;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.jobs-count strong {
+  color: #172033;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.table-container {
+  width: 100%;
+
+  overflow-x: auto;
+
+  border: 1px solid #dfe6f0;
+
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 8px 25px rgba(31, 45, 70, 0.06);
+}
+
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.jobs-table {
+  width: 100%;
+
+  min-width: 900px;
+
+  border-collapse: separate;
+
+  border-spacing: 0;
+
+  background: #ffffff;
+
+  table-layout: fixed;
+}
+
+
+/* =========================================================
+   COLUMN WIDTHS
+========================================================= */
+
+.jobs-table th:nth-child(1),
+.jobs-table td:nth-child(1) {
+  width: 8%;
+}
+
+.jobs-table th:nth-child(2),
+.jobs-table td:nth-child(2) {
+  width: 24%;
+}
+
+.jobs-table th:nth-child(3),
+.jobs-table td:nth-child(3) {
+  width: 21%;
+}
+
+.jobs-table th:nth-child(4),
+.jobs-table td:nth-child(4) {
+  width: 18%;
+}
+
+.jobs-table th:nth-child(5),
+.jobs-table td:nth-child(5) {
+  width: 14%;
+}
+
+.jobs-table th:nth-child(6),
+.jobs-table td:nth-child(6) {
+  width: 15%;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.jobs-table thead {
+  background: linear-gradient(
+    135deg,
+    #0c9b72 0%,
+    #087a5c 100%
+  );
+}
+
+.jobs-table th {
+  height: 58px;
+
+  padding: 0 18px;
+
+  border: none;
+
+  color: #ffffff;
+
+  text-align: left;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  letter-spacing: 0.2px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.jobs-table tbody tr {
+  background: #ffffff;
+
+  transition:
+    background 0.2s ease;
+}
+
+.jobs-table tbody tr:nth-child(even) {
+  background: #fbfcfe;
+}
+
+.jobs-table tbody tr:hover {
+  background: #f2fbf8;
+}
+
+.jobs-table tbody tr:nth-child(even):hover {
+  background: #f0faf7;
+}
+
+
+/* =========================================================
+   TABLE CELLS
+========================================================= */
+
+.jobs-table td {
+  height: 70px;
+
+  padding: 12px 18px;
+
+  border-bottom: 1px solid #e8edf4;
+
+  color: #506078;
+
+  text-align: left;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  vertical-align: middle;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+.jobs-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* =========================================================
+   ID
+========================================================= */
+
+.jobs-table td:nth-child(1) {
+  color: #7a899e;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   JOB TITLE
+========================================================= */
+
+.jobs-table td:nth-child(2) {
+  color: #172033;
+
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   COMPANY
+========================================================= */
+
+.jobs-table td:nth-child(3) {
+  color: #52627a;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.jobs-table td:nth-child(4) {
+  color: #5f6e83;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   SALARY
+========================================================= */
+
+.jobs-table td:nth-child(5) {
+  color: #087f5b;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   ACTIONS COLUMN
+========================================================= */
+
+.jobs-table th:last-child,
+.jobs-table td:last-child {
+  text-align: center;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.action-buttons {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   EDIT BUTTON
+========================================================= */
+
+.edit-btn {
+  width: 38px;
+  height: 38px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: 1px solid #bde8cf;
+
+  border-radius: 9px;
+
+  background: #effcf4;
+
+  color: #15803d;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.edit-btn:hover {
+  background: #dcfce7;
+
+  border-color: #86d8a7;
+
+  color: #166534;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 5px 12px rgba(22, 163, 74, 0.12);
+}
+
+.edit-btn:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   DELETE BUTTON
+========================================================= */
+
+.delete-btn {
+  width: 38px;
+  height: 38px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: 1px solid #ffd0d0;
+
+  border-radius: 9px;
+
+  background: #fff7f7;
+
+  color: #dc2626;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.delete-btn:hover {
+  background: #feecec;
+
+  border-color: #fca5a5;
+
+  color: #b91c1c;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 5px 12px rgba(220, 38, 38, 0.12);
+}
+
+.delete-btn:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   TABLE MESSAGE
+========================================================= */
+
+.table-message {
+  height: 150px;
+
+  color: #7c8a9f !important;
+
+  text-align: center !important;
+
+  font-size: 14px !important;
+
+  font-weight: 600 !important;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.loading-container {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 120px;
+
+  color: #64748b;
+
+  font-size: 14px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   TABLE SCROLLBAR
+========================================================= */
+
+.table-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+
+  border-radius: 20px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+
+/* =========================================================
+   FOCUS ACCESSIBILITY
+========================================================= */
+
+.manage-jobs-container button:focus-visible,
+.manage-jobs-container input:focus-visible {
+  outline: 3px solid rgba(12, 155, 114, 0.18);
+
+  outline-offset: 2px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1200px) {
+
+  .manage-jobs-container {
+    padding: 36px 30px 60px;
+  }
+
+  .manage-jobs-header h1 {
+    font-size: 31px;
+  }
+
+  .jobs-table th,
+  .jobs-table td {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+
+/* =========================================================
+   TABLET SMALL
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .manage-jobs-container {
+    padding: 30px 22px 50px;
+  }
+
+  .manage-jobs-header h1 {
+    font-size: 28px;
+  }
+
+  .manage-jobs-header p {
+    font-size: 13px;
+  }
+
+  .jobs-table {
+    min-width: 900px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .manage-jobs-container {
+    padding: 24px 16px 45px;
+  }
+
+  .manage-jobs-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 18px;
+  }
+
+  .manage-jobs-header-actions {
+    width: 100%;
+
+    justify-content: flex-start;
+  }
+
+  .refresh-job-btn,
+  .add-job-btn {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 44px;
+  }
+
+  .search-box {
+    height: 54px;
+  }
+
+  .jobs-table {
+    min-width: 900px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .manage-jobs-container {
+    padding: 20px 12px 40px;
+  }
+
+  .manage-jobs-header h1 {
+    font-size: 25px;
+  }
+
+  .manage-jobs-header p {
+    font-size: 12px;
+  }
+
+  .refresh-job-btn,
+  .add-job-btn {
+    height: 42px;
+
+    font-size: 12px;
+  }
+
+  .search-box {
+    height: 52px;
+
+    padding: 0 15px;
+  }
+
+  .search-box input {
+    font-size: 13px;
+  }
+
+  .jobs-count {
+    font-size: 12px;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .manage-jobs-container *,
+  .manage-jobs-container *::before,
+  .manage-jobs-container *::after {
+    transition: none !important;
+
+    animation: none !important;
+  }
+}

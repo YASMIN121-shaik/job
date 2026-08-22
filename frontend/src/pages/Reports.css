@@ -1,0 +1,1029 @@
+/* =========================================================
+   REPORTS
+   JOB PORTAL - PROFESSIONAL ADMIN BLUE DESIGN
+   FULL WIDTH / LARGE DASHBOARD VERSION
+========================================================= */
+
+
+/* =========================================================
+   COLOR SYSTEM
+========================================================= */
+
+:root {
+    --primary-blue: #2563eb;
+    --dark-blue: #1d4ed8;
+    --light-blue: #eff6ff;
+    --indigo: #4f46e5;
+
+    --dark-text: #172033;
+    --secondary-text: #64748b;
+    --muted-text: #94a3b8;
+
+    --page-bg: #f5f8ff;
+    --white: #ffffff;
+
+    --border: #dbe4f0;
+    --soft-border: #edf1f7;
+
+    --success: #10b981;
+    --success-dark: #047857;
+
+    --danger: #ef4444;
+    --danger-dark: #dc2626;
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    background: var(--page-bg);
+    color: var(--dark-text);
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   IMPORTANT:
+   No hard-coded sidebar margin.
+   This allows the page to fill available space.
+========================================================= */
+
+.reports-container {
+    width: 100%;
+    min-height: calc(100vh - 70px);
+
+    padding: 38px 42px 70px;
+
+    background: var(--page-bg);
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.reports-header {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 30px;
+}
+
+.reports-header h1 {
+    margin: 0 0 8px;
+
+    color: var(--dark-text);
+
+    font-size: 36px;
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.8px;
+}
+
+.reports-header p {
+    margin: 0;
+
+    color: var(--secondary-text);
+
+    font-size: 15px;
+    font-weight: 500;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   DATE & TIME CARD
+========================================================= */
+
+.date-time-card {
+    min-width: 215px;
+
+    padding: 17px 22px;
+
+    border: 1px solid var(--border);
+    border-radius: 13px;
+
+    background: var(--white);
+
+    box-shadow:
+        0 5px 18px rgba(37, 99, 235, 0.06);
+
+    flex-shrink: 0;
+}
+
+.date-time-card div {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin: 6px 0;
+
+    color: var(--secondary-text);
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.date-time-card svg {
+    color: var(--primary-blue);
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   REPORT INFO CARD
+========================================================= */
+
+.last-login-card {
+    width: 100%;
+
+    background: var(--white);
+
+    padding: 26px 28px;
+
+    border: 1px solid var(--border);
+    border-radius: 15px;
+
+    margin-bottom: 28px;
+
+    box-shadow:
+        0 7px 22px rgba(37, 99, 235, 0.06);
+}
+
+.last-login-card h2 {
+    margin-bottom: 8px;
+
+    color: var(--dark-text);
+
+    font-size: 23px;
+    font-weight: 750;
+}
+
+.last-login-card p {
+    margin-bottom: 20px;
+
+    color: var(--secondary-text);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   REFRESH BUTTON
+========================================================= */
+
+.refresh-reports-btn {
+    width: 100%;
+
+    min-height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 14px 20px;
+
+    border: none;
+    border-radius: 9px;
+
+    outline: none;
+
+    background: var(--primary-blue);
+
+    color: var(--white);
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 16px rgba(37, 99, 235, 0.18);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.refresh-reports-btn:hover {
+    background: var(--dark-blue);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 9px 21px rgba(37, 99, 235, 0.25);
+}
+
+.refresh-reports-btn:active {
+    transform: translateY(0);
+}
+
+.refresh-reports-btn:disabled {
+    opacity: 0.7;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   REFRESH ICON
+========================================================= */
+
+.refresh-icon {
+    font-size: 15px;
+}
+
+.spinning {
+    animation: reports-spin 1s linear infinite;
+}
+
+@keyframes reports-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   ERROR MESSAGE
+========================================================= */
+
+.reports-error {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    padding: 15px 18px;
+
+    margin-bottom: 25px;
+
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+
+    background: #fff7f7;
+
+    color: #991b1b;
+
+    font-size: 13px;
+}
+
+.reports-error strong {
+    font-weight: 700;
+}
+
+.reports-error span {
+    color: #b91c1c;
+}
+
+.reports-error button {
+    margin-left: auto;
+
+    padding: 8px 15px;
+
+    border: 1px solid #fca5a5;
+    border-radius: 7px;
+
+    background: var(--white);
+
+    color: #991b1b;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.reports-error button:hover {
+    background: #fee2e2;
+
+    border-color: #ef4444;
+}
+
+
+/* =========================================================
+   REPORT CARDS GRID
+   WIDER CARDS
+========================================================= */
+
+.reports-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 22px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   REPORT CARD
+========================================================= */
+
+.report-card {
+    width: 100%;
+
+    min-height: 150px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 25px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 6px 20px rgba(37, 99, 235, 0.055);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.report-card:hover {
+    transform: translateY(-4px);
+
+    border-color: #cbdcf5;
+
+    box-shadow:
+        0 12px 30px rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================================================
+   REPORT CARD ICON
+========================================================= */
+
+.report-card-icon {
+    width: 66px;
+    height: 66px;
+
+    min-width: 66px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    font-size: 26px;
+
+    transition:
+        transform 0.25s ease;
+}
+
+.report-card:hover .report-card-icon {
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   USERS
+========================================================= */
+
+.users-card .report-card-icon {
+    background: var(--light-blue);
+
+    color: var(--primary-blue);
+
+    border: 1px solid #dbeafe;
+}
+
+
+/* =========================================================
+   JOBS
+========================================================= */
+
+.jobs-card .report-card-icon {
+    background: #eff6ff;
+
+    color: var(--dark-blue);
+
+    border: 1px solid #dbeafe;
+}
+
+
+/* =========================================================
+   JOB SEEKERS
+========================================================= */
+
+.seekers-card .report-card-icon {
+    background: #eef2ff;
+
+    color: var(--indigo);
+
+    border: 1px solid #e0e7ff;
+}
+
+
+/* =========================================================
+   JOB HOLDERS
+========================================================= */
+
+.holders-card .report-card-icon {
+    background: #f5f3ff;
+
+    color: var(--indigo);
+
+    border: 1px solid #e9e5ff;
+}
+
+
+/* =========================================================
+   APPLICATIONS
+========================================================= */
+
+.applications-card .report-card-icon {
+    background: #eff6ff;
+
+    color: var(--primary-blue);
+
+    border: 1px solid #dbeafe;
+}
+
+
+/* =========================================================
+   INTERVIEWS
+========================================================= */
+
+.interviews-card .report-card-icon {
+    background: #eef2ff;
+
+    color: var(--indigo);
+
+    border: 1px solid #e0e7ff;
+}
+
+
+/* =========================================================
+   REPORT CARD CONTENT
+========================================================= */
+
+.report-card-content {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.report-card-content h3 {
+    margin: 0;
+
+    color: var(--secondary-text);
+
+    font-size: 14px;
+    font-weight: 600;
+
+    line-height: 1.4;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.report-card-content strong {
+    color: var(--dark-text);
+
+    font-size: 30px;
+    font-weight: 800;
+
+    line-height: 1.1;
+}
+
+
+/* =========================================================
+   PLATFORM SUMMARY
+========================================================= */
+
+.reports-summary {
+    width: 100%;
+
+    margin-top: 28px;
+
+    padding: 28px;
+
+    border: 1px solid var(--border);
+    border-radius: 16px;
+
+    background: var(--white);
+
+    box-shadow:
+        0 7px 22px rgba(37, 99, 235, 0.06);
+}
+
+.reports-summary h2 {
+    margin-bottom: 22px;
+
+    color: var(--dark-text);
+
+    font-size: 24px;
+    font-weight: 750;
+}
+
+
+/* =========================================================
+   SUMMARY GRID
+========================================================= */
+
+.summary-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 16px;
+}
+
+
+/* =========================================================
+   SUMMARY ITEM
+========================================================= */
+
+.summary-item {
+    min-height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 17px 20px;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    background: #fbfdff;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.summary-item:hover {
+    background: var(--light-blue);
+
+    border-color: #bfdbfe;
+
+    transform: translateY(-1px);
+}
+
+.summary-item span {
+    color: var(--secondary-text);
+
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.summary-item strong {
+    color: var(--dark-text);
+
+    font-size: 20px;
+    font-weight: 750;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1600px) {
+
+    .reports-container {
+        padding:
+            48px
+            55px
+            80px;
+    }
+
+    .reports-header {
+        margin-bottom: 38px;
+    }
+
+    .reports-header h1 {
+        font-size: 40px;
+    }
+
+    .reports-header p {
+        font-size: 16px;
+    }
+
+    .date-time-card {
+        min-width: 235px;
+
+        padding: 20px 26px;
+    }
+
+    .reports-grid {
+        gap: 26px;
+    }
+
+    .report-card {
+        min-height: 160px;
+
+        padding: 29px;
+    }
+
+    .report-card-icon {
+        width: 72px;
+        height: 72px;
+
+        min-width: 72px;
+
+        font-size: 29px;
+    }
+
+    .report-card-content h3 {
+        font-size: 15px;
+    }
+
+    .report-card-content strong {
+        font-size: 33px;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (max-width: 1400px) {
+
+    .reports-container {
+        padding:
+            38px
+            38px
+            65px;
+    }
+
+    .reports-grid {
+        gap: 20px;
+    }
+
+    .report-card {
+        padding: 23px;
+    }
+
+    .report-card-icon {
+        width: 62px;
+        height: 62px;
+
+        min-width: 62px;
+
+        font-size: 24px;
+    }
+}
+
+
+/* =========================================================
+   LAPTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .reports-container {
+        padding:
+            34px
+            28px
+            55px;
+    }
+
+    .reports-header h1 {
+        font-size: 32px;
+    }
+
+    .reports-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 18px;
+    }
+
+    .report-card {
+        min-height: 140px;
+
+        padding: 22px;
+    }
+
+    .report-card-content strong {
+        font-size: 27px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .reports-container {
+        padding:
+            28px
+            20px
+            45px;
+    }
+
+    .reports-header {
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    .reports-header h1 {
+        font-size: 29px;
+    }
+
+    .reports-header p {
+        font-size: 13px;
+    }
+
+    .date-time-card {
+        min-width: 175px;
+
+        padding: 15px 17px;
+    }
+
+    .reports-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 16px;
+    }
+
+    .report-card {
+        min-height: 130px;
+
+        padding: 20px;
+
+        gap: 15px;
+    }
+
+    .report-card-icon {
+        width: 57px;
+        height: 57px;
+
+        min-width: 57px;
+
+        font-size: 22px;
+    }
+
+    .report-card-content strong {
+        font-size: 25px;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .reports-container {
+        width: 100%;
+
+        margin: 0;
+
+        padding:
+            24px
+            16px
+            40px;
+    }
+
+    .reports-header {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 18px;
+
+        margin-bottom: 25px;
+    }
+
+    .reports-header h1 {
+        font-size: 27px;
+    }
+
+    .reports-header p {
+        font-size: 13px;
+    }
+
+    .date-time-card {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+    .last-login-card {
+        padding: 22px;
+    }
+
+    .reports-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .report-card {
+        min-height: 125px;
+
+        padding: 20px;
+    }
+
+    .reports-summary {
+        padding: 22px;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .reports-container {
+        padding:
+            21px
+            12px
+            35px;
+    }
+
+    .reports-header h1 {
+        font-size: 25px;
+    }
+
+    .reports-header p {
+        font-size: 12.5px;
+    }
+
+    .last-login-card {
+        padding: 19px;
+    }
+
+    .last-login-card h2 {
+        font-size: 20px;
+    }
+
+    .refresh-reports-btn {
+        min-height: 48px;
+
+        font-size: 13px;
+    }
+
+    .reports-summary {
+        padding: 19px;
+    }
+
+    .reports-summary h2 {
+        font-size: 21px;
+    }
+
+    .report-card {
+        padding: 18px;
+
+        gap: 14px;
+    }
+
+    .report-card-icon {
+        width: 54px;
+        height: 54px;
+
+        min-width: 54px;
+
+        font-size: 20px;
+    }
+
+    .report-card-content h3 {
+        font-size: 13px;
+    }
+
+    .report-card-content strong {
+        font-size: 24px;
+    }
+
+    .summary-item {
+        padding: 15px 16px;
+    }
+
+    .summary-item span {
+        font-size: 13px;
+    }
+
+    .summary-item strong {
+        font-size: 18px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.reports-container button:focus-visible {
+    outline: 3px solid rgba(37, 99, 235, 0.20);
+
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .reports-container *,
+    .reports-container *::before,
+    .reports-container *::after {
+
+        transition: none !important;
+
+        animation: none !important;
+    }
+}

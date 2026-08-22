@@ -1,0 +1,1298 @@
+/* =====================================================
+   APPROVED JOBS PAGE
+   MODERN PROFESSIONAL BLUE JOB MANAGEMENT UI
+===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+.approved-jobs-container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 34px 42px 60px;
+  background: #f5f8ff;
+  color: #172033;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.approved-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 28px;
+}
+
+.approved-header-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 0;
+}
+
+.approved-header-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #eaf2ff;
+  color: #2563eb;
+
+  font-size: 20px;
+}
+
+.approved-header h2 {
+  margin: 0 0 6px;
+
+  color: #172033;
+
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.approved-header p {
+  margin: 0;
+
+  color: #718096;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* =====================================================
+   SEARCH
+===================================================== */
+
+.search-box {
+  width: 350px;
+  height: 46px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 14px;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe6f1;
+  border-radius: 10px;
+
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.045);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.search-box:focus-within {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.09);
+}
+
+.search-box svg {
+  flex-shrink: 0;
+
+  color: #2563eb;
+
+  font-size: 16px;
+}
+
+.search-box input {
+  width: 100%;
+  height: 100%;
+
+  margin-left: 10px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #172033;
+
+  font-size: 13px;
+}
+
+.search-box input::placeholder {
+  color: #9aa4b2;
+}
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.stats-row {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  min-height: 110px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  padding: 22px 24px;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e9f2;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 5px 18px rgba(15, 23, 42, 0.05);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 9px 24px rgba(15, 23, 42, 0.08);
+}
+
+.stat-card:nth-child(1) {
+  border-left: 4px solid #2563eb;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f7faff 100%
+    );
+}
+
+.stat-card:nth-child(2) {
+  border-left: 4px solid #4f46e5;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #f8f7ff 100%
+    );
+}
+
+/* =====================================================
+   STAT ICON
+===================================================== */
+
+.stat-icon {
+  width: 46px;
+  height: 46px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 11px;
+
+  font-size: 18px;
+}
+
+.approved-stat {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.showing-stat {
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+.stat-card h3 {
+  margin: 0 0 6px;
+
+  color: #172033;
+
+  font-size: 30px;
+  line-height: 1;
+
+  font-weight: 700;
+}
+
+.stat-card p {
+  margin: 0;
+
+  color: #718096;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* =====================================================
+   TABLE CARD
+===================================================== */
+
+.table-card {
+  width: 100%;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e9f2;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 7px 24px rgba(15, 23, 42, 0.055);
+
+  overflow: hidden;
+}
+
+/* =====================================================
+   TABLE WRAPPER
+===================================================== */
+
+.table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: visible;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+.table-wrapper::-webkit-scrollbar {
+  height: 7px;
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+  background: #f1f4f9;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #c8d1df;
+  border-radius: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #aeb9cb;
+}
+
+/* =====================================================
+   TABLE
+===================================================== */
+
+.table-wrapper table {
+  width: 100%;
+
+  /*
+    Important:
+    Large enough so the Action column
+    never gets squeezed.
+  */
+  min-width: 1180px;
+
+  border-collapse: separate;
+  border-spacing: 0;
+
+  table-layout: auto;
+}
+
+/* =====================================================
+   TABLE HEADER
+===================================================== */
+
+.table-wrapper thead {
+  background: #2563eb;
+}
+
+.table-wrapper thead tr {
+  height: 56px;
+
+  background: #2563eb;
+}
+
+.table-wrapper thead th {
+  padding: 0 18px;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-align: left;
+
+  white-space: nowrap;
+
+  border: none;
+
+  letter-spacing: 0.035em;
+}
+
+.table-wrapper thead th:first-child {
+  padding-left: 22px;
+}
+
+.table-wrapper thead th:last-child {
+  padding-right: 22px;
+}
+
+/* =====================================================
+   BODY
+===================================================== */
+
+.table-wrapper tbody tr {
+  background: #ffffff;
+
+  transition:
+    background 0.2s ease;
+}
+
+.table-wrapper tbody tr:nth-child(even) td {
+  background: #fbfcff;
+}
+
+.table-wrapper tbody tr:hover td {
+  background: #f0f5ff;
+}
+
+.table-wrapper tbody td {
+  padding: 16px 18px;
+
+  color: #344054;
+
+  font-size: 13px;
+
+  border-bottom: 1px solid #edf1f6;
+
+  vertical-align: middle;
+
+  background: #ffffff;
+
+  transition:
+    background 0.2s ease;
+}
+
+.table-wrapper tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table-wrapper tbody td:first-child {
+  padding-left: 22px;
+}
+
+/* =====================================================
+   JOB TITLE
+===================================================== */
+
+.job-title-cell {
+  min-width: 220px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+/* =====================================================
+   JOB AVATAR
+===================================================== */
+
+.job-avatar {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #4f46e5
+    );
+
+  color: #ffffff;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  box-shadow:
+    0 4px 10px rgba(37, 99, 235, 0.16);
+}
+
+.job-title-cell > div:last-child {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.job-title-cell strong {
+  color: #172033;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  line-height: 1.35;
+
+  word-break: break-word;
+}
+
+.job-title-cell span {
+  width: fit-content;
+
+  padding: 3px 7px;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  border: 1px solid #dbeafe;
+
+  border-radius: 5px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+/* =====================================================
+   COMPANY
+===================================================== */
+
+.company-cell {
+  min-width: 150px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #374151;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.company-cell svg {
+  flex-shrink: 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+/* =====================================================
+   LOCATION
+===================================================== */
+
+.location-cell {
+  min-width: 145px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #596579;
+
+  font-size: 13px;
+}
+
+.location-cell svg {
+  flex-shrink: 0;
+
+  color: #4f46e5;
+
+  font-size: 14px;
+}
+
+.location-cell span {
+  white-space: nowrap;
+}
+
+/* =====================================================
+   SALARY
+===================================================== */
+
+.salary-cell {
+  min-width: 135px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #475467;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.salary-cell svg {
+  flex-shrink: 0;
+
+  color: #2563eb;
+
+  font-size: 14px;
+}
+
+.salary-cell span {
+  white-space: nowrap;
+}
+
+/* =====================================================
+   JOB TYPE
+===================================================== */
+
+.job-type-cell {
+  min-width: 120px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #596579;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.job-type-cell svg {
+  flex-shrink: 0;
+
+  color: #6366f1;
+
+  font-size: 13px;
+}
+
+.job-type-cell span {
+  white-space: nowrap;
+}
+
+/* =====================================================
+   DATE
+===================================================== */
+
+.date-cell {
+  min-width: 125px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  color: #718096;
+
+  font-size: 12px;
+}
+
+.date-cell svg {
+  flex-shrink: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+.date-cell span {
+  white-space: nowrap;
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  padding: 6px 11px;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.status.approved {
+  background: #ecfdf3;
+
+  color: #15803d;
+
+  border: 1px solid #bbf7d0;
+}
+
+.status.approved::before {
+  content: "";
+
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+}
+
+.status.approved svg {
+  font-size: 10px;
+}
+
+/* =====================================================
+   ACTION COLUMN
+   IMPORTANT FIX
+===================================================== */
+
+.table-wrapper th:last-child,
+.table-wrapper td:last-child {
+  width: 150px !important;
+
+  min-width: 150px !important;
+
+  max-width: 150px !important;
+
+  padding-left: 18px !important;
+  padding-right: 22px !important;
+
+  white-space: nowrap !important;
+}
+
+/* =====================================================
+   ACTION BUTTON CONTAINER
+===================================================== */
+
+.action-buttons {
+  width: 100%;
+
+  min-width: 110px;
+
+  display: flex !important;
+
+  align-items: center !important;
+
+  justify-content: flex-start !important;
+
+  gap: 9px !important;
+
+  white-space: nowrap !important;
+}
+
+/* =====================================================
+   COMMON ACTION BUTTON
+===================================================== */
+
+.action-buttons button.view-btn,
+.action-buttons button.delete-btn {
+  position: relative !important;
+
+  width: 38px !important;
+  height: 38px !important;
+
+  min-width: 38px !important;
+  max-width: 38px !important;
+
+  flex: 0 0 38px !important;
+
+  display: inline-flex !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  border-radius: 9px !important;
+
+  cursor: pointer !important;
+
+  font-size: 14px !important;
+
+  line-height: 1 !important;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+
+  box-sizing: border-box !important;
+
+  appearance: none !important;
+
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+/* =====================================================
+   VIEW BUTTON
+===================================================== */
+
+.action-buttons .view-btn {
+  background: #eff6ff !important;
+
+  border: 1px solid #bfdbfe !important;
+
+  color: #2563eb !important;
+
+  box-shadow:
+    0 2px 6px rgba(37, 99, 235, 0.08) !important;
+}
+
+.action-buttons .view-btn svg {
+  display: block !important;
+
+  width: 15px !important;
+  height: 15px !important;
+
+  margin: 0 !important;
+
+  color: #2563eb !important;
+
+  fill: currentColor !important;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+}
+
+.action-buttons .view-btn:hover {
+  background: #dbeafe !important;
+
+  border-color: #93c5fd !important;
+
+  color: #1d4ed8 !important;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 12px rgba(37, 99, 235, 0.16) !important;
+}
+
+.action-buttons .view-btn:hover svg {
+  color: #1d4ed8 !important;
+}
+
+/* =====================================================
+   DELETE BUTTON
+===================================================== */
+
+.action-buttons .delete-btn {
+  background: #fff1f2 !important;
+
+  border: 1px solid #fecdd3 !important;
+
+  color: #dc2626 !important;
+
+  box-shadow:
+    0 2px 6px rgba(220, 38, 38, 0.06) !important;
+}
+
+.action-buttons .delete-btn svg {
+  display: block !important;
+
+  width: 14px !important;
+  height: 14px !important;
+
+  margin: 0 !important;
+
+  color: #dc2626 !important;
+
+  fill: currentColor !important;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+}
+
+.action-buttons .delete-btn:hover {
+  background: #ffe4e6 !important;
+
+  border-color: #fda4af !important;
+
+  color: #b91c1c !important;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 12px rgba(220, 38, 38, 0.12) !important;
+}
+
+.action-buttons .delete-btn:hover svg {
+  color: #b91c1c !important;
+}
+
+/* =====================================================
+   DISABLED DELETE
+===================================================== */
+
+.action-buttons .delete-btn:disabled {
+  cursor: not-allowed !important;
+
+  opacity: 0.65 !important;
+
+  transform: none !important;
+}
+
+/* =====================================================
+   FOCUS
+===================================================== */
+
+.action-buttons .view-btn:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.2) !important;
+  outline-offset: 2px;
+}
+
+.action-buttons .delete-btn:focus-visible {
+  outline: 3px solid rgba(220, 38, 38, 0.16) !important;
+  outline-offset: 2px;
+}
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.empty-state {
+  height: 300px;
+
+  text-align: center;
+
+  color: #64748b;
+}
+
+.empty-state > div {
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.empty-icon {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 14px;
+
+  border-radius: 50%;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-size: 20px;
+}
+
+.empty-state h3 {
+  margin: 0 0 7px;
+
+  color: #172033;
+
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+.empty-state p {
+  margin: 0;
+
+  color: #8a94a6;
+
+  font-size: 13px;
+}
+
+.empty-state button {
+  margin-top: 14px;
+
+  padding: 8px 14px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.loading-container {
+  min-height: 320px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #718096;
+}
+
+.loading-container p {
+  margin: 14px 0 0;
+
+  color: #7a8699;
+
+  font-size: 13px;
+}
+
+.loading-spinner {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 3px solid #dbeafe;
+
+  border-top-color: #2563eb;
+
+  border-radius: 50%;
+
+  animation: approvedJobsSpin 0.8s linear infinite;
+}
+
+.loading-spinner svg {
+  display: none;
+}
+
+@keyframes approvedJobsSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.error-message {
+  min-height: 320px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 30px;
+}
+
+.error-icon {
+  width: 50px;
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 14px;
+
+  border-radius: 50%;
+
+  background: #fff1f2;
+
+  color: #dc2626;
+
+  font-size: 20px;
+}
+
+.error-message h3 {
+  margin: 0 0 8px;
+
+  color: #dc2626;
+
+  font-size: 19px;
+
+  font-weight: 700;
+}
+
+.error-message p {
+  max-width: 600px;
+
+  margin: 0 0 18px;
+
+  color: #718096;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+.error-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.error-message button {
+  min-height: 38px;
+
+  padding: 0 17px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.error-message button:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+}
+
+/* =====================================================
+   RESPONSIVE - 1200px
+===================================================== */
+
+@media (max-width: 1200px) {
+
+  .approved-jobs-container {
+    padding: 30px 32px 50px;
+  }
+
+  .search-box {
+    width: 310px;
+  }
+
+  .table-wrapper table {
+    min-width: 1180px;
+  }
+}
+
+/* =====================================================
+   RESPONSIVE - 900px
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .approved-jobs-container {
+    padding: 26px 24px 45px;
+  }
+
+  .approved-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 18px;
+  }
+
+  .approved-header {
+    width: 100%;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .stats-row {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .stat-card {
+    min-height: 96px;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
+  .table-wrapper table {
+    min-width: 1180px;
+  }
+}
+
+/* =====================================================
+   RESPONSIVE - 600px
+===================================================== */
+
+@media (max-width: 600px) {
+
+  .approved-jobs-container {
+    padding: 20px 15px 35px;
+  }
+
+  .approved-header {
+    margin-bottom: 22px;
+  }
+
+  .approved-header h2 {
+    font-size: 25px;
+  }
+
+  .approved-header p {
+    font-size: 13px;
+  }
+
+  .approved-header-icon {
+    width: 42px;
+    height: 42px;
+
+    font-size: 17px;
+  }
+
+  .search-box {
+    height: 44px;
+  }
+
+  .stats-row {
+    margin-bottom: 20px;
+  }
+
+  .stat-card {
+    min-height: 90px;
+
+    padding: 19px 20px;
+
+    border-radius: 12px;
+  }
+
+  .stat-card h3 {
+    font-size: 27px;
+  }
+
+  .table-card {
+    border-radius: 12px;
+  }
+
+  .table-wrapper table {
+    min-width: 1180px;
+  }
+}
+
+/* =====================================================
+   RESPONSIVE - 480px
+===================================================== */
+
+@media (max-width: 480px) {
+
+  .approved-jobs-container {
+    padding: 16px 12px 30px;
+  }
+
+  .approved-header h2 {
+    font-size: 23px;
+  }
+
+  .approved-header p {
+    font-size: 12px;
+  }
+
+  .stat-card {
+    min-height: 84px;
+
+    padding: 17px;
+  }
+
+  .stat-card h3 {
+    font-size: 25px;
+  }
+
+  .stat-card p {
+    font-size: 11px;
+  }
+
+  .empty-state {
+    height: 270px;
+  }
+
+  .empty-state h3 {
+    font-size: 16px;
+  }
+
+  .empty-state p {
+    font-size: 12px;
+  }
+
+  .error-actions {
+    flex-direction: column;
+  }
+}

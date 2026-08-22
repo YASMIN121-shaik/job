@@ -1,0 +1,980 @@
+/* =========================================================
+   CATEGORIES SECTION
+   JOB PORTAL - NAVY / INDIGO / VIOLET THEME
+========================================================= */
+
+.categories {
+  position: relative;
+  width: 100%;
+
+  padding:
+    90px
+    7vw;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8faff 0%,
+      #f4f7ff 55%,
+      #faf8ff 100%
+    );
+
+  color: #172554;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND DECORATION
+========================================================= */
+
+.categories::before {
+  content: "";
+
+  position: absolute;
+
+  width: 380px;
+  height: 380px;
+
+  top: -200px;
+  left: -190px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(79, 70, 229, 0.055);
+
+  pointer-events: none;
+}
+
+.categories::after {
+  content: "";
+
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  right: -160px;
+  bottom: -170px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(124, 58, 237, 0.05);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SUBTLE CENTER GLOW
+========================================================= */
+
+.categories-heading::before {
+  content: "";
+
+  position: absolute;
+
+  width: 260px;
+  height: 160px;
+
+  left: 50%;
+  top: -30px;
+
+  transform: translateX(-50%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(99, 102, 241, 0.07) 0%,
+      rgba(99, 102, 241, 0) 70%
+    );
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.categories-heading {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 700px;
+
+  margin:
+    0
+    auto
+    50px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.categories-eyebrow {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 14px;
+
+  color: #4f46e5;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  text-transform: uppercase;
+}
+
+.categories-eyebrow i {
+  color: #6366f1;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.categories-heading h2 {
+  margin: 0;
+
+  color: #172554;
+
+  font-size:
+    clamp(
+      36px,
+      4vw,
+      48px
+    );
+
+  font-weight: 750;
+
+  line-height: 1.15;
+
+  letter-spacing: -1.5px;
+}
+
+
+/* =========================================================
+   HEADING HIGHLIGHT
+========================================================= */
+
+.categories-heading h2 span {
+  background:
+    linear-gradient(
+      90deg,
+      #4338ca,
+      #6366f1,
+      #7c3aed
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.categories-heading p {
+  max-width: 600px;
+
+  margin:
+    18px
+    auto
+    0;
+
+  color: #667085;
+
+  font-size: 15px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   CATEGORY GRID
+========================================================= */
+
+.category-grid {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  max-width: 1200px;
+
+  margin:
+    0
+    auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: 20px;
+}
+
+
+/* =========================================================
+   CATEGORY CARD
+========================================================= */
+
+.category-card {
+  position: relative;
+
+  min-height: 245px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 27px;
+
+  border:
+    1px solid
+    #dce3f1;
+
+  border-radius: 16px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 8px 26px
+    rgba(30, 41, 80, 0.055);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* =========================================================
+   TOP INDIGO LINE
+========================================================= */
+
+.category-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 27px;
+
+  width: 38px;
+  height: 3px;
+
+  border-radius:
+    0
+    0
+    5px
+    5px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #4f46e5,
+      #7c3aed
+    );
+
+  transition:
+    width 0.25s ease;
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.category-card:hover {
+  transform:
+    translateY(-6px);
+
+  border-color:
+    #c7d2fe;
+
+  box-shadow:
+    0 20px 40px
+    rgba(30, 41, 80, 0.11);
+}
+
+.category-card:hover::before {
+  width: 70px;
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.category-card-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 27px;
+}
+
+
+/* =========================================================
+   CATEGORY ICON
+========================================================= */
+
+.category-icon {
+  width: 54px;
+  height: 54px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background:
+    #eef2ff;
+
+  color: #4f46e5;
+
+  font-size: 21px;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* =========================================================
+   ICON HOVER
+========================================================= */
+
+.category-card:hover .category-icon {
+  background:
+    linear-gradient(
+      135deg,
+      #4f46e5,
+      #6366f1
+    );
+
+  color: #ffffff;
+
+  transform:
+    scale(1.05);
+
+  box-shadow:
+    0 8px 18px
+    rgba(79, 70, 229, 0.20);
+}
+
+
+/* =========================================================
+   CATEGORY NUMBER
+========================================================= */
+
+.category-number {
+  color: #a0a9ba;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.6px;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.category-content {
+  flex: 1;
+}
+
+
+/* =========================================================
+   CATEGORY TITLE
+========================================================= */
+
+.category-content h3 {
+  margin:
+    0
+    0
+    10px;
+
+  color: #1e2a4a;
+
+  font-size: 19px;
+
+  font-weight: 700;
+
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   CATEGORY DESCRIPTION
+========================================================= */
+
+.category-content p {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin: 0;
+
+  color: #758197;
+
+  font-size: 13px;
+
+  line-height: 1.55;
+}
+
+.category-content p i {
+  color: #6366f1;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   EXPLORE BUTTON
+========================================================= */
+
+.explore-btn {
+  width: 100%;
+
+  height: 43px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-top: 21px;
+
+  padding:
+    0
+    15px;
+
+  border:
+    1px solid
+    #dce3f1;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #4f46e5;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   EXPLORE ICON
+========================================================= */
+
+.explore-btn i {
+  font-size: 13px;
+
+  transition:
+    transform 0.2s ease;
+}
+
+
+/* =========================================================
+   EXPLORE HOVER
+========================================================= */
+
+.explore-btn:hover {
+  border-color:
+    #4f46e5;
+
+  background:
+    linear-gradient(
+      135deg,
+      #4f46e5,
+      #6366f1
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 8px 18px
+    rgba(79, 70, 229, 0.18);
+}
+
+.explore-btn:hover i {
+  transform:
+    translate(
+      2px,
+      -2px
+    );
+}
+
+
+/* =========================================================
+   CATEGORIES FOOTER
+========================================================= */
+
+.categories-footer {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 1200px;
+
+  margin:
+    32px
+    auto
+    0;
+
+  padding:
+    20px
+    22px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  border:
+    1px solid
+    #dce3f1;
+
+  border-radius: 13px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 8px 24px
+    rgba(30, 41, 80, 0.045);
+}
+
+
+/* =========================================================
+   FOOTER ICON
+========================================================= */
+
+.categories-footer-icon {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background:
+    #eef2ff;
+
+  color: #4f46e5;
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   FOOTER TEXT
+========================================================= */
+
+.categories-footer p {
+  flex: 1;
+
+  margin: 0;
+
+  color: #758197;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+.categories-footer strong {
+  margin-left: 5px;
+
+  color: #263452;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   FOOTER BUTTON
+========================================================= */
+
+.categories-footer button {
+  height: 39px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding:
+    0
+    16px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background:
+    #eef2ff;
+
+  color: #4f46e5;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* =========================================================
+   FOOTER BUTTON HOVER
+========================================================= */
+
+.categories-footer button:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #4f46e5,
+      #6366f1
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 7px 16px
+    rgba(79, 70, 229, 0.18);
+}
+
+.categories-footer button i {
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   LARGE TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .categories {
+    padding:
+      80px
+      5vw;
+  }
+
+  .category-grid {
+    gap: 18px;
+  }
+
+  .category-card {
+    padding: 25px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .categories {
+    padding:
+      75px
+      5vw;
+  }
+
+  .categories-heading h2 {
+    font-size: 38px;
+  }
+
+  .categories-heading p {
+    font-size: 14px;
+  }
+
+  .category-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+  .category-card {
+    min-height: 235px;
+  }
+
+  .category-content h3 {
+    font-size: 18px;
+  }
+
+  .category-content p {
+    font-size: 13px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .categories {
+    padding:
+      60px
+      20px;
+  }
+
+  .categories-heading {
+    margin-bottom: 38px;
+  }
+
+  .categories-eyebrow {
+    font-size: 12px;
+  }
+
+  .categories-heading h2 {
+    font-size: 31px;
+
+    letter-spacing: -0.8px;
+  }
+
+  .categories-heading p {
+    margin-top: 15px;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .category-card {
+    min-height: 220px;
+
+    padding: 24px;
+  }
+
+  .category-card-top {
+    margin-bottom: 24px;
+  }
+
+  .category-icon {
+    width: 51px;
+    height: 51px;
+
+    font-size: 20px;
+  }
+
+  .category-number {
+    font-size: 12px;
+  }
+
+  .category-content h3 {
+    font-size: 18px;
+  }
+
+  .category-content p {
+    font-size: 13px;
+  }
+
+  .explore-btn {
+    height: 42px;
+
+    font-size: 12px;
+  }
+
+
+  /* =======================================================
+     FOOTER MOBILE
+  ======================================================= */
+
+  .categories-footer {
+    align-items: flex-start;
+
+    flex-wrap: wrap;
+
+    padding: 17px;
+  }
+
+  .categories-footer p {
+    width:
+      calc(
+        100% - 52px
+      );
+
+    flex: none;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+  }
+
+  .categories-footer p strong {
+    display: block;
+
+    margin:
+      3px
+      0
+      0;
+  }
+
+  .categories-footer button {
+    width: 100%;
+
+    height: 40px;
+
+    justify-content: center;
+
+    margin-top: 5px;
+
+    font-size: 12px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .categories {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .categories-heading h2 {
+    font-size: 28px;
+  }
+
+  .categories-heading p {
+    font-size: 12.5px;
+  }
+
+  .category-card {
+    min-height: 210px;
+
+    padding: 22px;
+  }
+
+  .category-icon {
+    width: 48px;
+    height: 48px;
+
+    font-size: 19px;
+  }
+
+  .category-content h3 {
+    font-size: 17px;
+  }
+
+  .category-content p {
+    font-size: 12px;
+  }
+
+  .explore-btn {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.categories button:focus-visible,
+.categories a:focus-visible {
+
+  outline:
+    3px solid
+    rgba(79, 70, 229, 0.25);
+
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .categories *,
+  .categories *::before,
+  .categories *::after {
+
+    transition: none !important;
+
+    animation: none !important;
+  }
+}

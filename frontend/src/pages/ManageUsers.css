@@ -1,0 +1,994 @@
+/* =========================================================
+   MANAGE USERS
+   PROFESSIONAL ADMIN / JOB PORTAL UI
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.users-page {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  background: #f5f8fd;
+  color: #172033;
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.users-container {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 40px 48px 70px;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.users-header {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 28px;
+}
+
+.users-header-content {
+  min-width: 0;
+}
+
+.users-header h1 {
+  margin: 0;
+  color: #172033;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.8px;
+}
+
+.users-header p {
+  margin: 8px 0 0;
+  color: #718096;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.users-header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   REFRESH USERS BUTTON
+========================================================= */
+
+.refresh-users-btn {
+  height: 44px;
+  min-width: 110px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+  padding: 0 16px;
+
+  border: 1px solid #d6e0ec;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #40516d;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 3px 10px rgba(31, 45, 70, 0.05);
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.refresh-users-btn svg {
+  flex-shrink: 0;
+  font-size: 14px;
+  color: #526987;
+}
+
+.refresh-users-btn:hover:not(:disabled) {
+  background: #f8fbff;
+  border-color: #aebfd8;
+  color: #2563eb;
+
+  box-shadow: 0 6px 15px rgba(31, 45, 70, 0.08);
+
+  transform: translateY(-1px);
+}
+
+.refresh-users-btn:hover:not(:disabled) svg {
+  color: #2563eb;
+}
+
+.refresh-users-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.refresh-users-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* =========================================================
+   REFRESH ANIMATION
+========================================================= */
+
+.refresh-spinning {
+  animation: refreshSpin 0.9s linear infinite;
+}
+
+@keyframes refreshSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   ADD USER BUTTON
+========================================================= */
+
+.add-user-btn {
+  height: 44px;
+  min-width: 125px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+  padding: 0 18px;
+
+  border: 1px solid #2563eb;
+  border-radius: 9px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 14px rgba(37, 99, 235, 0.18);
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.add-user-btn svg {
+  flex-shrink: 0;
+  font-size: 14px;
+}
+
+.add-user-btn:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.24);
+}
+
+.add-user-btn:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   ERROR MESSAGE
+========================================================= */
+
+.users-error {
+  width: 100%;
+
+  min-height: 52px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 18px;
+  padding: 12px 16px;
+
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+
+  background: #fff7f7;
+  color: #991b1b;
+
+  font-size: 13px;
+}
+
+.users-error strong {
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.users-error span {
+  flex: 1;
+  min-width: 0;
+}
+
+.users-error button {
+  flex-shrink: 0;
+
+  border: none;
+  background: transparent;
+
+  color: #dc2626;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.users-error button:hover {
+  color: #991b1b;
+  text-decoration: underline;
+}
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.users-search {
+  width: 100%;
+  height: 54px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 19px;
+
+  border: 1.5px solid #cbd7e8;
+  border-radius: 11px;
+
+  background: #ffffff;
+
+  box-shadow: 0 4px 14px rgba(31, 45, 70, 0.06);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+
+  margin-bottom: 14px;
+}
+
+.users-search:hover {
+  border-color: #aebed3;
+  box-shadow: 0 5px 16px rgba(31, 45, 70, 0.08);
+}
+
+.users-search:focus-within {
+  border-color: #2563eb;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.09),
+    0 5px 16px rgba(31, 45, 70, 0.06);
+}
+
+.users-search > svg {
+  flex-shrink: 0;
+
+  margin-right: 13px;
+
+  color: #71829a;
+
+  font-size: 18px;
+}
+
+.users-search input {
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+
+  padding: 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #25334d;
+
+  font-family: inherit;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.users-search input::placeholder {
+  color: #8c9ab0;
+  font-size: 14px;
+}
+
+/* =========================================================
+   USER COUNT
+========================================================= */
+
+.users-count {
+  margin: 0 0 12px;
+
+  color: #718096;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.users-count strong {
+  color: #172033;
+  font-weight: 800;
+}
+
+/* =========================================================
+   TABLE CARD
+========================================================= */
+
+.users-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  border: 1px solid #dfe6f0;
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow: 0 8px 25px rgba(31, 45, 70, 0.06);
+
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+.users-table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.users-table-wrapper::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+.users-table-wrapper::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.users-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* =========================================================
+   TABLE
+========================================================= */
+
+.users-table {
+  width: 100%;
+  min-width: 1100px;
+
+  border-collapse: separate;
+  border-spacing: 0;
+
+  background: #ffffff;
+
+  table-layout: fixed;
+}
+
+/* =========================================================
+   TABLE HEADER
+========================================================= */
+
+.users-table thead {
+  background: linear-gradient(
+    135deg,
+    #2563eb 0%,
+    #1d4ed8 100%
+  );
+}
+
+.users-table thead tr {
+  height: 58px;
+}
+
+.users-table th {
+  height: 58px;
+
+  padding: 0 18px;
+
+  border: none;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  text-align: left;
+
+  white-space: nowrap;
+}
+
+.users-table thead th:first-child {
+  border-top-left-radius: 13px;
+}
+
+.users-table thead th:last-child {
+  border-top-right-radius: 13px;
+}
+
+/* =========================================================
+   COLUMN WIDTHS
+
+   IMPORTANT:
+   ACTION COLUMN IS WIDE ENOUGH FOR BOTH BUTTONS
+========================================================= */
+
+.users-table th:nth-child(1),
+.users-table td:nth-child(1) {
+  width: 7%;
+}
+
+.users-table th:nth-child(2),
+.users-table td:nth-child(2) {
+  width: 19%;
+}
+
+.users-table th:nth-child(3),
+.users-table td:nth-child(3) {
+  width: 27%;
+}
+
+.users-table th:nth-child(4),
+.users-table td:nth-child(4) {
+  width: 15%;
+}
+
+.users-table th:nth-child(5),
+.users-table td:nth-child(5) {
+  width: 14%;
+}
+
+.users-table th:nth-child(6),
+.users-table td:nth-child(6) {
+  width: 18%;
+}
+
+/* =========================================================
+   TABLE BODY
+========================================================= */
+
+.users-table tbody tr {
+  background: #ffffff;
+
+  transition: background 0.2s ease;
+}
+
+.users-table tbody tr:nth-child(even) {
+  background: #fbfcfe;
+}
+
+.users-table tbody tr:hover {
+  background: #f8faff;
+}
+
+.users-table tbody tr:nth-child(even):hover {
+  background: #f5f8ff;
+}
+
+/* =========================================================
+   TABLE CELLS
+========================================================= */
+
+.users-table td {
+  height: 72px;
+
+  padding: 0 18px;
+
+  border-bottom: 1px solid #e8edf4;
+
+  color: #506078;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  vertical-align: middle;
+
+  overflow: hidden;
+}
+
+.users-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* =========================================================
+   ID
+========================================================= */
+
+.users-table td:nth-child(1) {
+  color: #64748b;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   NAME
+========================================================= */
+
+.users-table td:nth-child(2) {
+  color: #172033;
+
+  font-weight: 750;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.users-table td:nth-child(2) strong {
+  display: block;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* =========================================================
+   EMAIL
+========================================================= */
+
+.users-table td:nth-child(3) {
+  color: #52627a;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* =========================================================
+   ROLE
+========================================================= */
+
+.users-table td:nth-child(4) {
+  white-space: nowrap;
+}
+
+/* =========================================================
+   ROLE BADGE
+========================================================= */
+
+.role-badge {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 92px;
+  height: 30px;
+
+  padding: 0 12px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  white-space: nowrap;
+
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+/* ADMIN */
+
+.role-badge.admin {
+  background: #f3e8ff;
+  color: #7e22ce;
+}
+
+/* JOB SEEKER */
+
+.role-badge.job_seeker {
+  background: #eaf4ff;
+  color: #2563eb;
+}
+
+/* MANAGER */
+
+.role-badge.manager {
+  background: #fff7df;
+  color: #a16207;
+}
+
+/* JOB HOLDER */
+
+.role-badge.job_holder {
+  background: #eafaf3;
+  color: #087f5b;
+}
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.status-badge {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  min-width: 78px;
+  height: 30px;
+
+  padding: 0 11px;
+
+  border-radius: 999px;
+
+  background: #eafaf3;
+  color: #087f5b;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+.status-badge::before {
+  content: "";
+
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #0f9f6e;
+}
+
+/* =========================================================
+   ACTION COLUMN
+========================================================= */
+
+/*
+   VERY IMPORTANT:
+   Keep the action cell wide and prevent wrapping.
+*/
+
+.users-table td:last-child {
+  width: 18%;
+
+  padding-left: 14px;
+  padding-right: 14px;
+
+  overflow: visible;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   ACTION BUTTON CONTAINER
+========================================================= */
+
+/*
+   EDIT + DELETE ARE FORCED INTO ONE ROW
+*/
+
+.action-buttons {
+  width: 100%;
+
+  display: flex !important;
+
+  flex-direction: row !important;
+
+  align-items: center !important;
+
+  justify-content: flex-start !important;
+
+  gap: 10px !important;
+
+  flex-wrap: nowrap !important;
+
+  white-space: nowrap !important;
+
+  overflow: visible !important;
+}
+
+/* =========================================================
+   COMMON ACTION BUTTON
+========================================================= */
+
+.action-buttons button {
+  width: 40px !important;
+  min-width: 40px !important;
+  max-width: 40px !important;
+
+  height: 40px !important;
+  min-height: 40px !important;
+  max-height: 40px !important;
+
+  flex: 0 0 40px !important;
+
+  display: inline-flex !important;
+
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  border-radius: 9px;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* =========================================================
+   EDIT BUTTON
+========================================================= */
+
+.action-buttons .edit-btn {
+  border: 1px solid #d7e2f1;
+
+  background: #ffffff;
+
+  color: #45617f;
+}
+
+.action-buttons .edit-btn:hover {
+  background: #eff5ff;
+
+  border-color: #9dbcf0;
+
+  color: #2563eb;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 5px 12px rgba(37, 99, 235, 0.10);
+}
+
+.action-buttons .edit-btn:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   DELETE BUTTON
+========================================================= */
+
+.action-buttons .delete-btn {
+  border: 1px solid #ffd1d1;
+
+  background: #fff7f7;
+
+  color: #dc2626;
+}
+
+.action-buttons .delete-btn:hover {
+  background: #feecec;
+
+  border-color: #fca5a5;
+
+  color: #b91c1c;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 5px 12px rgba(220, 38, 38, 0.10);
+}
+
+.action-buttons .delete-btn:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   TABLE MESSAGE
+========================================================= */
+
+.table-message {
+  height: 180px !important;
+
+  padding: 0 20px !important;
+
+  text-align: center;
+
+  color: #7b879a !important;
+
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.loading-container {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 150px;
+
+  color: #64748b;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.users-page button:focus-visible,
+.users-page input:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.18);
+
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   RESPONSIVE - 1200px
+========================================================= */
+
+@media (max-width: 1200px) {
+  .users-container {
+    padding: 34px 30px 60px;
+  }
+
+  .users-header h1 {
+    font-size: 31px;
+  }
+
+  .users-table {
+    min-width: 1100px;
+  }
+
+  .users-table th,
+  .users-table td {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .users-table td:last-child {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .action-buttons {
+    gap: 8px !important;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - 900px
+========================================================= */
+
+@media (max-width: 900px) {
+  .users-container {
+    padding: 30px 22px 50px;
+  }
+
+  .users-header h1 {
+    font-size: 28px;
+  }
+
+  .users-header p {
+    font-size: 13px;
+  }
+
+  .users-table {
+    min-width: 1100px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - 650px
+========================================================= */
+
+@media (max-width: 650px) {
+  .users-container {
+    padding: 24px 16px 45px;
+  }
+
+  .users-header {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .users-header-actions {
+    width: 100%;
+
+    justify-content: stretch;
+  }
+
+  .refresh-users-btn,
+  .add-user-btn {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 44px;
+  }
+
+  .users-search {
+    height: 50px;
+  }
+
+  .users-table {
+    min-width: 1100px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .users-page *,
+  .users-page *::before,
+  .users-page *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

@@ -1,0 +1,1164 @@
+/* =========================================================
+   JOB HOLDER - APPLICANTS
+   JOB PORTAL - PROFESSIONAL BLUE UI
+   ========================================================= */
+
+
+/* =========================================================
+   COLOR SYSTEM
+   ========================================================= */
+
+:root {
+  --jh-primary: #2563eb;
+  --jh-primary-dark: #1d4ed8;
+  --jh-light-blue: #eff6ff;
+  --jh-indigo: #4f46e5;
+
+  --jh-dark-text: #172033;
+  --jh-text: #374151;
+  --jh-muted: #718096;
+  --jh-light-text: #94a3b8;
+
+  --jh-page-bg: #f5f8ff;
+  --jh-white: #ffffff;
+
+  --jh-border: #dfe7f2;
+  --jh-border-light: #e9eef6;
+
+  --jh-success: #16a34a;
+  --jh-success-bg: #f0fdf4;
+
+  --jh-warning: #d97706;
+  --jh-warning-bg: #fff7ed;
+
+  --jh-danger: #dc2626;
+  --jh-danger-bg: #fff1f2;
+
+  --jh-shadow:
+    0 5px 18px rgba(15, 23, 42, 0.035);
+
+  --jh-shadow-hover:
+    0 10px 28px rgba(37, 99, 235, 0.09);
+}
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MAIN PAGE
+   ========================================================= */
+
+.jha-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0 35px;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: var(--jh-dark-text);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.jha-header {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+
+.jha-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+
+.jha-heading-icon {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 11px;
+
+  background: var(--jh-light-blue);
+  color: var(--jh-primary);
+
+  font-size: 18px;
+
+  border: 1px solid #dbeafe;
+}
+
+
+.jha-heading h1 {
+  margin: 0;
+
+  color: var(--jh-dark-text);
+
+  font-size: 27px;
+  font-weight: 750;
+
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+
+.jha-heading p {
+  margin: 5px 0 0;
+
+  color: var(--jh-muted);
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.jha-error {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 18px;
+  padding: 12px 15px;
+
+  border: 1px solid #fecaca;
+  border-radius: 9px;
+
+  background: #fff7f7;
+  color: #b42318;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   STATISTICS
+   ========================================================= */
+
+.jha-stats {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+
+.jha-stat-card {
+  min-height: 84px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+  padding: 15px;
+
+  background: var(--jh-white);
+
+  border: 1px solid var(--jh-border);
+
+  border-radius: 11px;
+
+  box-shadow: var(--jh-shadow);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.jha-stat-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #cbdcf5;
+
+  box-shadow: var(--jh-shadow-hover);
+}
+
+
+/* =========================================================
+   STAT ICON
+   ========================================================= */
+
+.jha-stat-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  font-size: 14px;
+}
+
+
+/* TOTAL */
+
+.jha-stat-icon.total {
+  background: var(--jh-light-blue);
+  color: var(--jh-primary);
+}
+
+
+/* PENDING */
+
+.jha-stat-icon.pending {
+  background: var(--jh-warning-bg);
+  color: var(--jh-warning);
+}
+
+
+/* SHORTLISTED */
+
+.jha-stat-icon.shortlisted {
+  background: var(--jh-success-bg);
+  color: var(--jh-success);
+}
+
+
+/* REJECTED */
+
+.jha-stat-icon.rejected {
+  background: var(--jh-danger-bg);
+  color: var(--jh-danger);
+}
+
+
+/* =========================================================
+   STAT TEXT
+   ========================================================= */
+
+.jha-stat-card span {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #8793a5;
+
+  font-size: 10.5px;
+  font-weight: 500;
+}
+
+
+.jha-stat-card strong {
+  display: block;
+
+  color: var(--jh-dark-text);
+
+  font-size: 21px;
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   FILTER BAR
+   ========================================================= */
+
+.jha-filter-bar {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 12px;
+  padding: 13px;
+
+  background: var(--jh-white);
+
+  border: 1px solid var(--jh-border);
+
+  border-radius: 11px;
+
+  box-shadow:
+    0 3px 12px rgba(15, 23, 42, 0.025);
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.jha-search {
+  height: 42px;
+
+  flex: 1;
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #d7e1ef;
+  border-radius: 8px;
+
+  background: var(--jh-white);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.jha-search:hover {
+  border-color: #b9c9df;
+}
+
+
+.jha-search:focus-within {
+  border-color: var(--jh-primary);
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.09);
+}
+
+
+.jha-search > svg {
+  margin: 0 11px;
+
+  flex-shrink: 0;
+
+  color: #7b8798;
+
+  font-size: 13px;
+}
+
+
+.jha-search input {
+  width: 100%;
+  height: 100%;
+
+  padding: 0 12px 0 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: var(--jh-dark-text);
+
+  font-family: inherit;
+  font-size: 12px;
+}
+
+
+.jha-search input::placeholder {
+  color: #a0aabd;
+}
+
+
+/* =========================================================
+   STATUS FILTER
+   ========================================================= */
+
+.jha-status-filter {
+  width: 175px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #d7e1ef;
+  border-radius: 8px;
+
+  background: var(--jh-white);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.jha-status-filter:hover {
+  border-color: #b9c9df;
+}
+
+
+.jha-status-filter:focus-within {
+  border-color: var(--jh-primary);
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.09);
+}
+
+
+.jha-status-filter > svg {
+  margin: 0 9px 0 11px;
+
+  color: var(--jh-primary);
+
+  font-size: 12px;
+}
+
+
+.jha-status-filter select {
+  width: 100%;
+  height: 100%;
+
+  padding-right: 8px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: var(--jh-text);
+
+  font-family: inherit;
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   RESULTS
+   ========================================================= */
+
+.jha-results {
+  margin-bottom: 11px;
+
+  color: #8793a5;
+
+  font-size: 11.5px;
+}
+
+
+.jha-results strong {
+  color: var(--jh-text);
+}
+
+
+/* =========================================================
+   TABLE CONTAINER
+   ========================================================= */
+
+.jha-table-container {
+  width: 100%;
+
+  overflow-x: auto;
+
+  background: var(--jh-white);
+
+  border: 1px solid var(--jh-border);
+
+  border-radius: 12px;
+
+  box-shadow: var(--jh-shadow);
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.jha-table {
+  width: 100%;
+
+  min-width: 1000px;
+
+  border-collapse: collapse;
+
+  table-layout: auto;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+   ========================================================= */
+
+.jha-table thead {
+  background: var(--jh-page-bg);
+}
+
+
+.jha-table th {
+  padding: 13px 14px;
+
+  border-bottom: 1px solid #dfe7f2;
+
+  color: #52627a;
+
+  font-size: 10.5px;
+  font-weight: 700;
+
+  text-align: left;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   TABLE BODY
+   ========================================================= */
+
+.jha-table tbody tr {
+  background: var(--jh-white);
+
+  transition:
+    background 0.15s ease;
+}
+
+
+.jha-table tbody tr:hover {
+  background: #f8fbff;
+}
+
+
+.jha-table td {
+  padding: 14px;
+
+  border-bottom: 1px solid #edf1f6;
+
+  color: #4d5b70;
+
+  font-size: 11px;
+
+  vertical-align: middle;
+}
+
+
+.jha-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* =========================================================
+   APPLICANT
+   ========================================================= */
+
+.jha-applicant {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  min-width: 160px;
+}
+
+
+.jha-avatar {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  background: var(--jh-light-blue);
+  color: var(--jh-primary);
+
+  border: 1px solid #dbeafe;
+
+  font-size: 13px;
+  font-weight: 750;
+}
+
+
+.jha-applicant strong {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color: #27344a;
+
+  font-size: 11.5px;
+  font-weight: 650;
+}
+
+
+.jha-applicant span {
+  display: block;
+
+  color: #9aa6b7;
+
+  font-size: 9.5px;
+}
+
+
+/* =========================================================
+   JOB
+   ========================================================= */
+
+.jha-job {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  max-width: 170px;
+
+  color: #4b5c72;
+}
+
+
+.jha-job svg {
+  flex-shrink: 0;
+
+  color: var(--jh-primary);
+
+  font-size: 11px;
+}
+
+
+.jha-job span {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+
+.jha-contact {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  min-width: 165px;
+}
+
+
+.jha-contact span {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  color: #69778a;
+
+  font-size: 10px;
+}
+
+
+.jha-contact svg {
+  width: 10px;
+
+  color: var(--jh-primary);
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   EXPERIENCE
+   ========================================================= */
+
+.jha-experience {
+  color: #56657a;
+
+  font-size: 10.5px;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   DATE
+   ========================================================= */
+
+.jha-date {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  white-space: nowrap;
+
+  color: #68768a;
+
+  font-size: 10px;
+}
+
+
+.jha-date svg {
+  color: var(--jh-primary);
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   STATUS BADGES
+   ========================================================= */
+
+.jha-status {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 9px;
+
+  border-radius: 20px;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  text-transform: capitalize;
+
+  white-space: nowrap;
+}
+
+
+/* SUCCESS */
+
+.jha-status-success {
+  background: var(--jh-success-bg);
+  color: #15803d;
+
+  border: 1px solid #dcfce7;
+}
+
+
+/* DANGER */
+
+.jha-status-danger {
+  background: var(--jh-danger-bg);
+  color: var(--jh-danger);
+
+  border: 1px solid #ffe4e6;
+}
+
+
+/* INFO */
+
+.jha-status-info {
+  background: var(--jh-light-blue);
+  color: var(--jh-primary);
+
+  border: 1px solid #dbeafe;
+}
+
+
+/* PENDING */
+
+.jha-status-pending {
+  background: var(--jh-warning-bg);
+  color: #b45309;
+
+  border: 1px solid #fed7aa;
+}
+
+
+/* =========================================================
+   VIEW RESUME BUTTON
+   ========================================================= */
+
+.jha-view-btn {
+  height: 32px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  padding: 0 10px;
+
+  border: 1px solid #bfdbfe;
+
+  border-radius: 7px;
+
+  background: var(--jh-light-blue);
+
+  color: var(--jh-primary-dark);
+
+  font-family: inherit;
+
+  font-size: 9.5px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.jha-view-btn:hover {
+  background: #dbeafe;
+
+  border-color: #93c5fd;
+
+  color: var(--jh-primary-dark);
+
+  transform: translateY(-1px);
+}
+
+
+.jha-view-btn:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.jha-empty {
+  min-height: 320px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 35px;
+
+  background: var(--jh-white);
+
+  border: 1px solid var(--jh-border);
+
+  border-radius: 12px;
+
+  text-align: center;
+
+  box-shadow: var(--jh-shadow);
+}
+
+
+.jha-empty-icon {
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 14px;
+
+  border-radius: 15px;
+
+  background: var(--jh-light-blue);
+
+  color: var(--jh-primary);
+
+  border: 1px solid #dbeafe;
+
+  font-size: 23px;
+}
+
+
+.jha-empty h2 {
+  margin: 0 0 7px;
+
+  color: var(--jh-dark-text);
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+.jha-empty p {
+  margin: 0;
+
+  color: #8793a5;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.jha-loading {
+  min-height: 350px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  background: var(--jh-white);
+}
+
+
+.jha-loading p {
+  margin: 0;
+
+  color: #7b8798;
+
+  font-size: 12px;
+}
+
+
+.jha-spinner {
+  width: 31px;
+  height: 31px;
+
+  border: 3px solid #dbeafe;
+
+  border-top-color: var(--jh-primary);
+
+  border-radius: 50%;
+
+  animation:
+    jhaSpin 0.7s linear infinite;
+}
+
+
+@keyframes jhaSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+  .jha-page {
+    max-width: 100%;
+  }
+
+  .jha-stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .jha-table-container {
+    overflow-x: auto;
+  }
+}
+
+
+/* =========================================================
+   MOBILE FILTER
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .jha-header {
+    align-items: flex-start;
+
+    margin-bottom: 20px;
+  }
+
+  .jha-filter-bar {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 10px;
+  }
+
+  .jha-status-filter {
+    width: 100%;
+  }
+
+  .jha-heading h1 {
+    font-size: 23px;
+  }
+
+  .jha-heading p {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .jha-page {
+    padding-bottom: 25px;
+  }
+
+  .jha-heading {
+    gap: 9px;
+  }
+
+  .jha-heading-icon {
+    width: 40px;
+    height: 40px;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+  }
+
+  .jha-heading h1 {
+    font-size: 21px;
+  }
+
+  .jha-heading p {
+    font-size: 10.5px;
+  }
+
+  .jha-stats {
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 9px;
+
+    margin-bottom: 15px;
+  }
+
+  .jha-stat-card {
+    min-height: 72px;
+
+    padding: 11px;
+
+    gap: 8px;
+
+    border-radius: 10px;
+  }
+
+  .jha-stat-icon {
+    width: 32px;
+    height: 32px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+  }
+
+  .jha-stat-card span {
+    font-size: 9px;
+  }
+
+  .jha-stat-card strong {
+    font-size: 17px;
+  }
+
+  .jha-filter-bar {
+    padding: 10px;
+
+    border-radius: 10px;
+  }
+
+  .jha-search,
+  .jha-status-filter {
+    height: 40px;
+  }
+
+  .jha-table-container {
+    border-radius: 10px;
+  }
+
+  .jha-empty {
+    min-height: 280px;
+
+    padding: 25px 18px;
+  }
+
+  .jha-empty-icon {
+    width: 54px;
+    height: 54px;
+
+    border-radius: 13px;
+
+    font-size: 20px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 350px) {
+  .jha-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .jha-heading h1 {
+    font-size: 19px;
+  }
+
+  .jha-heading-icon {
+    width: 37px;
+    height: 37px;
+
+    font-size: 14px;
+  }
+
+  .jha-stat-card {
+    min-height: 68px;
+
+    padding: 10px;
+  }
+
+  .jha-stat-icon {
+    width: 31px;
+    height: 31px;
+  }
+
+  .jha-filter-bar {
+    padding: 9px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY / FOCUS
+   ========================================================= */
+
+.jha-view-btn:focus-visible,
+.jha-search input:focus-visible,
+.jha-status-filter select:focus-visible {
+  outline: 2px solid var(--jh-primary);
+
+  outline-offset: 2px;
+}

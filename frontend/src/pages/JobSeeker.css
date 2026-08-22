@@ -1,0 +1,984 @@
+/* =========================================================
+   JOB SEEKER DASHBOARD
+   PROFESSIONAL BLUE / INDIGO JOB PORTAL UI
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.jobseeker-dashboard {
+  min-height: 100vh;
+  padding: 32px;
+  background: #f5f8ff;
+  color: #172033;
+  font-family:
+    Inter,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+}
+
+/* =========================================================
+   DASHBOARD HEADER
+========================================================= */
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 25px;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  color: #172033;
+  font-size: 30px;
+  font-weight: 750;
+  letter-spacing: -0.6px;
+}
+
+.dashboard-header p {
+  margin: 8px 0 0;
+  color: #718096;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   FIND JOB BUTTON
+========================================================= */
+
+.find-job-btn {
+  min-width: 130px;
+  height: 44px;
+  padding: 0 22px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.find-job-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(37, 99, 235, 0.22);
+}
+
+.find-job-btn:active {
+  transform: translateY(0);
+}
+
+/* =========================================================
+   INLINE MESSAGE / ALERT
+========================================================= */
+
+.jobseeker-dashboard > div[style] {
+  border: 1px solid #dbe5f5;
+  background: #ffffff !important;
+
+  box-shadow:
+    0 4px 18px rgba(25, 42, 70, 0.05) !important;
+
+  color: #4a5568;
+}
+
+.jobseeker-dashboard > div[style] strong {
+  color: #172033;
+}
+
+/* =========================================================
+   DASHBOARD STATS
+========================================================= */
+
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  gap: 20px;
+
+  width: 100%;
+  margin-bottom: 28px;
+}
+
+/* =========================================================
+   STAT CARD
+========================================================= */
+
+.stat-card {
+  position: relative;
+
+  min-height: 125px;
+
+  padding: 23px 24px 23px 28px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f2;
+  border-radius: 15px;
+
+  box-shadow:
+    0 5px 20px rgba(25, 42, 70, 0.055);
+
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* Left Accent */
+
+.stat-card::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 5px;
+  height: 100%;
+
+  background: #2563eb;
+}
+
+.stat-card:nth-child(1)::before {
+  background: #2563eb;
+}
+
+.stat-card:nth-child(2)::before {
+  background: #4f46e5;
+}
+
+.stat-card:nth-child(3)::before {
+  background: #60a5fa;
+}
+
+.stat-card:nth-child(4)::before {
+  background: #818cf8;
+}
+
+/* Hover */
+
+.stat-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #c9d8f4;
+
+  box-shadow:
+    0 12px 28px rgba(37, 99, 235, 0.10);
+}
+
+/* Stat Label */
+
+.stat-card span {
+  margin-bottom: 8px;
+
+  color: #718096;
+
+  font-size: 13px;
+  font-weight: 550;
+}
+
+/* Stat Number */
+
+.stat-card h2 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 29px;
+  font-weight: 750;
+}
+
+/* =========================================================
+   MAIN DASHBOARD GRID
+========================================================= */
+
+.dashboard-grid {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.65fr)
+    minmax(300px, 1fr);
+
+  gap: 24px;
+
+  width: 100%;
+
+  align-items: start;
+}
+
+/* =========================================================
+   DASHBOARD BOX
+========================================================= */
+
+.dashboard-box {
+  min-width: 0;
+
+  padding: 24px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f2;
+  border-radius: 16px;
+
+  box-shadow:
+    0 5px 20px rgba(25, 42, 70, 0.05);
+}
+
+/* =========================================================
+   BOX HEADER
+========================================================= */
+
+.box-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding-bottom: 17px;
+  margin-bottom: 2px;
+
+  border-bottom: 1px solid #edf1f7;
+}
+
+.box-header h2 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.box-header p {
+  margin: 5px 0 0;
+
+  color: #8a96a8;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   VIEW ALL BUTTON
+========================================================= */
+
+.view-all-btn {
+  border: none;
+
+  background: transparent;
+
+  color: #2563eb;
+
+  font-size: 13px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.view-all-btn:hover {
+  color: #1d4ed8;
+
+  transform: translateX(2px);
+}
+
+/* =========================================================
+   JOBS GRID
+========================================================= */
+
+.jobs-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-top: 18px;
+}
+
+/* =========================================================
+   JOB CARD
+========================================================= */
+
+.job-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-width: 0;
+  min-height: 205px;
+
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f2;
+  border-radius: 14px;
+
+  box-shadow:
+    0 4px 15px rgba(25, 42, 70, 0.055);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+
+  overflow: hidden;
+}
+
+/* Top Accent */
+
+.job-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #4f46e5
+  );
+}
+
+/* Job Card Hover */
+
+.job-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #bfd0f0;
+
+  box-shadow:
+    0 10px 25px rgba(37, 99, 235, 0.11);
+}
+
+/* =========================================================
+   JOB CARD CONTENT
+========================================================= */
+
+.job-card-content {
+  min-width: 0;
+}
+
+.job-card-content h3 {
+  margin: 0 0 9px;
+
+  color: #172033;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* =========================================================
+   COMPANY
+========================================================= */
+
+.job-company {
+  margin: 0 0 9px;
+
+  color: #2563eb;
+
+  font-size: 14px;
+  font-weight: 650;
+}
+
+/* =========================================================
+   LOCATION
+========================================================= */
+
+.job-location {
+  margin: 0 0 7px;
+
+  color: #718096;
+
+  font-size: 13px;
+}
+
+/* =========================================================
+   SALARY
+========================================================= */
+
+.job-salary {
+  margin: 0;
+
+  color: #374151;
+
+  font-size: 13px;
+  font-weight: 650;
+}
+
+/* =========================================================
+   APPLY BUTTON
+========================================================= */
+
+.job-card .apply-btn {
+  width: 100%;
+  height: 40px;
+
+  margin-top: 18px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.job-card .apply-btn:hover {
+  background: #1d4ed8;
+
+  box-shadow:
+    0 5px 14px rgba(37, 99, 235, 0.22);
+}
+
+.job-card .apply-btn:active {
+  transform: scale(0.98);
+}
+
+.job-card .apply-btn:disabled {
+  background: #b8c5cf;
+
+  color: #ffffff;
+
+  cursor: not-allowed;
+
+  box-shadow: none;
+}
+
+/* =========================================================
+   NO JOBS
+========================================================= */
+
+.no-jobs {
+  grid-column: 1 / -1;
+
+  padding: 40px 20px;
+
+  text-align: center;
+
+  background: #f8faff;
+
+  border: 1px dashed #cdd9eb;
+
+  border-radius: 12px;
+
+  color: #8793a5;
+}
+
+.no-jobs p {
+  margin: 0;
+
+  font-size: 14px;
+}
+
+/* =========================================================
+   STATUS LIST
+========================================================= */
+
+.status-list {
+  margin-top: 5px;
+}
+
+.status-row {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 5px;
+
+  border-bottom: 1px solid #edf1f5;
+}
+
+.status-row:last-child {
+  border-bottom: none;
+}
+
+.status-row span {
+  color: #4a5568;
+
+  font-size: 14px;
+  font-weight: 550;
+}
+
+.status-row strong {
+  min-width: 32px;
+
+  text-align: right;
+
+  font-size: 17px;
+  font-weight: 750;
+}
+
+/* =========================================================
+   STATUS COLORS
+========================================================= */
+
+.blue {
+  color: #2563eb;
+}
+
+.green {
+  color: #4f46e5;
+}
+
+.orange {
+  color: #f59e0b;
+}
+
+.red {
+  color: #ef4444;
+}
+
+/* =========================================================
+   QUICK ACTIONS
+========================================================= */
+
+.quick-actions {
+  margin-top: 28px;
+}
+
+.quick-actions > h2 {
+  margin: 0 0 18px;
+
+  color: #172033;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* =========================================================
+   QUICK ACTION GRID
+========================================================= */
+
+.quick-action-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+/* =========================================================
+   QUICK CARD
+========================================================= */
+
+.quick-card {
+  position: relative;
+
+  min-height: 115px;
+
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f2;
+  border-radius: 14px;
+
+  box-shadow:
+    0 4px 15px rgba(25, 42, 70, 0.04);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.quick-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 3px;
+
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #4f46e5
+  );
+
+  opacity: 0;
+
+  transition: opacity 0.25s ease;
+}
+
+.quick-card:hover::before {
+  opacity: 1;
+}
+
+.quick-card:hover {
+  transform: translateY(-4px);
+
+  border-color: #bfd0f0;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 9px 22px rgba(37, 99, 235, 0.10);
+}
+
+.quick-card h3 {
+  margin: 0 0 7px;
+
+  color: #172033;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.quick-card p {
+  margin: 0;
+
+  color: #8793a5;
+
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   LOADING SCREEN
+========================================================= */
+
+.loading-screen {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 70vh;
+}
+
+.loading-screen h2 {
+  color: #2563eb;
+
+  font-size: 20px;
+  font-weight: 650;
+}
+
+/* Optional loading spinner */
+
+.loading-screen::before {
+  content: "";
+
+  width: 32px;
+  height: 32px;
+
+  margin-right: 14px;
+
+  border: 3px solid #dbe7ff;
+  border-top-color: #2563eb;
+
+  border-radius: 50%;
+
+  animation: dashboardSpin 0.8s linear infinite;
+}
+
+@keyframes dashboardSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   ERROR SCREEN
+========================================================= */
+
+.error-screen {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  min-height: 70vh;
+
+  text-align: center;
+}
+
+.error-screen h2 {
+  margin-bottom: 20px;
+
+  color: #ef4444;
+
+  font-size: 20px;
+}
+
+.error-screen button {
+  padding: 10px 18px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.error-screen button:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 5px 14px rgba(37, 99, 235, 0.2);
+}
+
+/* =========================================================
+   TABLET / LAPTOP
+========================================================= */
+
+@media (max-width: 1100px) {
+  .jobseeker-dashboard {
+    padding: 25px;
+  }
+
+  .dashboard-stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .quick-action-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   SMALL LAPTOP / TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+  .jobs-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+  }
+
+  .job-card {
+    padding: 17px;
+  }
+
+  .job-card-content h3 {
+    font-size: 16px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+  .jobseeker-dashboard {
+    padding: 18px;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .dashboard-header h1 {
+    font-size: 24px;
+  }
+
+  .dashboard-header > div:last-child {
+    display: flex;
+
+    width: 100%;
+  }
+
+  .find-job-btn {
+    flex: 1;
+  }
+
+  .dashboard-stats {
+    grid-template-columns: 1fr;
+
+    gap: 14px;
+  }
+
+  .stat-card {
+    min-height: 105px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-box {
+    padding: 18px;
+  }
+
+  .jobs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .job-card {
+    min-height: auto;
+  }
+
+  .quick-action-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-card {
+    min-height: 100px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 450px) {
+  .jobseeker-dashboard {
+    padding: 14px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 21px;
+  }
+
+  .dashboard-header p {
+    font-size: 13px;
+  }
+
+  .dashboard-box {
+    padding: 16px;
+  }
+
+  .box-header h2 {
+    font-size: 17px;
+  }
+
+  .stat-card h2 {
+    font-size: 25px;
+  }
+
+  .job-card {
+    padding: 17px;
+  }
+
+  .job-card-content h3 {
+    font-size: 15px;
+  }
+
+  .status-row {
+    padding: 16px 4px;
+  }
+
+  .quick-card {
+    padding: 18px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 360px) {
+  .jobseeker-dashboard {
+    padding: 11px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 20px;
+  }
+
+  .find-job-btn {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .dashboard-box {
+    padding: 14px;
+  }
+
+  .stat-card {
+    padding: 20px 20px 20px 24px;
+  }
+
+  .stat-card h2 {
+    font-size: 23px;
+  }
+
+  .job-card {
+    padding: 15px;
+  }
+}

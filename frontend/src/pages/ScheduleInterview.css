@@ -1,0 +1,805 @@
+/* =========================================================
+   SCHEDULE INTERVIEW
+   JOB PORTAL - MODERN PROFESSIONAL BLUE UI
+   ========================================================= */
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.schedule-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 30px 36px 50px;
+
+  background: #f5f8ff;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+  color: #172033;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.schedule-header {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto 24px;
+}
+
+.schedule-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.schedule-title h1 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 28px;
+  font-weight: 750;
+  line-height: 1.2;
+
+  letter-spacing: -0.5px;
+}
+
+.schedule-title p {
+  margin: 6px 0 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.back-btn {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #dbe4f0;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #475569;
+
+  cursor: pointer;
+
+  font-size: 17px;
+
+  box-shadow:
+    0 3px 10px rgba(37, 99, 235, 0.06);
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.back-btn:hover {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+
+  transform: translateX(-2px);
+
+  box-shadow:
+    0 5px 14px rgba(37, 99, 235, 0.18);
+}
+
+/* =========================================================
+   ERROR MESSAGE
+   ========================================================= */
+
+.schedule-error {
+  width: 100%;
+  max-width: 1180px;
+
+  margin: 0 auto 18px;
+  padding: 13px 16px;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #fecaca;
+  border-left: 4px solid #ef4444;
+  border-radius: 8px;
+
+  background: #fff7f7;
+  color: #b91c1c;
+
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* =========================================================
+   MAIN CARD
+   ========================================================= */
+
+.schedule-card {
+  width: 100%;
+  max-width: 1180px;
+
+  margin: 0 auto;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe7f2;
+  border-radius: 15px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 8px 30px rgba(30, 64, 175, 0.07);
+}
+
+/* =========================================================
+   FORM SECTION
+   ========================================================= */
+
+.form-section {
+  padding: 28px 32px;
+
+  border-bottom: 1px solid #e8edf5;
+
+  background: #ffffff;
+}
+
+.form-section:last-of-type {
+  border-bottom: none;
+}
+
+/* =========================================================
+   SECTION HEADING
+   ========================================================= */
+
+.section-heading {
+  margin-bottom: 21px;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 17px;
+  font-weight: 750;
+
+  letter-spacing: -0.15px;
+}
+
+.section-heading p {
+  margin: 5px 0 0;
+
+  color: #718096;
+
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+/* Hide section icons */
+
+.section-heading > svg {
+  display: none !important;
+}
+
+/* =========================================================
+   FORM GRID
+   ========================================================= */
+
+.form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  column-gap: 24px;
+  row-gap: 19px;
+}
+
+/* =========================================================
+   FORM GROUP
+   ========================================================= */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  min-width: 0;
+}
+
+.form-group label {
+  color: #334155;
+
+  font-size: 12.5px;
+  font-weight: 650;
+}
+
+.form-group label span {
+  margin-left: 3px;
+
+  color: #ef4444;
+}
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+
+  border: 1px solid #d8e1ed;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #172033;
+
+  font-family: inherit;
+  font-size: 13.5px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.form-group input,
+.form-group select {
+  height: 44px;
+
+  padding: 0 13px;
+}
+
+.form-group textarea {
+  min-height: 105px;
+
+  padding: 11px 13px;
+
+  resize: vertical;
+
+  line-height: 1.55;
+}
+
+/* =========================================================
+   PLACEHOLDER
+   ========================================================= */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #9aa7b8;
+}
+
+/* =========================================================
+   INPUT HOVER
+   ========================================================= */
+
+.form-group input:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+  border-color: #b9c8dc;
+}
+
+/* =========================================================
+   INPUT FOCUS
+   ========================================================= */
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.10);
+
+  background: #ffffff;
+}
+
+/* =========================================================
+   SELECT
+   ========================================================= */
+
+.form-group select {
+  cursor: pointer;
+}
+
+.form-group select:focus {
+  cursor: pointer;
+}
+
+/* =========================================================
+   REMOVE INPUT ICONS
+   ========================================================= */
+
+.input-icon {
+  width: 100%;
+}
+
+.input-icon svg {
+  display: none !important;
+}
+
+.input-icon input,
+.input-icon select {
+  padding-left: 13px !important;
+}
+
+/* =========================================================
+   APPLICATION LOADING
+   ========================================================= */
+
+.loading-applications,
+.no-applications {
+  width: 100%;
+  min-height: 44px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 13px;
+
+  border: 1px solid #d8e1ed;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+.loading-applications {
+  background: #f8faff;
+
+  border-color: #dce6f5;
+
+  color: #64748b;
+}
+
+/* =========================================================
+   NO APPLICATIONS
+   ========================================================= */
+
+.no-applications {
+  background: #fffaf3;
+
+  border-color: #fed7aa;
+
+  color: #c2410c;
+}
+
+/* =========================================================
+   FULL WIDTH FORM GROUP
+   ========================================================= */
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+/* =========================================================
+   FORM ACTION AREA
+   ========================================================= */
+
+.form-actions {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  padding: 18px 30px;
+
+  background: #f8faff;
+
+  border-top: 1px solid #e7edf6;
+}
+
+/* =========================================================
+   CANCEL BUTTON
+   ========================================================= */
+
+.cancel-form-btn {
+  width: fit-content;
+
+  height: 41px;
+
+  padding: 0 20px;
+
+  border: 1px solid #d6dfeb;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #475569;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.cancel-form-btn:hover {
+  background: #f8faff;
+
+  border-color: #bfcde0;
+
+  color: #1f2937;
+
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   SAVE BUTTON
+   ========================================================= */
+
+.save-interview-btn {
+  width: fit-content;
+
+  min-width: 145px;
+
+  height: 41px;
+
+  padding: 0 21px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 13px rgba(37, 99, 235, 0.18);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.save-interview-btn:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 7px 17px rgba(37, 99, 235, 0.24);
+}
+
+.save-interview-btn:active {
+  transform: translateY(0);
+
+  box-shadow:
+    0 3px 8px rgba(37, 99, 235, 0.15);
+}
+
+.save-interview-btn:disabled {
+  background: #aab7c9;
+
+  box-shadow: none;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+/* =========================================================
+   BUTTON ICONS
+   ========================================================= */
+
+.save-interview-btn svg,
+.cancel-form-btn svg {
+  display: none !important;
+}
+
+/* =========================================================
+   DATE / TIME INPUT
+   ========================================================= */
+
+.form-group input[type="date"],
+.form-group input[type="time"] {
+  cursor: pointer;
+}
+
+/* =========================================================
+   DATE / TIME COLOR
+   ========================================================= */
+
+.form-group input[type="date"]::-webkit-calendar-picker-indicator,
+.form-group input[type="time"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+
+  opacity: 0.65;
+}
+
+.form-group input[type="date"]::-webkit-calendar-picker-indicator:hover,
+.form-group input[type="time"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* =========================================================
+   INDIGO ACCENT ELEMENTS
+   ========================================================= */
+
+.schedule-card .indigo-accent {
+  color: #4f46e5;
+}
+
+.schedule-card .indigo-background {
+  background: #eef2ff;
+  border-color: #c7d2fe;
+}
+
+/* =========================================================
+   FOCUS ACCESSIBILITY
+   ========================================================= */
+
+.back-btn:focus-visible,
+.cancel-form-btn:focus-visible,
+.save-interview-btn:focus-visible {
+  outline: 3px solid rgba(79, 70, 229, 0.18);
+
+  outline-offset: 2px;
+}
+
+.form-group input:focus-visible,
+.form-group select:focus-visible,
+.form-group textarea:focus-visible {
+  outline: none;
+}
+
+/* =========================================================
+   DISABLED FORM CONTROLS
+   ========================================================= */
+
+.form-group input:disabled,
+.form-group select:disabled,
+.form-group textarea:disabled {
+  background: #f8fafc;
+
+  color: #64748b;
+
+  border-color: #e2e8f0;
+
+  cursor: not-allowed;
+
+  opacity: 1;
+}
+
+/* =========================================================
+   RESPONSIVE - 1050px
+   ========================================================= */
+
+@media (max-width: 1050px) {
+  .schedule-page {
+    padding: 25px 25px 40px;
+  }
+
+  .schedule-header,
+  .schedule-card,
+  .schedule-error {
+    max-width: 100%;
+  }
+
+  .form-section {
+    padding: 24px;
+  }
+
+  .form-actions {
+    padding: 17px 24px;
+  }
+}
+
+/* =========================================================
+   RESPONSIVE - 800px
+   ========================================================= */
+
+@media (max-width: 800px) {
+  .schedule-page {
+    padding: 22px 18px 35px;
+  }
+
+  .schedule-title h1 {
+    font-size: 25px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+
+    row-gap: 17px;
+  }
+
+  .form-group.full-width {
+    grid-column: auto;
+  }
+
+  .form-section {
+    padding: 22px 20px;
+  }
+
+  .form-actions {
+    padding: 17px 20px;
+  }
+}
+
+/* =========================================================
+   MOBILE - 600px
+   ========================================================= */
+
+@media (max-width: 600px) {
+  .schedule-page {
+    padding: 18px 13px 30px;
+  }
+
+  .schedule-title {
+    gap: 11px;
+  }
+
+  .back-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .schedule-title h1 {
+    font-size: 22px;
+  }
+
+  .schedule-title p {
+    font-size: 12px;
+  }
+
+  .schedule-card {
+    border-radius: 11px;
+  }
+
+  .form-section {
+    padding: 20px 16px;
+  }
+
+  .section-heading {
+    margin-bottom: 17px;
+  }
+
+  .section-heading h2 {
+    font-size: 16px;
+  }
+
+  .form-actions {
+    padding: 16px;
+
+    flex-direction: column-reverse;
+
+    align-items: stretch;
+  }
+
+  .cancel-form-btn,
+  .save-interview-btn {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE - 400px
+   ========================================================= */
+
+@media (max-width: 400px) {
+  .schedule-page {
+    padding: 15px 10px 25px;
+  }
+
+  .schedule-title h1 {
+    font-size: 20px;
+  }
+
+  .schedule-title p {
+    font-size: 11px;
+  }
+
+  .form-section {
+    padding: 18px 14px;
+  }
+
+  .form-group input,
+  .form-group select {
+    height: 42px;
+  }
+
+  .form-group textarea {
+    min-height: 95px;
+  }
+
+  .save-interview-btn,
+  .cancel-form-btn {
+    font-size: 12.5px;
+  }
+}
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1400px) {
+  .schedule-page {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .schedule-card {
+    max-width: 1240px;
+  }
+
+  .schedule-header,
+  .schedule-error {
+    max-width: 1240px;
+  }
+}
+
+/* =========================================================
+   PRINT
+   ========================================================= */
+
+@media print {
+  .schedule-page {
+    padding: 0;
+
+    background: #ffffff;
+  }
+
+  .back-btn,
+  .form-actions {
+    display: none !important;
+  }
+
+  .schedule-card {
+    max-width: none;
+
+    border: 1px solid #d1d5db;
+
+    box-shadow: none;
+  }
+}

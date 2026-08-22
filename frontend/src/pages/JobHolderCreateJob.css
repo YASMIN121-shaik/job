@@ -1,0 +1,915 @@
+/* =========================================================
+   JOB HOLDER - CREATE JOB
+   JOB PORTAL - PROFESSIONAL BLUE UI
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MAIN PAGE
+   ========================================================= */
+
+.jobholder-create-page {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 0 35px;
+
+  color: #172033;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.jh-create-header {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 22px;
+}
+
+.jh-create-title {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.jh-create-title h1 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 27px;
+  font-weight: 750;
+  line-height: 1.2;
+
+  letter-spacing: -0.5px;
+}
+
+.jh-create-title p {
+  margin: 5px 0 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+   ========================================================= */
+
+.jh-back-btn {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #dbe4f0;
+  border-radius: 9px;
+
+  background: #ffffff;
+  color: #475569;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.jh-back-btn:hover {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #2563eb;
+
+  transform: translateX(-2px);
+}
+
+
+/* =========================================================
+   ALERTS
+   ========================================================= */
+
+.jh-alert {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 18px;
+  padding: 12px 15px;
+
+  border-radius: 9px;
+
+  font-size: 12.5px;
+  font-weight: 550;
+  line-height: 1.4;
+}
+
+.jh-alert > span {
+  width: 22px;
+  height: 22px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  font-size: 11px;
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   SUCCESS ALERT
+   ========================================================= */
+
+.jh-success-alert {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1d4ed8;
+}
+
+.jh-success-alert > span {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   ERROR ALERT
+   ========================================================= */
+
+.jh-error-alert {
+  background: #fff7f7;
+  border: 1px solid #fecaca;
+  color: #b42318;
+}
+
+.jh-error-alert > span {
+  background: #dc2626;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.jh-create-form {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+
+/* =========================================================
+   FORM CARD
+   ========================================================= */
+
+.jh-form-card {
+  width: 100%;
+
+  padding: 22px;
+
+  background: #ffffff;
+
+  border: 1px solid #e1e8f0;
+  border-radius: 13px;
+
+  box-shadow:
+    0 5px 18px rgba(15, 23, 42, 0.035);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.jh-form-card:hover {
+  border-color: #d5e2f2;
+
+  box-shadow:
+    0 8px 24px rgba(37, 99, 235, 0.045);
+}
+
+
+/* =========================================================
+   FORM CARD HEADER
+   ========================================================= */
+
+.jh-form-card-header {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 21px;
+  padding-bottom: 16px;
+
+  border-bottom: 1px solid #edf1f6;
+}
+
+.jh-section-icon {
+  width: 39px;
+  height: 39px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #eff6ff;
+  color: #2563eb;
+
+  font-size: 15px;
+}
+
+.jh-form-card-header h2 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.jh-form-card-header p {
+  margin: 3px 0 0;
+
+  color: #64748b;
+
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   FORM GRID
+   ========================================================= */
+
+.jh-form-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px 20px;
+}
+
+
+/* =========================================================
+   FORM GROUP
+   ========================================================= */
+
+.jh-form-group {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.jh-form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.jh-form-group label {
+  margin-bottom: 7px;
+
+  color: #334155;
+
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.jh-form-group label span {
+  color: #dc2626;
+  margin-left: 2px;
+}
+
+
+/* =========================================================
+   INPUT WRAPPER
+   ========================================================= */
+
+.jh-input-wrapper {
+  width: 100%;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #d7e0ec;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.jh-input-wrapper:hover {
+  border-color: #b9c9dc;
+}
+
+.jh-input-wrapper:focus-within {
+  border-color: #2563eb;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.09);
+}
+
+
+/* =========================================================
+   INPUT ICON
+   ========================================================= */
+
+.jh-input-wrapper > svg {
+  width: 43px;
+
+  flex-shrink: 0;
+
+  color: #2563eb;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.jh-input-wrapper input,
+.jh-input-wrapper select {
+  flex: 1;
+
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+
+  padding: 0 13px 0 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: #172033;
+
+  font-family: inherit;
+  font-size: 12.5px;
+}
+
+.jh-input-wrapper input::placeholder {
+  color: #94a3b8;
+}
+
+.jh-input-wrapper input:disabled {
+  background: #f8fafc;
+
+  color: #64748b;
+
+  cursor: not-allowed;
+}
+
+.jh-input-wrapper select {
+  cursor: pointer;
+
+  appearance: auto;
+}
+
+
+/* =========================================================
+   SMALL HELP TEXT
+   ========================================================= */
+
+.jh-form-group small {
+  margin-top: 6px;
+
+  color: #94a3b8;
+
+  font-size: 10.5px;
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   TEXTAREA
+   ========================================================= */
+
+.jh-textarea-wrapper {
+  width: 100%;
+
+  border: 1px solid #d7e0ec;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.jh-textarea-wrapper:hover {
+  border-color: #b9c9dc;
+}
+
+.jh-textarea-wrapper:focus-within {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.09);
+}
+
+.jh-textarea-wrapper textarea {
+  display: block;
+
+  width: 100%;
+  min-height: 155px;
+
+  padding: 13px 14px;
+
+  border: none;
+  outline: none;
+
+  resize: vertical;
+
+  background: transparent;
+
+  color: #172033;
+
+  font-family: inherit;
+  font-size: 12.5px;
+  line-height: 1.6;
+}
+
+.jh-textarea-wrapper textarea::placeholder {
+  color: #94a3b8;
+}
+
+
+/* =========================================================
+   DATE INPUT
+   ========================================================= */
+
+.jh-input-wrapper input[type="date"] {
+  padding-right: 10px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   FORM ACTIONS
+   ========================================================= */
+
+.jh-form-actions {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  padding-top: 2px;
+}
+
+
+/* =========================================================
+   CANCEL BUTTON
+   ========================================================= */
+
+.jh-cancel-btn {
+  height: 43px;
+
+  padding: 0 20px;
+
+  border: 1px solid #d7e0ec;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #475569;
+
+  font-family: inherit;
+
+  font-size: 12.5px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.jh-cancel-btn:hover {
+  background: #f8fafc;
+
+  border-color: #b9c7d8;
+
+  color: #334155;
+}
+
+.jh-cancel-btn:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+   ========================================================= */
+
+.jh-submit-btn {
+  min-width: 145px;
+  height: 43px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 0 18px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-family: inherit;
+
+  font-size: 12.5px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 7px 16px rgba(37, 99, 235, 0.16);
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.jh-submit-btn:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 10px 20px rgba(37, 99, 235, 0.22);
+}
+
+.jh-submit-btn:active {
+  transform: translateY(0);
+
+  box-shadow:
+    0 5px 12px rgba(37, 99, 235, 0.14);
+}
+
+.jh-submit-btn:disabled {
+  background: #94a3b8;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   LOADING SPINNER
+   ========================================================= */
+
+.jh-spinner {
+  width: 14px;
+  height: 14px;
+
+  border: 2px solid rgba(255, 255, 255, 0.4);
+
+  border-top-color: #ffffff;
+
+  border-radius: 50%;
+
+  animation:
+    jhSpin 0.7s linear infinite;
+}
+
+@keyframes jhSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   FILE INPUT
+   ========================================================= */
+
+.jh-input-wrapper input[type="file"] {
+  display: flex;
+  align-items: center;
+
+  padding: 0 10px 0 0;
+
+  color: #475569;
+
+  cursor: pointer;
+}
+
+.jh-input-wrapper input[type="file"]::file-selector-button {
+  margin-right: 10px;
+
+  padding: 7px 11px;
+
+  border: 1px solid #bfdbfe;
+  border-radius: 7px;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-family: inherit;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.jh-input-wrapper input[type="file"]::file-selector-button:hover {
+  background: #dbeafe;
+
+  border-color: #93c5fd;
+}
+
+
+/* =========================================================
+   SELECT DROPDOWN
+   ========================================================= */
+
+.jh-input-wrapper select:focus {
+  outline: none;
+}
+
+.jh-input-wrapper select option {
+  color: #172033;
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+  .jobholder-create-page {
+    max-width: 100%;
+  }
+
+  .jh-form-card {
+    padding: 20px;
+  }
+
+  .jh-form-grid {
+    gap: 16px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .jobholder-create-page {
+    padding-bottom: 25px;
+  }
+
+  .jh-create-title {
+    align-items: flex-start;
+  }
+
+  .jh-create-title h1 {
+    font-size: 23px;
+  }
+
+  .jh-create-title p {
+    font-size: 12px;
+  }
+
+  .jh-back-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .jh-form-card {
+    padding: 17px;
+
+    border-radius: 11px;
+  }
+
+  .jh-form-card-header {
+    margin-bottom: 18px;
+  }
+
+  .jh-form-grid {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .jh-form-group.full-width {
+    grid-column: auto;
+  }
+
+  .jh-input-wrapper {
+    height: 47px;
+  }
+
+  .jh-textarea-wrapper textarea {
+    min-height: 140px;
+  }
+
+  .jh-form-actions {
+    justify-content: stretch;
+  }
+
+  .jh-cancel-btn,
+  .jh-submit-btn {
+    flex: 1;
+
+    min-width: 0;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .jh-create-header {
+    margin-bottom: 18px;
+  }
+
+  .jh-create-title {
+    gap: 9px;
+  }
+
+  .jh-create-title h1 {
+    font-size: 21px;
+  }
+
+  .jh-create-title p {
+    font-size: 11.5px;
+  }
+
+  .jh-back-btn {
+    width: 35px;
+    height: 35px;
+
+    font-size: 12px;
+  }
+
+  .jh-alert {
+    padding: 10px 12px;
+
+    font-size: 11.5px;
+  }
+
+  .jh-form-card {
+    padding: 15px;
+  }
+
+  .jh-form-card-header {
+    gap: 9px;
+
+    padding-bottom: 13px;
+  }
+
+  .jh-section-icon {
+    width: 35px;
+    height: 35px;
+
+    font-size: 13px;
+  }
+
+  .jh-form-card-header h2 {
+    font-size: 14px;
+  }
+
+  .jh-form-card-header p {
+    font-size: 10px;
+  }
+
+  .jh-form-group label {
+    font-size: 11.5px;
+  }
+
+  .jh-input-wrapper input,
+  .jh-input-wrapper select,
+  .jh-textarea-wrapper textarea {
+    font-size: 12px;
+  }
+
+  .jh-form-actions {
+    flex-direction: column-reverse;
+
+    gap: 8px;
+  }
+
+  .jh-cancel-btn,
+  .jh-submit-btn {
+    width: 100%;
+    height: 42px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 350px) {
+
+  .jh-create-title h1 {
+    font-size: 19px;
+  }
+
+  .jh-form-card {
+    padding: 13px;
+  }
+
+  .jh-input-wrapper {
+    height: 45px;
+  }
+
+  .jh-input-wrapper > svg {
+    width: 38px;
+
+    font-size: 13px;
+  }
+}

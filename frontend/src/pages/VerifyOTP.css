@@ -1,0 +1,1248 @@
+/* =========================================================
+   VERIFY OTP PAGE
+   PROFESSIONAL BLUE JOB PORTAL THEME
+========================================================= */
+
+:root {
+  --primary-blue: #2563eb;
+  --dark-blue: #1d4ed8;
+  --light-blue: #eff6ff;
+  --indigo: #4f46e5;
+
+  --dark-text: #172033;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+
+  --white: #ffffff;
+  --border: #e2e8f0;
+  --border-blue: #dbeafe;
+
+  --success: #16a34a;
+  --success-light: #f0fdf4;
+
+  --shadow-card:
+    0 30px 80px rgba(15, 23, 42, 0.22);
+
+  --shadow-blue:
+    0 15px 35px rgba(37, 99, 235, 0.18);
+}
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  color: var(--dark-text);
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.verify-page {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 55px 25px;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   BACKGROUND OVERLAY
+========================================================= */
+
+.verify-background-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(239, 246, 255, 0.92),
+      rgba(245, 248, 255, 0.88)
+    );
+
+  backdrop-filter: blur(3px);
+}
+
+
+/* =========================================================
+   DECORATIVE SHAPES
+========================================================= */
+
+.verify-floating-shape {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  z-index: 1;
+
+  filter: blur(1px);
+}
+
+.shape-one {
+  width: 350px;
+  height: 350px;
+
+  top: -180px;
+  left: -150px;
+
+  background:
+    rgba(37, 99, 235, 0.10);
+
+  animation:
+    verifyFloatOne 8s ease-in-out infinite;
+}
+
+.shape-two {
+  width: 300px;
+  height: 300px;
+
+  right: -130px;
+  bottom: -150px;
+
+  background:
+    rgba(79, 70, 229, 0.09);
+
+  animation:
+    verifyFloatTwo 10s ease-in-out infinite;
+}
+
+.shape-three {
+  width: 130px;
+  height: 130px;
+
+  right: 13%;
+  top: 12%;
+
+  border:
+    1px solid rgba(37, 99, 235, 0.14);
+
+  background:
+    rgba(255, 255, 255, 0.25);
+
+  animation:
+    verifyFloatThree 7s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.verify-card {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+  max-width: 510px;
+
+  padding: 38px 42px 28px;
+
+  background:
+    rgba(255, 255, 255, 0.97);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.9);
+
+  border-radius: 26px;
+
+  box-shadow:
+    var(--shadow-card);
+
+  backdrop-filter: blur(15px);
+
+  animation:
+    verifyCardEnter 0.7s ease both;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+/* Professional slight floating effect */
+
+.verify-card:hover {
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    0 35px 90px rgba(15, 23, 42, 0.25);
+}
+
+
+/* =========================================================
+   TOP ACCENT
+========================================================= */
+
+.verify-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 12%;
+
+  width: 76%;
+  height: 4px;
+
+  border-radius:
+    0 0 10px 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--primary-blue),
+      var(--indigo)
+    );
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.verify-brand {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 30px;
+}
+
+.verify-brand-icon {
+  width: 43px;
+  height: 43px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary-blue),
+      var(--indigo)
+    );
+
+  color: var(--white);
+
+  font-size: 18px;
+
+  box-shadow:
+    0 8px 20px rgba(37, 99, 235, 0.23);
+}
+
+.verify-brand-text {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.verify-brand-text strong {
+  color: var(--dark-text);
+
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.verify-brand-text span {
+  color: var(--text-muted);
+
+  font-size: 10px;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   MAIN ICON
+========================================================= */
+
+.verify-icon-container {
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 22px;
+}
+
+.verify-icon-ring {
+  width: 82px;
+  height: 82px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    rgba(37, 99, 235, 0.08);
+
+  border:
+    1px solid var(--border-blue);
+
+  box-shadow:
+    inset 0 0 0 7px rgba(255, 255, 255, 0.7);
+}
+
+.verify-icon {
+  width: 56px;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary-blue),
+      var(--indigo)
+    );
+
+  color: var(--white);
+
+  font-size: 25px;
+
+  box-shadow:
+    0 10px 24px rgba(37, 99, 235, 0.24);
+
+  animation:
+    shieldPulse 3s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.verify-header {
+  text-align: center;
+
+  margin-bottom: 25px;
+}
+
+.verify-eyebrow {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  margin-bottom: 9px;
+
+  color: var(--primary-blue);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+}
+
+.verify-header h1 {
+  margin: 0;
+
+  color: var(--dark-text);
+
+  font-size: 29px;
+  line-height: 1.2;
+
+  font-weight: 800;
+
+  letter-spacing: -0.7px;
+}
+
+.verify-header p {
+  max-width: 390px;
+
+  margin: 10px auto 0;
+
+  color: var(--text-secondary);
+
+  font-size: 13px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   EMAIL INFORMATION
+========================================================= */
+
+.verify-email-info {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  margin-bottom: 23px;
+  padding: 12px 14px;
+
+  background:
+    var(--light-blue);
+
+  border:
+    1px solid var(--border-blue);
+
+  border-radius: 13px;
+}
+
+.verify-email-icon {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: var(--white);
+
+  color: var(--primary-blue);
+
+  font-size: 14px;
+
+  box-shadow:
+    0 3px 10px rgba(37, 99, 235, 0.08);
+}
+
+.verify-email-content {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.verify-email-content span {
+  color: var(--text-muted);
+
+  font-size: 9px;
+}
+
+.verify-email-content strong {
+  max-width: 300px;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+
+  color: var(--dark-text);
+
+  font-size: 12px;
+}
+
+.verify-email-check {
+  margin-left: auto;
+
+  flex-shrink: 0;
+
+  color: var(--success);
+
+  font-size: 15px;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.verify-form {
+  width: 100%;
+}
+
+
+/* =========================================================
+   FIELD
+========================================================= */
+
+.verify-field {
+  margin-bottom: 19px;
+}
+
+.verify-field label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--dark-text);
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   OTP LABEL
+========================================================= */
+
+.otp-label-row {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 7px;
+}
+
+.otp-label-row label {
+  margin: 0;
+}
+
+.otp-label-row span {
+  color: var(--primary-blue);
+
+  font-size: 10px;
+  font-weight: 700;
+
+  background:
+    var(--light-blue);
+
+  padding: 4px 8px;
+
+  border-radius: 20px;
+}
+
+
+/* =========================================================
+   INPUT WRAPPER
+========================================================= */
+
+.verify-input-wrapper {
+  position: relative;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   INPUT ICON
+========================================================= */
+
+.verify-input-icon {
+  position: absolute;
+
+  left: 14px;
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+
+  color: var(--text-muted);
+
+  font-size: 14px;
+
+  pointer-events: none;
+
+  transition:
+    color 0.2s ease;
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.verify-input-wrapper input {
+  width: 100%;
+  height: 50px;
+
+  padding:
+    0 15px
+    0 42px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius: 11px;
+
+  outline: none;
+
+  background:
+    var(--white);
+
+  color: var(--dark-text);
+
+  font-size: 13px;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.verify-input-wrapper input::placeholder {
+  color: #a0aec0;
+}
+
+
+/* =========================================================
+   INPUT FOCUS
+========================================================= */
+
+.verify-input-wrapper:focus-within
+.verify-input-icon {
+  color: var(--primary-blue);
+}
+
+.verify-input-wrapper input:focus {
+  border-color:
+    var(--primary-blue);
+
+  background:
+    var(--white);
+
+  box-shadow:
+    0 0 0 4px
+    rgba(37, 99, 235, 0.09);
+}
+
+
+/* =========================================================
+   OTP INPUT
+========================================================= */
+
+.otp-wrapper input {
+  padding-right: 55px;
+
+  font-size: 19px;
+  font-weight: 700;
+
+  letter-spacing: 7px;
+}
+
+.otp-wrapper input::placeholder {
+  letter-spacing: 7px;
+  color: #cbd5e1;
+}
+
+.otp-count {
+  position: absolute;
+
+  right: 13px;
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+
+  color: var(--text-muted);
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   OTP HELPER
+========================================================= */
+
+.otp-helper {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  margin-top: 7px;
+
+  color: var(--text-muted);
+
+  font-size: 9px;
+}
+
+.otp-helper svg {
+  color: var(--primary-blue);
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   VERIFY BUTTON
+========================================================= */
+
+.verify-button {
+  width: 100%;
+  height: 51px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 3px;
+
+  border: none;
+
+  border-radius: 11px;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary-blue),
+      var(--dark-blue)
+    );
+
+  color: var(--white);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  box-shadow:
+    var(--shadow-blue);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+.verify-button:hover:not(:disabled) {
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 17px 32px
+    rgba(37, 99, 235, 0.25);
+
+  filter:
+    brightness(1.03);
+}
+
+.verify-button:active:not(:disabled) {
+  transform:
+    translateY(0);
+}
+
+.verify-button:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   SPINNER
+========================================================= */
+
+.verify-spinner {
+  width: 16px;
+  height: 16px;
+
+  border:
+    2px solid
+    rgba(255, 255, 255, 0.35);
+
+  border-top-color:
+    var(--white);
+
+  border-radius: 50%;
+
+  animation:
+    verifySpin 0.7s linear infinite;
+}
+
+
+/* =========================================================
+   SECURITY
+========================================================= */
+
+.verify-security {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 20px;
+  padding: 12px;
+
+  border:
+    1px solid var(--border-blue);
+
+  border-radius: 11px;
+
+  background:
+    var(--light-blue);
+}
+
+.security-icon {
+  width: 32px;
+  height: 32px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: var(--white);
+
+  color: var(--primary-blue);
+
+  font-size: 14px;
+}
+
+.security-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.security-content strong {
+  color: var(--dark-text);
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.security-content span {
+  color: var(--text-secondary);
+
+  font-size: 9px;
+
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   EXTRA NOTICE
+========================================================= */
+
+.verify-notice {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 10px;
+  padding: 10px 12px;
+
+  border:
+    1px solid #e5e7eb;
+
+  border-radius: 10px;
+
+  background:
+    #fafafa;
+}
+
+.notice-icon {
+  width: 27px;
+  height: 27px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  background:
+    #f8fafc;
+
+  color: var(--text-muted);
+
+  font-size: 11px;
+}
+
+.verify-notice div:last-child {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.verify-notice strong {
+  color: var(--dark-text);
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.verify-notice span {
+  color: var(--text-muted);
+
+  font-size: 8px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.verify-back-button {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  margin-top: 19px;
+
+  border: none;
+
+  background:
+    transparent;
+
+  color: var(--text-secondary);
+
+  font-size: 11px;
+  font-weight: 600;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.verify-back-button:hover:not(:disabled) {
+  color: var(--primary-blue);
+
+  transform:
+    translateX(-2px);
+}
+
+.verify-back-button:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.5;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.verify-footer {
+  margin-top: 18px;
+
+  padding-top: 15px;
+
+  border-top:
+    1px solid var(--border);
+
+  text-align: center;
+
+  color: #a0aec0;
+
+  font-size: 8px;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes verifyCardEnter {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(25px)
+      rotateX(3deg);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      rotateX(0);
+  }
+}
+
+@keyframes shieldPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+@keyframes verifySpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes verifyFloatOne {
+  0%,
+  100% {
+    transform:
+      translate(0, 0);
+  }
+
+  50% {
+    transform:
+      translate(25px, 20px);
+  }
+}
+
+@keyframes verifyFloatTwo {
+  0%,
+  100% {
+    transform:
+      translate(0, 0);
+  }
+
+  50% {
+    transform:
+      translate(-20px, -25px);
+  }
+}
+
+@keyframes verifyFloatThree {
+  0%,
+  100% {
+    transform:
+      translateY(0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translateY(-15px)
+      rotate(8deg);
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.verify-button:focus-visible,
+.verify-back-button:focus-visible,
+.verify-input-wrapper input:focus-visible {
+  outline:
+    3px solid
+    rgba(37, 99, 235, 0.22);
+
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .verify-page {
+    padding: 35px 18px;
+  }
+
+  .verify-card {
+    max-width: 500px;
+
+    padding:
+      32px 30px 25px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+  .verify-page {
+    min-height: 100vh;
+
+    padding:
+      25px 14px;
+  }
+
+  .verify-card {
+    padding:
+      28px 20px 22px;
+
+    border-radius: 21px;
+  }
+
+  .verify-brand {
+    margin-bottom: 24px;
+  }
+
+  .verify-brand-icon {
+    width: 39px;
+    height: 39px;
+
+    font-size: 16px;
+  }
+
+  .verify-brand-text strong {
+    font-size: 14px;
+  }
+
+  .verify-brand-text span {
+    font-size: 9px;
+  }
+
+  .verify-icon-ring {
+    width: 72px;
+    height: 72px;
+  }
+
+  .verify-icon {
+    width: 50px;
+    height: 50px;
+
+    font-size: 22px;
+  }
+
+  .verify-header h1 {
+    font-size: 25px;
+  }
+
+  .verify-header p {
+    font-size: 12px;
+  }
+
+  .verify-email-info {
+    padding: 10px;
+  }
+
+  .verify-input-wrapper input {
+    height: 49px;
+  }
+
+  .otp-wrapper input {
+    font-size: 18px;
+    letter-spacing: 6px;
+  }
+
+  .otp-wrapper input::placeholder {
+    letter-spacing: 6px;
+  }
+
+  .verify-security {
+    padding: 10px;
+  }
+
+  .verify-notice {
+    padding: 9px 10px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .verify-page {
+    padding:
+      18px 10px;
+  }
+
+  .verify-card {
+    padding:
+      24px 16px 20px;
+  }
+
+  .verify-header h1 {
+    font-size: 23px;
+  }
+
+  .verify-header p {
+    font-size: 11px;
+  }
+
+  .verify-email-content strong {
+    max-width: 190px;
+  }
+
+  .otp-wrapper input {
+    letter-spacing: 4px;
+  }
+
+  .otp-wrapper input::placeholder {
+    letter-spacing: 4px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCE MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation:
+      none !important;
+
+    transition:
+      none !important;
+  }
+}

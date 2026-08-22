@@ -1,0 +1,748 @@
+/* =========================================================
+   JOB HOLDER LAYOUT
+   JOB PORTAL - PROFESSIONAL BLUE UI
+   ========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background: #f5f8ff;
+  color: #172033;
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+   ========================================================= */
+
+.jobholder-layout {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+
+  background: #f5f8ff;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.jobholder-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 235px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+
+  border-right: 1px solid #e3e9f5;
+
+  z-index: 1000;
+
+  overflow-y: auto;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.jobholder-brand {
+  min-height: 76px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+
+  padding: 0 20px;
+
+  border-bottom: 1px solid #edf1f8;
+}
+
+.jobholder-logo {
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #2563eb;
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+
+  box-shadow:
+    0 6px 15px rgba(37, 99, 235, 0.18);
+}
+
+.jobholder-brand-text {
+  min-width: 0;
+}
+
+.jobholder-brand-text h2 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 17px;
+  font-weight: 750;
+
+  line-height: 1.2;
+}
+
+.jobholder-brand-text span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #7b879c;
+
+  font-size: 10.5px;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+   ========================================================= */
+
+.jobholder-close-btn {
+  display: none;
+
+  margin-left: auto;
+
+  width: 34px;
+  height: 34px;
+
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 8px;
+
+  background: transparent;
+  color: #64748b;
+
+  font-size: 16px;
+
+  cursor: pointer;
+}
+
+.jobholder-close-btn:hover {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.jobholder-nav {
+  flex: 1;
+
+  padding: 24px 13px 15px;
+}
+
+.jobholder-nav-title {
+  padding: 0 12px 10px;
+
+  color: #94a3b8;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.8px;
+}
+
+
+/* =========================================================
+   NAV LINK
+   ========================================================= */
+
+.jobholder-nav-link {
+  width: 100%;
+  min-height: 43px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 5px;
+
+  padding: 0 12px;
+
+  border-radius: 9px;
+
+  text-decoration: none;
+
+  color: #596579;
+
+  font-size: 13px;
+  font-weight: 550;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+/* =========================================================
+   NAV ICON
+   ========================================================= */
+
+.jobholder-nav-icon {
+  width: 20px;
+  min-width: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #7b879c;
+
+  font-size: 15px;
+
+  transition: color 0.2s ease;
+}
+
+
+/* =========================================================
+   NAV LABEL
+   ========================================================= */
+
+.jobholder-nav-label {
+  flex: 1;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   NAV HOVER
+   ========================================================= */
+
+.jobholder-nav-link:hover {
+  background: #eff6ff;
+  color: #1d4ed8;
+
+  transform: translateX(2px);
+}
+
+.jobholder-nav-link:hover .jobholder-nav-icon {
+  color: #2563eb;
+}
+
+
+/* =========================================================
+   ACTIVE NAV
+   ========================================================= */
+
+.jobholder-nav-link.active {
+  background: #eff6ff;
+
+  color: #1d4ed8;
+
+  font-weight: 650;
+
+  box-shadow:
+    inset 3px 0 0 #2563eb;
+}
+
+.jobholder-nav-link.active .jobholder-nav-icon {
+  color: #2563eb;
+}
+
+
+/* =========================================================
+   SIDEBAR BOTTOM
+   ========================================================= */
+
+.jobholder-sidebar-bottom {
+  padding: 14px 13px 20px;
+
+  border-top: 1px solid #edf1f8;
+}
+
+
+/* =========================================================
+   LOGOUT
+   ========================================================= */
+
+.jobholder-logout {
+  width: 100%;
+  min-height: 43px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 0 12px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: #68758a;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 550;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.jobholder-logout:hover {
+  background: #fff1f2;
+  color: #dc2626;
+}
+
+.jobholder-logout:hover .jobholder-nav-icon {
+  color: #dc2626;
+}
+
+
+/* =========================================================
+   MAIN CONTENT AREA
+   ========================================================= */
+
+.jobholder-main {
+  width: calc(100% - 235px);
+
+  min-height: 100vh;
+
+  margin-left: 235px;
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.jobholder-header {
+  width: 100%;
+  min-height: 76px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 30px;
+
+  background: #ffffff;
+
+  border-bottom: 1px solid #e4eaf4;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 500;
+}
+
+
+/* =========================================================
+   HEADER CONTENT
+   ========================================================= */
+
+.jobholder-header-content {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.jobholder-header-content h1 {
+  margin: 0;
+
+  color: #172033;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  line-height: 1.25;
+}
+
+.jobholder-header-content p {
+  margin-top: 3px;
+
+  color: #7b879c;
+
+  font-size: 11.5px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================================================
+   HEADER PROFILE
+   ========================================================= */
+
+.jobholder-header-profile {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding-left: 18px;
+}
+
+.jobholder-header-profile > svg {
+  color: #2563eb;
+
+  font-size: 31px;
+}
+
+.jobholder-header-profile div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.jobholder-header-profile strong {
+  color: #27344d;
+
+  font-size: 12.5px;
+  font-weight: 650;
+}
+
+.jobholder-header-profile span {
+  color: #8995a8;
+
+  font-size: 10.5px;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+   ========================================================= */
+
+.jobholder-menu-btn {
+  display: none;
+
+  width: 38px;
+  height: 38px;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 13px;
+
+  border: 1px solid #dce4f2;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #374151;
+
+  font-size: 17px;
+
+  cursor: pointer;
+}
+
+.jobholder-menu-btn:hover {
+  background: #eff6ff;
+
+  border-color: #bfd2f7;
+
+  color: #2563eb;
+}
+
+
+/* =========================================================
+   PAGE CONTENT
+   ========================================================= */
+
+.jobholder-content {
+  width: 100%;
+
+  flex: 1;
+
+  padding: 25px 30px 30px;
+
+  min-width: 0;
+
+  background: #f5f8ff;
+}
+
+
+/* =========================================================
+   MOBILE OVERLAY
+   ========================================================= */
+
+.jobholder-overlay {
+  display: none;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+.jobholder-sidebar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.jobholder-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.jobholder-sidebar::-webkit-scrollbar-thumb {
+  background: #d7e0ef;
+
+  border-radius: 10px;
+}
+
+.jobholder-sidebar::-webkit-scrollbar-thumb:hover {
+  background: #b8c7df;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1400px) {
+  .jobholder-sidebar {
+    width: 245px;
+  }
+
+  .jobholder-main {
+    width: calc(100% - 245px);
+
+    margin-left: 245px;
+  }
+
+  .jobholder-header {
+    padding: 0 35px;
+  }
+
+  .jobholder-content {
+    padding: 28px 35px 35px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .jobholder-sidebar {
+    width: 220px;
+  }
+
+  .jobholder-main {
+    width: calc(100% - 220px);
+
+    margin-left: 220px;
+  }
+
+  .jobholder-header {
+    padding: 0 22px;
+  }
+
+  .jobholder-content {
+    padding: 22px;
+  }
+
+  .jobholder-header-profile div {
+    display: none;
+  }
+
+  .jobholder-header-profile {
+    padding-left: 12px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .jobholder-sidebar {
+    width: 245px;
+
+    transform: translateX(-100%);
+
+    box-shadow: none;
+  }
+
+  .jobholder-sidebar.jobholder-sidebar-open {
+    transform: translateX(0);
+
+    box-shadow:
+      10px 0 35px rgba(15, 23, 42, 0.12);
+  }
+
+  .jobholder-close-btn {
+    display: flex;
+  }
+
+  .jobholder-main {
+    width: 100%;
+
+    margin-left: 0;
+  }
+
+  .jobholder-header {
+    min-height: 68px;
+
+    padding: 0 16px;
+  }
+
+  .jobholder-menu-btn {
+    display: flex;
+  }
+
+  .jobholder-header-content h1 {
+    font-size: 17px;
+  }
+
+  .jobholder-header-content p {
+    display: none;
+  }
+
+  .jobholder-header-profile > svg {
+    font-size: 29px;
+  }
+
+  .jobholder-header-profile {
+    padding-left: 8px;
+  }
+
+  .jobholder-content {
+    padding: 18px 16px 25px;
+  }
+
+  .jobholder-overlay {
+    display: block;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(15, 23, 42, 0.35);
+
+    z-index: 900;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .jobholder-sidebar {
+    width: 235px;
+  }
+
+  .jobholder-header {
+    min-height: 64px;
+
+    padding: 0 13px;
+  }
+
+  .jobholder-menu-btn {
+    width: 36px;
+    height: 36px;
+
+    margin-right: 10px;
+  }
+
+  .jobholder-header-content h1 {
+    font-size: 15.5px;
+  }
+
+  .jobholder-header-profile > svg {
+    font-size: 27px;
+  }
+
+  .jobholder-content {
+    padding: 15px 12px 22px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 350px) {
+  .jobholder-sidebar {
+    width: 220px;
+  }
+
+  .jobholder-header-profile {
+    display: none;
+  }
+
+  .jobholder-header-content h1 {
+    font-size: 15px;
+  }
+
+  .jobholder-content {
+    padding: 13px 10px 20px;
+  }
+}

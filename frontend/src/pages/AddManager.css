@@ -1,0 +1,636 @@
+/* =========================================================
+   ADD MANAGER
+   JOB PORTAL - PROFESSIONAL ADMIN BLUE DESIGN
+   ========================================================= */
+
+
+/* =========================================================
+   COLOR SYSTEM
+   ========================================================= */
+
+:root {
+    --primary-blue: #2563eb;
+    --dark-blue: #1d4ed8;
+    --light-blue: #eff6ff;
+    --indigo: #4f46e5;
+
+    --dark-text: #172033;
+    --secondary-text: #64748b;
+    --muted-text: #94a3b8;
+
+    --page-bg: #f5f8ff;
+    --white: #ffffff;
+
+    --border: #dbe4f0;
+    --soft-border: #edf1f7;
+}
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    background: var(--page-bg);
+    color: var(--dark-text);
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
+
+.add-manager-container {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px 35px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(37, 99, 235, 0.06),
+            transparent 35%
+        ),
+        var(--page-bg);
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.add-manager-card {
+    width: 100%;
+    max-width: 560px;
+
+    padding: 40px 42px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 12px 35px rgba(37, 99, 235, 0.09);
+
+    position: relative;
+}
+
+
+/* =========================================================
+   CARD TOP ACCENT
+   ========================================================= */
+
+.add-manager-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 4px;
+
+    border-radius: 18px 18px 0 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary-blue),
+            var(--dark-blue)
+        );
+}
+
+
+/* =========================================================
+   CARD HEADING
+   ========================================================= */
+
+.add-manager-card h2 {
+    margin: 0;
+
+    text-align: center;
+
+    color: var(--dark-text);
+
+    font-size: 29px;
+
+    font-weight: 750;
+
+    line-height: 1.25;
+
+    letter-spacing: -0.5px;
+}
+
+
+/* =========================================================
+   CARD DESCRIPTION
+   ========================================================= */
+
+.add-manager-card > p {
+    margin-top: 9px;
+    margin-bottom: 30px;
+
+    text-align: center;
+
+    color: var(--secondary-text);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.add-manager-card form {
+    width: 100%;
+}
+
+
+/* =========================================================
+   FORM GROUP
+   ========================================================= */
+
+.form-group {
+    display: flex;
+
+    flex-direction: column;
+
+    margin-bottom: 21px;
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.form-group label {
+    margin-bottom: 8px;
+
+    color: var(--dark-text);
+
+    font-size: 13px;
+
+    font-weight: 650;
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.form-group input {
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0 14px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: var(--dark-text);
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.form-group input::placeholder {
+    color: var(--muted-text);
+}
+
+.form-group input:hover {
+    border-color: #bfd0e5;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-blue);
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 3px rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================================================
+   CREATE BUTTON
+   ========================================================= */
+
+.create-btn {
+    width: 100%;
+
+    height: 50px;
+
+    padding: 0 18px;
+
+    margin-top: 5px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: var(--primary-blue);
+
+    color: var(--white);
+
+    font-size: 14px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 16px rgba(37, 99, 235, 0.20);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.create-btn:hover {
+    background: var(--dark-blue);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 9px 21px rgba(37, 99, 235, 0.27);
+}
+
+.create-btn:active {
+    transform: translateY(0);
+}
+
+.create-btn:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   LOGIN SECTION
+   ========================================================= */
+
+.login-section {
+    margin-top: 26px;
+
+    padding-top: 24px;
+
+    border-top: 1px solid var(--soft-border);
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   LOGIN TEXT
+   ========================================================= */
+
+.login-section p {
+    margin-bottom: 11px;
+
+    color: var(--secondary-text);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+   ========================================================= */
+
+.login-btn {
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0 18px;
+
+    border: 1px solid #cbdcf5;
+
+    border-radius: 9px;
+
+    background: var(--light-blue);
+
+    color: var(--primary-blue);
+
+    font-size: 14px;
+
+    font-weight: 650;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.login-btn:hover {
+    background: #dbeafe;
+
+    border-color: #93c5fd;
+
+    color: var(--dark-blue);
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 6px 15px rgba(37, 99, 235, 0.10);
+}
+
+.login-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   OPTIONAL ERROR MESSAGE
+   ========================================================= */
+
+.add-manager-error {
+    width: 100%;
+
+    margin-bottom: 20px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #fecaca;
+
+    border-radius: 9px;
+
+    background: #fff7f7;
+
+    color: #991b1b;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   OPTIONAL SUCCESS MESSAGE
+   ========================================================= */
+
+.add-manager-success {
+    width: 100%;
+
+    margin-bottom: 20px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #bbf7d0;
+
+    border-radius: 9px;
+
+    background: #f0fdf4;
+
+    color: #166534;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media (min-width: 1400px) {
+    .add-manager-container {
+        padding: 60px;
+    }
+
+    .add-manager-card {
+        max-width: 600px;
+
+        padding: 45px 48px;
+
+        border-radius: 20px;
+    }
+
+    .add-manager-card h2 {
+        font-size: 31px;
+    }
+
+    .add-manager-card > p {
+        font-size: 15px;
+
+        margin-bottom: 34px;
+    }
+
+    .form-group {
+        margin-bottom: 23px;
+    }
+
+    .form-group input {
+        height: 52px;
+
+        font-size: 14.5px;
+    }
+
+    .create-btn,
+    .login-btn {
+        height: 52px;
+
+        font-size: 14.5px;
+    }
+}
+
+
+/* =========================================================
+   LAPTOP
+   ========================================================= */
+
+@media (max-width: 1100px) {
+    .add-manager-container {
+        padding: 45px 25px;
+    }
+
+    .add-manager-card {
+        max-width: 540px;
+
+        padding: 36px 38px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 768px) {
+    .add-manager-container {
+        min-height: 100vh;
+
+        padding: 35px 20px;
+    }
+
+    .add-manager-card {
+        max-width: 520px;
+
+        padding: 34px 30px;
+
+        border-radius: 16px;
+    }
+
+    .add-manager-card h2 {
+        font-size: 27px;
+    }
+
+    .add-manager-card > p {
+        font-size: 13.5px;
+
+        margin-bottom: 27px;
+    }
+
+    .form-group {
+        margin-bottom: 19px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+    .add-manager-container {
+        padding: 25px 15px;
+    }
+
+    .add-manager-card {
+        width: 100%;
+
+        padding: 30px 24px;
+
+        border-radius: 14px;
+    }
+
+    .add-manager-card h2 {
+        font-size: 25px;
+    }
+
+    .add-manager-card > p {
+        font-size: 13px;
+
+        margin-bottom: 25px;
+    }
+
+    .form-group label {
+        font-size: 12.5px;
+    }
+
+    .form-group input {
+        height: 47px;
+
+        font-size: 13.5px;
+    }
+
+    .create-btn,
+    .login-btn {
+        height: 48px;
+
+        font-size: 13.5px;
+    }
+
+    .login-section {
+        margin-top: 23px;
+
+        padding-top: 21px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 420px) {
+    .add-manager-container {
+        padding: 20px 11px;
+    }
+
+    .add-manager-card {
+        padding: 27px 19px;
+    }
+
+    .add-manager-card h2 {
+        font-size: 23px;
+    }
+
+    .add-manager-card > p {
+        font-size: 12.5px;
+    }
+
+    .form-group {
+        margin-bottom: 17px;
+    }
+
+    .form-group input {
+        height: 46px;
+    }
+
+    .create-btn,
+    .login-btn {
+        height: 47px;
+    }
+}

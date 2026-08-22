@@ -1,0 +1,1055 @@
+/* =========================================================
+   JOB HOLDER - INTERVIEWS
+   JOB PORTAL - PROFESSIONAL BLUE UI
+   ========================================================= */
+
+
+/* =========================================================
+   COLOR SYSTEM
+   ========================================================= */
+
+:root {
+  --jh-primary-blue: #2563eb;
+  --jh-dark-blue: #1d4ed8;
+  --jh-light-blue: #eff6ff;
+  --jh-indigo: #4f46e5;
+  --jh-dark-text: #172033;
+  --jh-pale-bg: #f5f8ff;
+
+  --jh-text: #374151;
+  --jh-muted: #718078;
+  --jh-light-text: #87918c;
+
+  --jh-border: #dce5f2;
+  --jh-border-light: #e8eef7;
+
+  --jh-white: #ffffff;
+
+  --jh-success-bg: #ecfdf5;
+  --jh-success-text: #047857;
+
+  --jh-warning-bg: #fff8e8;
+  --jh-warning-text: #b45309;
+
+  --jh-danger-bg: #fff1f2;
+  --jh-danger-text: #dc2626;
+
+  --jh-info-bg: #eff6ff;
+  --jh-info-text: #2563eb;
+}
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MAIN PAGE
+   ========================================================= */
+
+.jhi-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0 35px;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: var(--jh-dark-text);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.jhi-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.jhi-heading {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+
+/* =========================================================
+   HEADER ICON
+   ========================================================= */
+
+.jhi-heading-icon {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 11px;
+
+  background: var(--jh-light-blue);
+  color: var(--jh-primary-blue);
+
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   HEADER TEXT
+   ========================================================= */
+
+.jhi-heading h1 {
+  margin: 0;
+
+  color: var(--jh-dark-text);
+
+  font-size: 27px;
+  font-weight: 750;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.5px;
+}
+
+.jhi-heading p {
+  margin: 5px 0 0;
+
+  color: var(--jh-muted);
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.jhi-error {
+  margin-bottom: 18px;
+  padding: 12px 15px;
+
+  border: 1px solid #f0d0d0;
+  border-radius: 9px;
+
+  background: #fff7f7;
+  color: #b42318;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   STATISTICS
+   ========================================================= */
+
+.jhi-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   STAT CARD
+   ========================================================= */
+
+.jhi-stat-card {
+  min-height: 84px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 15px;
+
+  background: var(--jh-white);
+
+  border: 1px solid var(--jh-border);
+  border-radius: 11px;
+
+  box-shadow:
+    0 4px 15px rgba(37, 99, 235, 0.045);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.jhi-stat-card:hover {
+  transform: translateY(-2px);
+
+  border-color: #c8d8ef;
+
+  box-shadow:
+    0 8px 22px rgba(37, 99, 235, 0.08);
+}
+
+
+/* =========================================================
+   STAT ICON
+   ========================================================= */
+
+.jhi-stat-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  font-size: 14px;
+}
+
+
+/* TOTAL */
+
+.jhi-stat-icon.total {
+  background: var(--jh-light-blue);
+  color: var(--jh-primary-blue);
+}
+
+
+/* UPCOMING */
+
+.jhi-stat-icon.upcoming {
+  background: #eef2ff;
+  color: var(--jh-indigo);
+}
+
+
+/* COMPLETED */
+
+.jhi-stat-icon.completed {
+  background: var(--jh-success-bg);
+  color: var(--jh-success-text);
+}
+
+
+/* CANCELLED */
+
+.jhi-stat-icon.cancelled {
+  background: var(--jh-danger-bg);
+  color: var(--jh-danger-text);
+}
+
+
+/* =========================================================
+   STAT TEXT
+   ========================================================= */
+
+.jhi-stat-card span {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: var(--jh-light-text);
+
+  font-size: 10.5px;
+  font-weight: 500;
+}
+
+.jhi-stat-card strong {
+  display: block;
+
+  color: var(--jh-dark-text);
+
+  font-size: 21px;
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   FILTER BAR
+   ========================================================= */
+
+.jhi-filter-bar {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 12px;
+  padding: 13px;
+
+  background: var(--jh-white);
+
+  border: 1px solid var(--jh-border);
+  border-radius: 11px;
+
+  box-shadow:
+    0 3px 12px rgba(37, 99, 235, 0.025);
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.jhi-search {
+  height: 42px;
+
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #d5dfed;
+  border-radius: 8px;
+
+  background: var(--jh-white);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.jhi-search:hover {
+  border-color: #b8c9e1;
+}
+
+.jhi-search:focus-within {
+  border-color: var(--jh-primary-blue);
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.09);
+}
+
+.jhi-search > svg {
+  margin: 0 11px;
+
+  flex-shrink: 0;
+
+  color: #7b8982;
+
+  font-size: 13px;
+}
+
+.jhi-search input {
+  width: 100%;
+  height: 100%;
+
+  padding: 0 12px 0 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: var(--jh-dark-text);
+
+  font-family: inherit;
+
+  font-size: 12px;
+}
+
+.jhi-search input::placeholder {
+  color: #a0aaa5;
+}
+
+
+/* =========================================================
+   STATUS FILTER
+   ========================================================= */
+
+.jhi-status-filter {
+  width: 175px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #d5dfed;
+  border-radius: 8px;
+
+  background: var(--jh-white);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.jhi-status-filter:hover {
+  border-color: #b8c9e1;
+}
+
+.jhi-status-filter:focus-within {
+  border-color: var(--jh-primary-blue);
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.jhi-status-filter > svg {
+  margin: 0 9px 0 11px;
+
+  color: var(--jh-primary-blue);
+
+  font-size: 12px;
+}
+
+.jhi-status-filter select {
+  width: 100%;
+  height: 100%;
+
+  padding-right: 8px;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: var(--jh-text);
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   RESULTS
+   ========================================================= */
+
+.jhi-results {
+  margin-bottom: 11px;
+
+  color: var(--jh-light-text);
+
+  font-size: 11.5px;
+}
+
+.jhi-results strong {
+  color: var(--jh-text);
+}
+
+
+/* =========================================================
+   TABLE CONTAINER
+   ========================================================= */
+
+.jhi-table-container {
+  width: 100%;
+
+  overflow-x: auto;
+
+  background: var(--jh-white);
+
+  border: 1px solid var(--jh-border);
+  border-radius: 12px;
+
+  box-shadow:
+    0 5px 18px rgba(37, 99, 235, 0.045);
+}
+
+
+/* =========================================================
+   TABLE
+   ========================================================= */
+
+.jhi-table {
+  width: 100%;
+
+  min-width: 1000px;
+
+  border-collapse: collapse;
+}
+
+
+/* =========================================================
+   TABLE HEADER
+   ========================================================= */
+
+.jhi-table thead {
+  background: var(--jh-pale-bg);
+}
+
+.jhi-table th {
+  padding: 13px 14px;
+
+  border-bottom: 1px solid var(--jh-border);
+
+  color: #4b5f7a;
+
+  font-size: 10.5px;
+  font-weight: 700;
+
+  text-align: left;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   TABLE BODY
+   ========================================================= */
+
+.jhi-table tbody tr {
+  transition:
+    background 0.15s ease;
+}
+
+.jhi-table tbody tr:hover {
+  background: #f9fbff;
+}
+
+.jhi-table td {
+  padding: 14px;
+
+  border-bottom: 1px solid var(--jh-border-light);
+
+  color: #4d5b6b;
+
+  font-size: 11px;
+
+  vertical-align: middle;
+}
+
+.jhi-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* =========================================================
+   CANDIDATE
+   ========================================================= */
+
+.jhi-candidate {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  min-width: 155px;
+}
+
+
+/* =========================================================
+   AVATAR
+   ========================================================= */
+
+.jhi-avatar {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  background: var(--jh-light-blue);
+  color: var(--jh-primary-blue);
+
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.jhi-candidate strong {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color: var(--jh-dark-text);
+
+  font-size: 11.5px;
+  font-weight: 650;
+}
+
+.jhi-candidate span {
+  display: block;
+
+  color: #9aa3af;
+
+  font-size: 9.5px;
+}
+
+
+/* =========================================================
+   JOB
+   ========================================================= */
+
+.jhi-job {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  max-width: 170px;
+}
+
+.jhi-job svg {
+  flex-shrink: 0;
+
+  color: var(--jh-primary-blue);
+
+  font-size: 11px;
+}
+
+.jhi-job span {
+  overflow: hidden;
+
+  color: #4d5b6b;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   DATE / TIME
+   ========================================================= */
+
+.jhi-datetime {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  min-width: 120px;
+}
+
+.jhi-datetime span {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  color: #68766f;
+
+  font-size: 10px;
+
+  white-space: nowrap;
+}
+
+.jhi-datetime svg {
+  color: var(--jh-primary-blue);
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   INTERVIEW TYPE
+   ========================================================= */
+
+.jhi-type {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #59675f;
+
+  font-size: 10.5px;
+
+  white-space: nowrap;
+}
+
+.jhi-type svg {
+  color: var(--jh-indigo);
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   INTERVIEWER
+   ========================================================= */
+
+.jhi-interviewer {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  max-width: 135px;
+
+  color: #5f6c65;
+
+  font-size: 10.5px;
+}
+
+.jhi-interviewer svg {
+  flex-shrink: 0;
+
+  color: var(--jh-primary-blue);
+
+  font-size: 10px;
+}
+
+.jhi-interviewer span {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.jhi-status {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 9px;
+
+  border-radius: 20px;
+
+  font-size: 9px;
+  font-weight: 700;
+
+  text-transform: capitalize;
+
+  white-space: nowrap;
+}
+
+
+/* SUCCESS */
+
+.jhi-status-success {
+  background: var(--jh-success-bg);
+  color: var(--jh-success-text);
+}
+
+
+/* DANGER */
+
+.jhi-status-danger {
+  background: var(--jh-danger-bg);
+  color: var(--jh-danger-text);
+}
+
+
+/* INFO */
+
+.jhi-status-info {
+  background: var(--jh-light-blue);
+  color: var(--jh-primary-blue);
+}
+
+
+/* PENDING */
+
+.jhi-status-pending {
+  background: var(--jh-warning-bg);
+  color: var(--jh-warning-text);
+}
+
+
+/* =========================================================
+   VIEW BUTTON
+   ========================================================= */
+
+.jhi-view-btn {
+  height: 32px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  padding: 0 11px;
+
+  border: 1px solid #bfd3f2;
+  border-radius: 7px;
+
+  background: var(--jh-light-blue);
+
+  color: var(--jh-primary-blue);
+
+  font-family: inherit;
+
+  font-size: 9.5px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.jhi-view-btn:hover {
+  background: #dbeafe;
+
+  border-color: #93b4e8;
+
+  color: var(--jh-dark-blue);
+
+  transform: translateY(-1px);
+}
+
+.jhi-view-btn:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.jhi-empty {
+  min-height: 320px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 35px;
+
+  background: var(--jh-white);
+
+  border: 1px solid var(--jh-border);
+
+  border-radius: 12px;
+
+  text-align: center;
+}
+
+
+/* =========================================================
+   EMPTY ICON
+   ========================================================= */
+
+.jhi-empty-icon {
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 14px;
+
+  border-radius: 15px;
+
+  background: var(--jh-light-blue);
+
+  color: var(--jh-primary-blue);
+
+  font-size: 23px;
+}
+
+.jhi-empty h2 {
+  margin: 0 0 7px;
+
+  color: var(--jh-dark-text);
+
+  font-size: 18px;
+}
+
+.jhi-empty p {
+  margin: 0;
+
+  color: var(--jh-light-text);
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   LOADING
+   ========================================================= */
+
+.jhi-loading {
+  min-height: 350px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+}
+
+.jhi-loading p {
+  margin: 0;
+
+  color: #7b8580;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   LOADING SPINNER
+   ========================================================= */
+
+.jhi-spinner {
+  width: 31px;
+  height: 31px;
+
+  border: 3px solid #dbeafe;
+
+  border-top-color: var(--jh-primary-blue);
+
+  border-radius: 50%;
+
+  animation:
+    jhiSpin 0.7s linear infinite;
+}
+
+@keyframes jhiSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .jhi-stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .jhi-table-container {
+    overflow-x: auto;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+  .jhi-filter-bar {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .jhi-status-filter {
+    width: 100%;
+  }
+
+  .jhi-heading h1 {
+    font-size: 23px;
+  }
+
+  .jhi-heading p {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .jhi-stats {
+    grid-template-columns:
+      1fr 1fr;
+
+    gap: 9px;
+  }
+
+  .jhi-stat-card {
+    min-height: 72px;
+
+    padding: 11px;
+
+    gap: 8px;
+  }
+
+  .jhi-stat-icon {
+    width: 32px;
+    height: 32px;
+
+    font-size: 12px;
+  }
+
+  .jhi-stat-card span {
+    font-size: 9px;
+  }
+
+  .jhi-stat-card strong {
+    font-size: 17px;
+  }
+
+  .jhi-heading-icon {
+    width: 40px;
+    height: 40px;
+
+    font-size: 16px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 350px) {
+  .jhi-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .jhi-heading {
+    gap: 9px;
+  }
+
+  .jhi-heading h1 {
+    font-size: 21px;
+  }
+
+  .jhi-heading p {
+    font-size: 10.5px;
+  }
+
+  .jhi-filter-bar {
+    padding: 10px;
+  }
+
+  .jhi-table-container {
+    border-radius: 9px;
+  }
+}
